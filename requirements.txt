@@ -1,0 +1,30 @@
+# QID (Query Images by Description) - Requirements
+# Install with: pip install -r requirements.txt
+
+# Core ML/AI Libraries
+torch>=2.0.0
+torchvision>=0.15.0
+
+# CLIP Model
+git+https://github.com/openai/CLIP.git
+
+# Vector Database
+faiss-cpu>=1.7.4
+# If you have NVIDIA GPU, install faiss-gpu instead:
+# faiss-gpu>=1.7.4
+
+# Image Processing
+Pillow>=10.0.0
+
+# Data Management
+numpy>=1.24.0
+pandas>=2.0.0
+sqlalchemy>=2.0.0
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0
+loguru>=0.7.0
+
+# Testing
+pytest>=7.4.0

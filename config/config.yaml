@@ -1,0 +1,49 @@
+# QID - Query Images by Description
+# Configuration File
+
+# Model Settings
+model:
+  name: "ViT-B/32"  # CLIP model: ViT-B/32 (fast), ViT-B/16 (better), ViT-L/14 (best)
+  device: "auto"     # auto, cpu, cuda, mps
+  cache_dir: "./models"
+
+# Image Processing
+images:
+  supported_formats: [".jpg", ".jpeg", ".png", ".bmp", ".gif", ".webp"]
+  max_size: 1024
+  thumbnail_size: 256
+  batch_size: 32
+
+# Vector Database
+database:
+  type: "faiss"
+  index_type: "Flat"
+  metric: "cosine"
+  dimension: 512
+  embeddings_path: "./data/embeddings/image_embeddings.index"
+  metadata_path: "./data/metadata/image_metadata.db"
+
+# Search Settings
+search:
+  default_top_k: 20
+  similarity_threshold: 0.0
+
+# UI Settings
+ui:
+  window_title: "QID - Query Images by Description"
+  window_size: "1400x900"
+  theme: "light"
+  grid_columns: 4
+  preview_size: 200
+
+# Logging
+logging:
+  level: "INFO"
+  file: "./logs/qid.log"
+  console: true
+
+# Performance
+performance:
+  use_gpu: true
+  num_workers: 4
+  cache_embeddings: true

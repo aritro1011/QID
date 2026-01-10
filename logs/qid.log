@@ -1,0 +1,14 @@
+2026-01-10 04:12:54 | INFO     | Logging initialized
+2026-01-10 04:23:14 | INFO     | Logging initialized
+2026-01-10 05:14:42 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-10 05:14:50 | INFO     | ✅ Text encoder ready
+2026-01-10 05:14:52 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-10 05:14:57 | INFO     | ✅ Image encoder ready
+2026-01-10 05:15:05 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-10 05:15:05 | INFO     | Added 10 vectors (total: 10)
+2026-01-10 05:15:05 | INFO     | 💾 Saved vector store to data\embeddings\test_index.faiss
+2026-01-10 05:15:05 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-10 05:15:05 | INFO     | 📂 Loaded vector store from data/embeddings/test_index.faiss (10 vectors)
+2026-01-10 05:15:05 | INFO     | ✅ Metadata store initialized: data/metadata/test_metadata.db
+2026-01-10 05:15:05 | WARNING  | Image already exists: test/image1.jpg
+2026-01-10 05:15:05 | INFO     | Added 4/5 metadata entries
