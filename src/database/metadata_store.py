@@ -35,8 +35,12 @@ class MetadataStore:
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         
-        # Connect to database
-        self.conn = sqlite3.connect(str(self.db_path))
+        # Connect to database with thread safety
+        # check_same_thread=False allows usage across threads
+        self.conn = sqlite3.connect(
+            str(self.db_path),
+            check_same_thread=False
+        )
         self.conn.row_factory = sqlite3.Row  # Return rows as dictionaries
         
         # Create tables

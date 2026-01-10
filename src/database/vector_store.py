@@ -195,13 +195,20 @@ class VectorStore:
         Args:
             path: File path to load from
         """
-        if not Path(path).exists():
-            raise FileNotFoundError(f"Index file not found: {path}")
+        path = Path(path)
         
-        self.index = faiss.read_index(str(path))
-        self.num_vectors = self.index.ntotal
+        if not path.exists():
+            logger.warning(f"Index file not found: {path}, starting with empty index")
+            return
         
-        logger.info(f"📂 Loaded vector store from {path} ({self.num_vectors} vectors)")
+        try:
+            self.index = faiss.read_index(str(path))
+            self.num_vectors = self.index.ntotal
+            
+            logger.info(f"📂 Loaded vector store from {path} ({self.num_vectors} vectors)")
+        except Exception as e:
+            logger.error(f"Failed to load index: {e}")
+            logger.info("Starting with empty index")
     
     def clear(self):
         """Clear all vectors from the index."""
