@@ -298,8 +298,5 @@ class MainWindow:
             "Your database is empty.\n\n"
             "Get started by indexing some images:\n"
             "File → Index Folder\n\n"
-            "Or try the test images:\n"
-            "1. Run: python create_test_images.py\n"
-            "2. Then index the 'data/images' folder"
         )
         messagebox.showinfo("Welcome", msg)

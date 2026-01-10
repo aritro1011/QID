@@ -128,7 +128,7 @@ class IndexDialog:
         self.folder_frame.pack(fill=tk.X, padx=10, pady=10)
         self.options_frame.pack(fill=tk.X, padx=10, pady=10)
         self.progress_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        self.buttons_frame.pack(fill=tk.X, padx=10, pady=10)
+        self.buttons_frame.pack(fill=tk.X, padx=0.5, pady=0.5)
     
     def _browse_folder(self):
         """Open folder selection dialog."""

@@ -789,3 +789,142 @@
 2026-01-11 02:34:53 | INFO     | Cleaning up...
 2026-01-11 02:34:53 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
 2026-01-11 02:34:53 | INFO     | Cleanup complete
+2026-01-11 03:03:58 | INFO     | Starting QID application
+2026-01-11 03:03:58 | INFO     | Initializing components...
+2026-01-11 03:03:58 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:04:03 | INFO     | ✅ Image encoder ready
+2026-01-11 03:04:03 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:04:06 | INFO     | ✅ Text encoder ready
+2026-01-11 03:04:06 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 03:04:06 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 03:04:06 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (23 vectors)
+2026-01-11 03:04:06 | INFO     | Loaded 23 vectors
+2026-01-11 03:04:06 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 03:04:06 | INFO     | ✅ Batch indexer initialized
+2026-01-11 03:04:06 | INFO     | ✅ Search engine initialized
+2026-01-11 03:04:06 | INFO     | ✅ Components initialized
+2026-01-11 03:04:07 | INFO     | ✅ QID application initialized
+2026-01-11 03:04:07 | INFO     | Starting main loop
+2026-01-11 03:04:26 | INFO     | 🗑️  Cleared vector store
+2026-01-11 03:04:26 | WARNING  | 🗑️  Cleared all metadata
+2026-01-11 03:04:29 | INFO     | Application closed
+2026-01-11 03:04:29 | INFO     | Cleaning up...
+2026-01-11 03:04:29 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 03:04:29 | INFO     | Cleanup complete
+2026-01-11 03:04:38 | INFO     | Starting QID application
+2026-01-11 03:04:38 | INFO     | Initializing components...
+2026-01-11 03:04:38 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:04:43 | INFO     | ✅ Image encoder ready
+2026-01-11 03:04:43 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:04:45 | INFO     | ✅ Text encoder ready
+2026-01-11 03:04:45 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 03:04:45 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 03:04:45 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (0 vectors)
+2026-01-11 03:04:45 | INFO     | Loaded 0 vectors
+2026-01-11 03:04:45 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 03:04:45 | INFO     | ✅ Batch indexer initialized
+2026-01-11 03:04:45 | INFO     | ✅ Search engine initialized
+2026-01-11 03:04:45 | INFO     | ✅ Components initialized
+2026-01-11 03:04:57 | INFO     | ✅ QID application initialized
+2026-01-11 03:04:57 | INFO     | Starting main loop
+2026-01-11 03:05:04 | INFO     | Starting indexing: data/images
+2026-01-11 03:05:04 | INFO     | Scanning directory: data\images
+2026-01-11 03:05:04 | INFO     | Found 23 image files
+2026-01-11 03:05:07 | INFO     | Validation complete: 23 valid, 0 invalid
+2026-01-11 03:05:07 | INFO     | 23 new images to process
+2026-01-11 03:05:20 | INFO     | ✅ Encoded 23 images
+2026-01-11 03:05:20 | INFO     | Added 23 vectors (total: 23)
+2026-01-11 03:05:20 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 03:05:20 | INFO     | 💾 All data saved
+2026-01-11 03:05:20 | INFO     | Indexing complete: {'found': 23, 'valid': 23, 'new': 23, 'processed': 23, 'failed': 0}
+2026-01-11 03:05:30 | INFO     | Searching: 'dog' (top_k=50, threshold=0.0)
+2026-01-11 03:05:30 | INFO     | Adaptive filtering: 23 → 20 results (top: 23.96%, threshold: 14.38%)
+2026-01-11 03:05:30 | INFO     | Found 20 results
+2026-01-11 03:05:37 | INFO     | Searching: 'banana' (top_k=50, threshold=0.0)
+2026-01-11 03:05:37 | INFO     | Adaptive filtering: 23 → 20 results (top: 24.11%, threshold: 14.47%)
+2026-01-11 03:05:37 | INFO     | Found 20 results
+2026-01-11 03:05:43 | INFO     | Application closed
+2026-01-11 03:05:43 | INFO     | Cleaning up...
+2026-01-11 03:05:43 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 03:05:43 | INFO     | Cleanup complete
+2026-01-11 03:07:32 | INFO     | Starting QID application
+2026-01-11 03:07:32 | INFO     | Initializing components...
+2026-01-11 03:07:32 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:07:37 | INFO     | ✅ Image encoder ready
+2026-01-11 03:07:37 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:07:40 | INFO     | ✅ Text encoder ready
+2026-01-11 03:07:40 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 03:07:40 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 03:07:40 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (23 vectors)
+2026-01-11 03:07:40 | INFO     | Loaded 23 vectors
+2026-01-11 03:07:40 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 03:07:40 | INFO     | ✅ Batch indexer initialized
+2026-01-11 03:07:40 | INFO     | ✅ Search engine initialized
+2026-01-11 03:07:40 | INFO     | ✅ Components initialized
+2026-01-11 03:07:41 | INFO     | ✅ QID application initialized
+2026-01-11 03:07:41 | INFO     | Starting main loop
+2026-01-11 03:07:51 | INFO     | Application closed
+2026-01-11 03:07:51 | INFO     | Cleaning up...
+2026-01-11 03:07:51 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 03:07:51 | INFO     | Cleanup complete
+2026-01-11 03:08:22 | INFO     | Starting QID application
+2026-01-11 03:08:22 | INFO     | Initializing components...
+2026-01-11 03:08:22 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:08:26 | INFO     | ✅ Image encoder ready
+2026-01-11 03:08:26 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:08:29 | INFO     | ✅ Text encoder ready
+2026-01-11 03:08:29 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 03:08:29 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 03:08:29 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (23 vectors)
+2026-01-11 03:08:29 | INFO     | Loaded 23 vectors
+2026-01-11 03:08:29 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 03:08:29 | INFO     | ✅ Batch indexer initialized
+2026-01-11 03:08:29 | INFO     | ✅ Search engine initialized
+2026-01-11 03:08:29 | INFO     | ✅ Components initialized
+2026-01-11 03:08:29 | INFO     | ✅ QID application initialized
+2026-01-11 03:08:29 | INFO     | Starting main loop
+2026-01-11 03:08:40 | INFO     | Application closed
+2026-01-11 03:08:40 | INFO     | Cleaning up...
+2026-01-11 03:08:40 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 03:08:40 | INFO     | Cleanup complete
+2026-01-11 03:09:01 | INFO     | Starting QID application
+2026-01-11 03:09:01 | INFO     | Initializing components...
+2026-01-11 03:09:01 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:09:06 | INFO     | ✅ Image encoder ready
+2026-01-11 03:09:06 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:09:08 | INFO     | ✅ Text encoder ready
+2026-01-11 03:09:08 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 03:09:08 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 03:09:08 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (23 vectors)
+2026-01-11 03:09:08 | INFO     | Loaded 23 vectors
+2026-01-11 03:09:08 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 03:09:08 | INFO     | ✅ Batch indexer initialized
+2026-01-11 03:09:08 | INFO     | ✅ Search engine initialized
+2026-01-11 03:09:08 | INFO     | ✅ Components initialized
+2026-01-11 03:09:09 | INFO     | ✅ QID application initialized
+2026-01-11 03:09:09 | INFO     | Starting main loop
+2026-01-11 03:09:20 | INFO     | Application closed
+2026-01-11 03:09:20 | INFO     | Cleaning up...
+2026-01-11 03:09:20 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 03:09:20 | INFO     | Cleanup complete
+2026-01-11 03:09:39 | INFO     | Starting QID application
+2026-01-11 03:09:39 | INFO     | Initializing components...
+2026-01-11 03:09:39 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:09:43 | INFO     | ✅ Image encoder ready
+2026-01-11 03:09:43 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 03:09:46 | INFO     | ✅ Text encoder ready
+2026-01-11 03:09:46 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 03:09:46 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 03:09:46 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (23 vectors)
+2026-01-11 03:09:46 | INFO     | Loaded 23 vectors
+2026-01-11 03:09:46 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 03:09:46 | INFO     | ✅ Batch indexer initialized
+2026-01-11 03:09:46 | INFO     | ✅ Search engine initialized
+2026-01-11 03:09:46 | INFO     | ✅ Components initialized
+2026-01-11 03:09:46 | INFO     | ✅ QID application initialized
+2026-01-11 03:09:46 | INFO     | Starting main loop
+2026-01-11 03:10:04 | WARNING  | Image already indexed: iman.jpg
+2026-01-11 03:10:47 | INFO     | Application closed
+2026-01-11 03:10:47 | INFO     | Cleaning up...
+2026-01-11 03:10:47 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 03:10:47 | INFO     | Cleanup complete
