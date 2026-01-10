@@ -4,4 +4,8 @@ __pycache__/
 *.pyc
 models/ViT-B-32.pt
 *.pt
+data/*
+!data/metadata/.gitkeep
+!data/images/.gitkeep
+!data/embeddings/.gitkeep
 
