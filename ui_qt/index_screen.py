@@ -1,0 +1,556 @@
+"""
+QID - Index Screen
+Full-page indexing interface with live progress and stats.
+"""
+
+from PySide6.QtWidgets import (
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel,
+    QPushButton, QProgressBar, QFrame, QFileDialog, QTextEdit
+)
+from PySide6.QtCore import Qt, QThread, Signal, QTimer
+from PySide6.QtGui import QFont
+import time
+
+from .theme import COLORS, SPACING, RADIUS
+
+
+class IndexWorker(QThread):
+    """Background thread for indexing."""
+    
+    progress = Signal(int, int)  # current, total
+    status = Signal(str)
+    log = Signal(str)
+    stats_update = Signal(dict)  # Real-time stats
+    speed = Signal(float)  # images per second
+    finished = Signal(dict)
+    error = Signal(str)
+    
+    def __init__(self, batch_indexer, folder, options):
+        super().__init__()
+        self.batch_indexer = batch_indexer
+        self.folder = folder
+        self.options = options
+        self.start_time = None
+        self.processed_count = 0
+        self.last_update_time = None
+        self.last_processed_count = 0
+    
+    def run(self):
+        """Run indexing in background."""
+        try:
+            self.start_time = time.time()
+            self.last_update_time = self.start_time
+            
+            self.status.emit("Scanning for images...")
+            self.log.emit("🔍 Scanning for images...")
+            
+            # Override the batch indexer's methods to capture progress
+            original_process = self.batch_indexer._process_batch
+            
+            def custom_process(image_paths):
+                total = len(image_paths)
+                processed = 0
+                
+                for i in range(0, total, self.batch_indexer.batch_size):
+                    batch = image_paths[i:i + self.batch_indexer.batch_size]
+                    
+                    # Process batch
+                    try:
+                        embeddings = self.batch_indexer.image_encoder.encode_batch(
+                            [str(p) for p in batch],
+                            batch_size=len(batch),
+                            show_progress=False
+                        )
+                        
+                        vector_ids = self.batch_indexer.vector_store.add(embeddings)
+                        
+                        for vector_id, path in zip(vector_ids, batch):
+                            success = self.batch_indexer.metadata_store.add(
+                                vector_id=vector_id,
+                                file_path=str(path.absolute())
+                            )
+                            if success:
+                                processed += 1
+                                self.processed_count += 1
+                        
+                        # Update progress
+                        self.progress.emit(i + len(batch), total)
+                        
+                        # Calculate speed
+                        current_time = time.time()
+                        if current_time - self.last_update_time >= 1.0:
+                            elapsed = current_time - self.last_update_time
+                            count_diff = self.processed_count - self.last_processed_count
+                            speed = count_diff / elapsed if elapsed > 0 else 0
+                            self.speed.emit(speed)
+                            
+                            self.last_update_time = current_time
+                            self.last_processed_count = self.processed_count
+                        
+                        # Log progress
+                        self.log.emit(f"✅ Processed batch {i//self.batch_indexer.batch_size + 1}: {len(batch)} images")
+                        
+                    except Exception as e:
+                        self.log.emit(f"❌ Error in batch: {str(e)}")
+                        continue
+                
+                return processed
+            
+            # Temporarily replace the method
+            self.batch_indexer._process_batch = custom_process
+            
+            stats = self.batch_indexer.index_directory(
+                self.folder,
+                recursive=self.options.get('recursive', True),
+                validate=self.options.get('validate', True),
+                skip_existing=self.options.get('skip_existing', True)
+            )
+            
+            # Restore original method
+            self.batch_indexer._process_batch = original_process
+            
+            # Send final stats
+            self.stats_update.emit(stats)
+            self.finished.emit(stats)
+            
+        except Exception as e:
+            self.error.emit(str(e))
+
+
+class StatCard(QFrame):
+    """Statistics card with icon and value."""
+    
+    def __init__(self, icon: str, label: str, value: str = "0", parent=None):
+        super().__init__(parent)
+        
+        self.setStyleSheet(f"""
+            QFrame {{
+                background: {COLORS['background_elevated']};
+                border: 1px solid {COLORS['border']};
+                border-radius: 12px;
+                padding: 20px;
+            }}
+        """)
+        
+        layout = QVBoxLayout(self)
+        layout.setSpacing(10)
+        layout.setAlignment(Qt.AlignCenter)
+        
+        icon_label = QLabel(icon)
+        icon_label.setAlignment(Qt.AlignCenter)
+        icon_label.setStyleSheet("font-size: 36px;")
+        
+        self.value_label = QLabel(value)
+        self.value_label.setAlignment(Qt.AlignCenter)
+        font = QFont("Inter, Segoe UI", 28, QFont.Bold)
+        self.value_label.setFont(font)
+        self.value_label.setStyleSheet(f"color: {COLORS['primary']};")
+        
+        label_text = QLabel(label)
+        label_text.setAlignment(Qt.AlignCenter)
+        font = QFont("Inter, Segoe UI", 12)
+        label_text.setFont(font)
+        label_text.setStyleSheet(f"color: {COLORS['text_secondary']};")
+        
+        layout.addWidget(icon_label)
+        layout.addWidget(self.value_label)
+        layout.addWidget(label_text)
+    
+    def set_value(self, value: str):
+        """Update value."""
+        self.value_label.setText(value)
+
+
+class IndexScreen(QWidget):
+    """Full-page indexing interface."""
+    
+    completed = Signal(dict)
+    
+    def __init__(self, batch_indexer, parent=None):
+        super().__init__(parent)
+        
+        self.batch_indexer = batch_indexer
+        self.worker = None
+        self.start_time = None
+        self.folder = None
+        
+        self.setStyleSheet(f"background: {COLORS['background']};")
+        
+        self._create_ui()
+    
+    def _create_ui(self):
+        """Create UI."""
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(60, 40, 60, 40)
+        layout.setSpacing(32)
+        
+        # Header
+        header = QLabel("Image Indexing")
+        font = QFont("Inter, Segoe UI", 28, QFont.Bold)
+        header.setFont(font)
+        header.setStyleSheet(f"color: {COLORS['text_primary']};")
+        
+        subtitle = QLabel("Extract AI features and index metadata from your local library")
+        font = QFont("Inter, Segoe UI", 14)
+        subtitle.setFont(font)
+        subtitle.setStyleSheet(f"color: {COLORS['text_secondary']};")
+        
+        layout.addWidget(header)
+        layout.addWidget(subtitle)
+        layout.addSpacing(20)
+        
+        # Folder selection
+        folder_frame = QFrame()
+        folder_frame.setStyleSheet(f"""
+            QFrame {{
+                background: {COLORS['background_elevated']};
+                border: 1px solid {COLORS['border']};
+                border-radius: 12px;
+                padding: 20px;
+            }}
+        """)
+        
+        folder_layout = QHBoxLayout(folder_frame)
+        
+        folder_icon = QLabel("📁")
+        folder_icon.setStyleSheet("font-size: 28px;")
+        
+        folder_info = QVBoxLayout()
+        folder_info.setSpacing(4)
+        
+        folder_title = QLabel("SOURCE FOLDER")
+        font = QFont("Inter, Segoe UI", 10, QFont.Bold)
+        folder_title.setFont(font)
+        folder_title.setStyleSheet(f"color: {COLORS['text_tertiary']};")
+        
+        self.folder_label = QLabel("No folder selected")
+        font = QFont("Inter, Segoe UI", 13)
+        self.folder_label.setFont(font)
+        self.folder_label.setStyleSheet(f"color: {COLORS['text_primary']};")
+        
+        folder_info.addWidget(folder_title)
+        folder_info.addWidget(self.folder_label)
+        
+        self.browse_btn = QPushButton("Browse Folder")
+        self.browse_btn.clicked.connect(self._browse_folder)
+        font = QFont("Inter, Segoe UI", 12, QFont.Medium)
+        self.browse_btn.setFont(font)
+        self.browse_btn.setCursor(Qt.PointingHandCursor)
+        self.browse_btn.setFixedHeight(44)
+        self.browse_btn.setStyleSheet(f"""
+            QPushButton {{
+                background: {COLORS['primary']};
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 0 24px;
+            }}
+            QPushButton:hover {{
+                background: {COLORS['primary_hover']};
+            }}
+        """)
+        
+        folder_layout.addWidget(folder_icon)
+        folder_layout.addLayout(folder_info, stretch=1)
+        folder_layout.addWidget(self.browse_btn)
+        
+        layout.addWidget(folder_frame)
+        
+        # Progress section (initially hidden)
+        self.progress_container = QWidget()
+        progress_layout = QVBoxLayout(self.progress_container)
+        progress_layout.setSpacing(20)
+        
+        # Progress header
+        progress_header = QLabel("📊 INDEXING PROGRESS")
+        font = QFont("Inter, Segoe UI", 12, QFont.Bold)
+        progress_header.setFont(font)
+        progress_header.setStyleSheet(f"color: {COLORS['text_tertiary']};")
+        
+        # Progress bar
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setMinimumHeight(16)
+        self.progress_bar.setTextVisible(False)
+        self.progress_bar.setStyleSheet(f"""
+            QProgressBar {{
+                background: {COLORS['background_elevated']};
+                border: none;
+                border-radius: 8px;
+            }}
+            QProgressBar::chunk {{
+                background: qlineargradient(
+                    x1:0, y1:0, x2:1, y2:0,
+                    stop:0 {COLORS['gradient_start']}, 
+                    stop:1 {COLORS['gradient_end']}
+                );
+                border-radius: 8px;
+            }}
+        """)
+        
+        # Status and speed
+        status_row = QHBoxLayout()
+        
+        self.status_label = QLabel("Ready to index")
+        font = QFont("Inter, Segoe UI", 13)
+        self.status_label.setFont(font)
+        self.status_label.setStyleSheet(f"color: {COLORS['text_primary']};")
+        
+        self.speed_label = QLabel("")
+        font = QFont("Inter, Segoe UI", 13, QFont.Bold)
+        self.speed_label.setFont(font)
+        self.speed_label.setStyleSheet(f"color: {COLORS['success']};")
+        
+        status_row.addWidget(self.status_label)
+        status_row.addStretch()
+        status_row.addWidget(self.speed_label)
+        
+        progress_layout.addWidget(progress_header)
+        progress_layout.addWidget(self.progress_bar)
+        progress_layout.addLayout(status_row)
+        
+        self.progress_container.setVisible(False)
+        layout.addWidget(self.progress_container)
+        
+        # Statistics cards
+        self.stats_container = QWidget()
+        stats_layout = QVBoxLayout(self.stats_container)
+        stats_layout.setSpacing(16)
+        
+        stats_header = QLabel("📈 LIVE STATISTICS")
+        font = QFont("Inter, Segoe UI", 12, QFont.Bold)
+        stats_header.setFont(font)
+        stats_header.setStyleSheet(f"color: {COLORS['text_tertiary']};")
+        
+        cards_layout = QHBoxLayout()
+        cards_layout.setSpacing(20)
+        
+        self.found_card = StatCard("📊", "Images Found", "0")
+        self.processed_card = StatCard("✅", "Successfully Indexed", "0")
+        self.skipped_card = StatCard("⏭️", "Already Indexed", "0")
+        
+        cards_layout.addWidget(self.found_card)
+        cards_layout.addWidget(self.processed_card)
+        cards_layout.addWidget(self.skipped_card)
+        
+        stats_layout.addWidget(stats_header)
+        stats_layout.addLayout(cards_layout)
+        
+        self.stats_container.setVisible(False)
+        layout.addWidget(self.stats_container)
+        
+        # Time and log
+        self.info_container = QWidget()
+        info_layout = QVBoxLayout(self.info_container)
+        info_layout.setSpacing(16)
+        
+        self.time_label = QLabel("⏱️  Time Elapsed: 00:00:00")
+        font = QFont("Inter, Segoe UI", 12)
+        self.time_label.setFont(font)
+        self.time_label.setStyleSheet(f"color: {COLORS['text_secondary']};")
+        
+        # Log area
+        log_header = QLabel("📋 Activity Log")
+        font = QFont("Inter, Segoe UI", 11, QFont.Bold)
+        log_header.setFont(font)
+        log_header.setStyleSheet(f"color: {COLORS['text_tertiary']};")
+        
+        self.log_area = QTextEdit()
+        self.log_area.setReadOnly(True)
+        self.log_area.setMaximumHeight(150)
+        font = QFont("Consolas, Monaco, monospace", 10)
+        self.log_area.setFont(font)
+        self.log_area.setStyleSheet(f"""
+            QTextEdit {{
+                background: {COLORS['background_elevated']};
+                border: 1px solid {COLORS['border']};
+                border-radius: 8px;
+                padding: 12px;
+                color: {COLORS['text_secondary']};
+            }}
+        """)
+        
+        info_layout.addWidget(self.time_label)
+        info_layout.addWidget(log_header)
+        info_layout.addWidget(self.log_area)
+        
+        self.info_container.setVisible(False)
+        layout.addWidget(self.info_container)
+        
+        layout.addStretch()
+        
+        # Start button
+        self.start_btn = QPushButton("🚀 Start Indexing")
+        self.start_btn.clicked.connect(self._start_indexing)
+        font = QFont("Inter, Segoe UI", 15, QFont.Bold)
+        self.start_btn.setFont(font)
+        self.start_btn.setMinimumHeight(56)
+        self.start_btn.setCursor(Qt.PointingHandCursor)
+        self.start_btn.setStyleSheet(f"""
+            QPushButton {{
+                background: qlineargradient(
+                    x1:0, y1:0, x2:1, y2:0,
+                    stop:0 {COLORS['gradient_start']}, 
+                    stop:1 {COLORS['gradient_end']}
+                );
+                color: white;
+                border: none;
+                border-radius: 12px;
+            }}
+            QPushButton:hover {{
+                background: qlineargradient(
+                    x1:0, y1:0, x2:1, y2:0,
+                    stop:0 #7c8ef5, 
+                    stop:1 #8b5cb8
+                );
+            }}
+            QPushButton:disabled {{
+                background: {COLORS['background_hover']};
+                color: {COLORS['text_tertiary']};
+            }}
+        """)
+        self.start_btn.setEnabled(False)
+        
+        layout.addWidget(self.start_btn)
+    
+    def _browse_folder(self):
+        """Browse for folder."""
+        folder = QFileDialog.getExistingDirectory(
+            self,
+            "Select Image Folder",
+            "data/images"
+        )
+        
+        if folder:
+            self.folder = folder
+            self.folder_label.setText(folder)
+            self.start_btn.setEnabled(True)
+            self._add_log(f"📁 Selected folder: {folder}")
+    
+    def _start_indexing(self):
+        """Start indexing process."""
+        if not self.folder:
+            return
+        
+        # Show progress UI
+        self.progress_container.setVisible(True)
+        self.stats_container.setVisible(True)
+        self.info_container.setVisible(True)
+        
+        # Disable controls
+        self.start_btn.setEnabled(False)
+        self.start_btn.setText("⏳ Indexing...")
+        self.browse_btn.setEnabled(False)
+        
+        # Start timer
+        self.start_time = time.time()
+        self.timer = QTimer()
+        self.timer.timeout.connect(self._update_time)
+        self.timer.start(1000)
+        
+        # Create worker
+        options = {
+            'recursive': True,
+            'validate': True,
+            'skip_existing': True
+        }
+        
+        self.worker = IndexWorker(self.batch_indexer, self.folder, options)
+        self.worker.status.connect(self._update_status)
+        self.worker.log.connect(self._add_log)
+        self.worker.progress.connect(self._update_progress)
+        self.worker.speed.connect(self._update_speed)
+        self.worker.stats_update.connect(self._update_stats)
+        self.worker.finished.connect(self._on_finished)
+        self.worker.error.connect(self._on_error)
+        
+        self._add_log("🚀 Starting indexing process...")
+        self.worker.start()
+    
+    def _update_progress(self, current: int, total: int):
+        """Update progress bar."""
+        if total > 0:
+            percentage = int((current / total) * 100)
+            self.progress_bar.setValue(percentage)
+            self.status_label.setText(f"Processing: {current}/{total} images")
+    
+    def _update_speed(self, speed: float):
+        """Update speed indicator."""
+        self.speed_label.setText(f"⚡ {speed:.1f} img/s")
+    
+    def _update_stats(self, stats: dict):
+        """Update statistics cards."""
+        self.found_card.set_value(f"{stats.get('found', 0):,}")
+        self.processed_card.set_value(f"{stats.get('processed', 0):,}")
+        skipped = stats.get('found', 0) - stats.get('new', 0)
+        self.skipped_card.set_value(f"{skipped:,}")
+    
+    def _update_status(self, message: str):
+        """Update status message."""
+        self.status_label.setText(message)
+    
+    def _add_log(self, message: str):
+        """Add log message."""
+        self.log_area.append(message)
+        # Auto-scroll to bottom
+        self.log_area.verticalScrollBar().setValue(
+            self.log_area.verticalScrollBar().maximum()
+        )
+    
+    def _update_time(self):
+        """Update elapsed time."""
+        if self.start_time:
+            elapsed = int(time.time() - self.start_time)
+            hours = elapsed // 3600
+            minutes = (elapsed % 3600) // 60
+            seconds = elapsed % 60
+            
+            self.time_label.setText(f"⏱️  Time Elapsed: {hours:02d}:{minutes:02d}:{seconds:02d}")
+    
+    def _on_finished(self, stats: dict):
+        """Handle completion."""
+        self.timer.stop()
+        
+        # Update UI
+        self.progress_bar.setValue(100)
+        self.status_label.setText("✅ Indexing complete!")
+        self.speed_label.setText("")
+        
+        # Update stats
+        self.found_card.set_value(f"{stats['found']:,}")
+        self.processed_card.set_value(f"{stats['processed']:,}")
+        self.skipped_card.set_value(f"{stats['found'] - stats['new']:,}")
+        
+        # Re-enable controls
+        self.start_btn.setText("✅ Indexing Complete")
+        self.browse_btn.setEnabled(True)
+        
+        self._add_log(f"✅ Successfully indexed {stats['processed']} images!")
+        self._add_log(f"📊 Total in database: {len(self.batch_indexer.metadata_store):,} images")
+        
+        # Emit signal
+        self.completed.emit(stats)
+    
+    def _on_error(self, error: str):
+        """Handle error."""
+        self.timer.stop()
+        
+        self.status_label.setText(f"❌ Error occurred")
+        self.start_btn.setEnabled(True)
+        self.start_btn.setText("🔄 Retry")
+        self.browse_btn.setEnabled(True)
+        
+        self._add_log(f"❌ Error: {error}")
+    
+    def reset_to_folder_selection(self):
+        """Reset screen to initial state."""
+        self.progress_container.setVisible(False)
+        self.stats_container.setVisible(False)
+        self.info_container.setVisible(False)
+        
+        self.start_btn.setText("🚀 Start Indexing")
+        self.start_btn.setEnabled(bool(self.folder))
+        self.browse_btn.setEnabled(True)
+        
+        self.log_area.clear()
+        self.progress_bar.setValue(0)
+        self.status_label.setText("Ready to index")
