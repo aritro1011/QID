@@ -28,3 +28,7 @@ loguru>=0.7.0
 
 # Testing
 pytest>=7.4.0
+
+#Advanced UI
+PySide6>=6.6.0
+PySide6-Addons>=6.6.0

@@ -928,3 +928,1546 @@
 2026-01-11 03:10:47 | INFO     | Cleaning up...
 2026-01-11 03:10:47 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
 2026-01-11 03:10:47 | INFO     | Cleanup complete
+2026-01-11 05:51:21 | INFO     | Starting QID application
+2026-01-11 05:51:21 | INFO     | Initializing components...
+2026-01-11 05:51:21 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 05:51:26 | INFO     | ✅ Image encoder ready
+2026-01-11 05:51:26 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 05:51:29 | INFO     | ✅ Text encoder ready
+2026-01-11 05:51:29 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 05:51:29 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 05:51:29 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (23 vectors)
+2026-01-11 05:51:29 | INFO     | Loaded 23 vectors
+2026-01-11 05:51:29 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 05:51:29 | INFO     | ✅ Batch indexer initialized
+2026-01-11 05:51:29 | INFO     | ✅ Search engine initialized
+2026-01-11 05:51:29 | INFO     | ✅ Components initialized
+2026-01-11 05:51:30 | INFO     | ✅ QID application initialized
+2026-01-11 05:51:30 | INFO     | Starting main loop
+2026-01-11 06:21:58 | INFO     | Starting indexing: data/images
+2026-01-11 06:21:58 | INFO     | Scanning directory: data\images
+2026-01-11 06:21:58 | INFO     | Found 3023 image files
+2026-01-11 06:22:02 | INFO     | Validation complete: 3023 valid, 0 invalid
+2026-01-11 06:22:02 | INFO     | Skipped 23 already-processed images
+2026-01-11 06:22:02 | INFO     | 3000 new images to process
+2026-01-11 06:22:14 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:14 | INFO     | Added 32 vectors (total: 55)
+2026-01-11 06:22:15 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:15 | INFO     | Added 32 vectors (total: 87)
+2026-01-11 06:22:15 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:15 | INFO     | Added 32 vectors (total: 119)
+2026-01-11 06:22:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:16 | INFO     | Added 32 vectors (total: 151)
+2026-01-11 06:22:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:16 | INFO     | Added 32 vectors (total: 183)
+2026-01-11 06:22:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:17 | INFO     | Added 32 vectors (total: 215)
+2026-01-11 06:22:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:17 | INFO     | Added 32 vectors (total: 247)
+2026-01-11 06:22:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:18 | INFO     | Added 32 vectors (total: 279)
+2026-01-11 06:22:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:18 | INFO     | Added 32 vectors (total: 311)
+2026-01-11 06:22:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:19 | INFO     | Added 32 vectors (total: 343)
+2026-01-11 06:22:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:19 | INFO     | Added 32 vectors (total: 375)
+2026-01-11 06:22:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:20 | INFO     | Added 32 vectors (total: 407)
+2026-01-11 06:22:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:20 | INFO     | Added 32 vectors (total: 439)
+2026-01-11 06:22:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:20 | INFO     | Added 32 vectors (total: 471)
+2026-01-11 06:22:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:21 | INFO     | Added 32 vectors (total: 503)
+2026-01-11 06:22:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:21 | INFO     | Added 32 vectors (total: 535)
+2026-01-11 06:22:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:22 | INFO     | Added 32 vectors (total: 567)
+2026-01-11 06:22:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:22 | INFO     | Added 32 vectors (total: 599)
+2026-01-11 06:22:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:22 | INFO     | Added 32 vectors (total: 631)
+2026-01-11 06:22:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:22 | INFO     | Added 32 vectors (total: 663)
+2026-01-11 06:22:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:23 | INFO     | Added 32 vectors (total: 695)
+2026-01-11 06:22:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:23 | INFO     | Added 32 vectors (total: 727)
+2026-01-11 06:22:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:23 | INFO     | Added 32 vectors (total: 759)
+2026-01-11 06:22:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:24 | INFO     | Added 32 vectors (total: 791)
+2026-01-11 06:22:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:24 | INFO     | Added 32 vectors (total: 823)
+2026-01-11 06:22:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:24 | INFO     | Added 32 vectors (total: 855)
+2026-01-11 06:22:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:25 | INFO     | Added 32 vectors (total: 887)
+2026-01-11 06:22:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:25 | INFO     | Added 32 vectors (total: 919)
+2026-01-11 06:22:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:26 | INFO     | Added 32 vectors (total: 951)
+2026-01-11 06:22:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:26 | INFO     | Added 32 vectors (total: 983)
+2026-01-11 06:22:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:27 | INFO     | Added 32 vectors (total: 1015)
+2026-01-11 06:22:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:27 | INFO     | Added 32 vectors (total: 1047)
+2026-01-11 06:22:28 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:28 | INFO     | Added 32 vectors (total: 1079)
+2026-01-11 06:22:28 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:28 | INFO     | Added 32 vectors (total: 1111)
+2026-01-11 06:22:29 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:29 | INFO     | Added 32 vectors (total: 1143)
+2026-01-11 06:22:29 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:29 | INFO     | Added 32 vectors (total: 1175)
+2026-01-11 06:22:29 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:29 | INFO     | Added 32 vectors (total: 1207)
+2026-01-11 06:22:30 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:30 | INFO     | Added 32 vectors (total: 1239)
+2026-01-11 06:22:30 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:30 | INFO     | Added 32 vectors (total: 1271)
+2026-01-11 06:22:31 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:31 | INFO     | Added 32 vectors (total: 1303)
+2026-01-11 06:22:31 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:31 | INFO     | Added 32 vectors (total: 1335)
+2026-01-11 06:22:32 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:32 | INFO     | Added 32 vectors (total: 1367)
+2026-01-11 06:22:32 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:32 | INFO     | Added 32 vectors (total: 1399)
+2026-01-11 06:22:33 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:33 | INFO     | Added 32 vectors (total: 1431)
+2026-01-11 06:22:33 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:33 | INFO     | Added 32 vectors (total: 1463)
+2026-01-11 06:22:34 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:34 | INFO     | Added 32 vectors (total: 1495)
+2026-01-11 06:22:34 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:34 | INFO     | Added 32 vectors (total: 1527)
+2026-01-11 06:22:35 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:35 | INFO     | Added 32 vectors (total: 1559)
+2026-01-11 06:22:35 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:35 | INFO     | Added 32 vectors (total: 1591)
+2026-01-11 06:22:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:36 | INFO     | Added 32 vectors (total: 1623)
+2026-01-11 06:22:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:36 | INFO     | Added 32 vectors (total: 1655)
+2026-01-11 06:22:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:36 | INFO     | Added 32 vectors (total: 1687)
+2026-01-11 06:22:37 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:37 | INFO     | Added 32 vectors (total: 1719)
+2026-01-11 06:22:37 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:37 | INFO     | Added 32 vectors (total: 1751)
+2026-01-11 06:22:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:38 | INFO     | Added 32 vectors (total: 1783)
+2026-01-11 06:22:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:38 | INFO     | Added 32 vectors (total: 1815)
+2026-01-11 06:22:39 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:39 | INFO     | Added 32 vectors (total: 1847)
+2026-01-11 06:22:39 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:39 | INFO     | Added 32 vectors (total: 1879)
+2026-01-11 06:22:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:40 | INFO     | Added 32 vectors (total: 1911)
+2026-01-11 06:22:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:40 | INFO     | Added 32 vectors (total: 1943)
+2026-01-11 06:22:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:40 | INFO     | Added 32 vectors (total: 1975)
+2026-01-11 06:22:41 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:41 | INFO     | Added 32 vectors (total: 2007)
+2026-01-11 06:22:41 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:41 | INFO     | Added 32 vectors (total: 2039)
+2026-01-11 06:22:42 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:42 | INFO     | Added 32 vectors (total: 2071)
+2026-01-11 06:22:42 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:42 | INFO     | Added 32 vectors (total: 2103)
+2026-01-11 06:22:43 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:43 | INFO     | Added 32 vectors (total: 2135)
+2026-01-11 06:22:43 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:43 | INFO     | Added 32 vectors (total: 2167)
+2026-01-11 06:22:44 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:44 | INFO     | Added 32 vectors (total: 2199)
+2026-01-11 06:22:44 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:44 | INFO     | Added 32 vectors (total: 2231)
+2026-01-11 06:22:44 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:44 | INFO     | Added 32 vectors (total: 2263)
+2026-01-11 06:22:45 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:45 | INFO     | Added 32 vectors (total: 2295)
+2026-01-11 06:22:45 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:45 | INFO     | Added 32 vectors (total: 2327)
+2026-01-11 06:22:46 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:46 | INFO     | Added 32 vectors (total: 2359)
+2026-01-11 06:22:46 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:46 | INFO     | Added 32 vectors (total: 2391)
+2026-01-11 06:22:47 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:47 | INFO     | Added 32 vectors (total: 2423)
+2026-01-11 06:22:47 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:47 | INFO     | Added 32 vectors (total: 2455)
+2026-01-11 06:22:48 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:48 | INFO     | Added 32 vectors (total: 2487)
+2026-01-11 06:22:48 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:48 | INFO     | Added 32 vectors (total: 2519)
+2026-01-11 06:22:49 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:49 | INFO     | Added 32 vectors (total: 2551)
+2026-01-11 06:22:49 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:49 | INFO     | Added 32 vectors (total: 2583)
+2026-01-11 06:22:49 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:49 | INFO     | Added 32 vectors (total: 2615)
+2026-01-11 06:22:50 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:50 | INFO     | Added 32 vectors (total: 2647)
+2026-01-11 06:22:50 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:50 | INFO     | Added 32 vectors (total: 2679)
+2026-01-11 06:22:51 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:51 | INFO     | Added 32 vectors (total: 2711)
+2026-01-11 06:22:51 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:51 | INFO     | Added 32 vectors (total: 2743)
+2026-01-11 06:22:52 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:52 | INFO     | Added 32 vectors (total: 2775)
+2026-01-11 06:22:52 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:52 | INFO     | Added 32 vectors (total: 2807)
+2026-01-11 06:22:53 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:53 | INFO     | Added 32 vectors (total: 2839)
+2026-01-11 06:22:53 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:53 | INFO     | Added 32 vectors (total: 2871)
+2026-01-11 06:22:53 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:53 | INFO     | Added 32 vectors (total: 2903)
+2026-01-11 06:22:54 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:54 | INFO     | Added 32 vectors (total: 2935)
+2026-01-11 06:22:54 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:54 | INFO     | Added 32 vectors (total: 2967)
+2026-01-11 06:22:55 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:22:55 | INFO     | Added 32 vectors (total: 2999)
+2026-01-11 06:22:55 | INFO     | ✅ Encoded 24 images
+2026-01-11 06:22:55 | INFO     | Added 24 vectors (total: 3023)
+2026-01-11 06:22:55 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 06:22:55 | INFO     | 💾 All data saved
+2026-01-11 06:22:55 | INFO     | Indexing complete: {'found': 3023, 'valid': 3023, 'new': 3000, 'processed': 3000, 'failed': 0}
+2026-01-11 06:23:24 | INFO     | Searching: 'A man walking in front of a modern building in a western country' (top_k=50, threshold=0.0)
+2026-01-11 06:23:24 | INFO     | Adaptive filtering: 150 → 20 results (top: 31.02%, threshold: 18.61%)
+2026-01-11 06:23:24 | INFO     | Found 20 results
+2026-01-11 06:23:40 | INFO     | Searching: 'A man walking in front of a modern building in black and white' (top_k=50, threshold=0.0)
+2026-01-11 06:23:40 | INFO     | Adaptive filtering: 150 → 20 results (top: 31.22%, threshold: 18.73%)
+2026-01-11 06:23:40 | INFO     | Found 20 results
+2026-01-11 06:25:22 | INFO     | Starting indexing: data/images
+2026-01-11 06:25:22 | INFO     | Scanning directory: data\images
+2026-01-11 06:25:22 | INFO     | Found 3024 image files
+2026-01-11 06:25:26 | INFO     | Validation complete: 3024 valid, 0 invalid
+2026-01-11 06:25:26 | INFO     | Skipped 3023 already-processed images
+2026-01-11 06:25:26 | INFO     | 1 new images to process
+2026-01-11 06:25:26 | INFO     | ✅ Encoded 1 images
+2026-01-11 06:25:26 | INFO     | Added 1 vectors (total: 3024)
+2026-01-11 06:25:26 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 06:25:26 | INFO     | 💾 All data saved
+2026-01-11 06:25:26 | INFO     | Indexing complete: {'found': 3024, 'valid': 3024, 'new': 1, 'processed': 1, 'failed': 0}
+2026-01-11 06:25:34 | INFO     | Searching: 'breasts' (top_k=50, threshold=0.0)
+2026-01-11 06:25:34 | INFO     | Adaptive filtering: 150 → 20 results (top: 29.01%, threshold: 17.41%)
+2026-01-11 06:25:34 | INFO     | Found 20 results
+2026-01-11 06:25:44 | INFO     | Searching: 'jellyfish' (top_k=50, threshold=0.0)
+2026-01-11 06:25:44 | INFO     | Adaptive filtering: 150 → 20 results (top: 31.53%, threshold: 18.92%)
+2026-01-11 06:25:44 | INFO     | Found 20 results
+2026-01-11 06:25:50 | INFO     | Searching: 'porn' (top_k=50, threshold=0.0)
+2026-01-11 06:25:50 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.50%, threshold: 15.30%)
+2026-01-11 06:25:50 | INFO     | Found 20 results
+2026-01-11 06:26:01 | INFO     | Searching: 'biscuit' (top_k=50, threshold=0.0)
+2026-01-11 06:26:01 | INFO     | Adaptive filtering: 150 → 20 results (top: 23.72%, threshold: 14.23%)
+2026-01-11 06:26:01 | INFO     | Found 20 results
+2026-01-11 06:26:08 | INFO     | Searching: 'merry go round' (top_k=50, threshold=0.0)
+2026-01-11 06:26:08 | INFO     | Adaptive filtering: 150 → 20 results (top: 23.91%, threshold: 14.34%)
+2026-01-11 06:26:08 | INFO     | Found 20 results
+2026-01-11 06:26:20 | INFO     | Searching: 'dani daniels' (top_k=50, threshold=0.0)
+2026-01-11 06:26:20 | INFO     | Adaptive filtering: 150 → 3 results (top: 32.29%, threshold: 19.37%)
+2026-01-11 06:26:20 | INFO     | Found 3 results
+2026-01-11 06:26:34 | INFO     | Searching: 'cat' (top_k=50, threshold=0.0)
+2026-01-11 06:26:34 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.11%, threshold: 15.66%)
+2026-01-11 06:26:34 | INFO     | Found 20 results
+2026-01-11 06:26:41 | INFO     | Searching: 'tree' (top_k=50, threshold=0.0)
+2026-01-11 06:26:41 | INFO     | Adaptive filtering: 150 → 20 results (top: 29.22%, threshold: 17.53%)
+2026-01-11 06:26:41 | INFO     | Found 20 results
+2026-01-11 06:26:47 | INFO     | Searching: 'nipple' (top_k=50, threshold=0.0)
+2026-01-11 06:26:47 | INFO     | Adaptive filtering: 150 → 20 results (top: 30.79%, threshold: 18.48%)
+2026-01-11 06:26:47 | INFO     | Found 20 results
+2026-01-11 06:26:53 | INFO     | Searching: 'triangle' (top_k=50, threshold=0.0)
+2026-01-11 06:26:53 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.22%, threshold: 15.73%)
+2026-01-11 06:26:53 | INFO     | Found 20 results
+2026-01-11 06:26:59 | INFO     | Searching: 'condom' (top_k=50, threshold=0.0)
+2026-01-11 06:26:59 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.18%, threshold: 14.51%)
+2026-01-11 06:26:59 | INFO     | Found 20 results
+2026-01-11 06:27:05 | INFO     | Searching: 'bed' (top_k=50, threshold=0.0)
+2026-01-11 06:27:05 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.89%, threshold: 16.13%)
+2026-01-11 06:27:05 | INFO     | Found 20 results
+2026-01-11 06:27:12 | INFO     | Searching: 'lana rhoade' (top_k=50, threshold=0.0)
+2026-01-11 06:27:12 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.17%, threshold: 16.30%)
+2026-01-11 06:27:12 | INFO     | Found 20 results
+2026-01-11 06:27:14 | INFO     | Searching: 'lana rhoades' (top_k=50, threshold=0.0)
+2026-01-11 06:27:14 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.35%, threshold: 16.41%)
+2026-01-11 06:27:14 | INFO     | Found 20 results
+2026-01-11 06:27:18 | INFO     | Searching: 'woman' (top_k=50, threshold=0.0)
+2026-01-11 06:27:18 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.72%, threshold: 15.43%)
+2026-01-11 06:27:18 | INFO     | Found 20 results
+2026-01-11 06:27:27 | INFO     | Searching: 'green' (top_k=50, threshold=0.0)
+2026-01-11 06:27:27 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.92%, threshold: 17.35%)
+2026-01-11 06:27:27 | INFO     | Found 20 results
+2026-01-11 06:27:31 | INFO     | Searching: 'hot' (top_k=50, threshold=0.0)
+2026-01-11 06:27:31 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.91%, threshold: 15.55%)
+2026-01-11 06:27:31 | INFO     | Found 20 results
+2026-01-11 06:27:37 | INFO     | Searching: 'green' (top_k=50, threshold=0.0)
+2026-01-11 06:27:37 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.92%, threshold: 17.35%)
+2026-01-11 06:27:37 | INFO     | Found 20 results
+2026-01-11 06:27:46 | INFO     | Searching: 'masturbation' (top_k=50, threshold=0.0)
+2026-01-11 06:27:46 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.54%, threshold: 15.32%)
+2026-01-11 06:27:46 | INFO     | Found 20 results
+2026-01-11 06:27:51 | INFO     | Searching: 'pink' (top_k=50, threshold=0.0)
+2026-01-11 06:27:51 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.61%, threshold: 14.77%)
+2026-01-11 06:27:51 | INFO     | Found 20 results
+2026-01-11 06:27:56 | INFO     | Searching: 'pussy' (top_k=50, threshold=0.0)
+2026-01-11 06:27:56 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.22%, threshold: 16.93%)
+2026-01-11 06:27:56 | INFO     | Found 20 results
+2026-01-11 06:27:59 | INFO     | Searching: 'sex' (top_k=50, threshold=0.0)
+2026-01-11 06:27:59 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.03%, threshold: 15.62%)
+2026-01-11 06:27:59 | INFO     | Found 20 results
+2026-01-11 06:28:06 | INFO     | Application closed
+2026-01-11 06:28:06 | INFO     | Cleaning up...
+2026-01-11 06:28:06 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 06:28:06 | INFO     | Cleanup complete
+2026-01-11 06:28:23 | INFO     | Starting QID application
+2026-01-11 06:28:23 | INFO     | Initializing components...
+2026-01-11 06:28:23 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 06:28:28 | INFO     | ✅ Image encoder ready
+2026-01-11 06:28:28 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 06:28:31 | INFO     | ✅ Text encoder ready
+2026-01-11 06:28:31 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 06:28:31 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 06:28:31 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3024 vectors)
+2026-01-11 06:28:31 | INFO     | Loaded 3024 vectors
+2026-01-11 06:28:31 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 06:28:31 | INFO     | ✅ Batch indexer initialized
+2026-01-11 06:28:31 | INFO     | ✅ Search engine initialized
+2026-01-11 06:28:31 | INFO     | ✅ Components initialized
+2026-01-11 06:28:31 | INFO     | ✅ QID application initialized
+2026-01-11 06:28:31 | INFO     | Starting main loop
+2026-01-11 06:28:38 | INFO     | Searching: 'boobs' (top_k=50, threshold=0.0)
+2026-01-11 06:28:40 | INFO     | Adaptive filtering: 150 → 20 results (top: 30.61%, threshold: 18.36%)
+2026-01-11 06:28:40 | INFO     | Found 20 results
+2026-01-11 06:28:52 | INFO     | 🗑️  Cleared vector store
+2026-01-11 06:28:52 | WARNING  | 🗑️  Cleared all metadata
+2026-01-11 06:29:04 | INFO     | Starting indexing: data/images
+2026-01-11 06:29:04 | INFO     | Scanning directory: data\images
+2026-01-11 06:29:04 | INFO     | Found 3023 image files
+2026-01-11 06:29:09 | INFO     | Validation complete: 3023 valid, 0 invalid
+2026-01-11 06:29:09 | INFO     | 3023 new images to process
+2026-01-11 06:29:13 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:13 | INFO     | Added 32 vectors (total: 32)
+2026-01-11 06:29:13 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:13 | INFO     | Added 32 vectors (total: 64)
+2026-01-11 06:29:14 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:14 | INFO     | Added 32 vectors (total: 96)
+2026-01-11 06:29:14 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:14 | INFO     | Added 32 vectors (total: 128)
+2026-01-11 06:29:14 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:14 | INFO     | Added 32 vectors (total: 160)
+2026-01-11 06:29:15 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:15 | INFO     | Added 32 vectors (total: 192)
+2026-01-11 06:29:15 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:15 | INFO     | Added 32 vectors (total: 224)
+2026-01-11 06:29:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:16 | INFO     | Added 32 vectors (total: 256)
+2026-01-11 06:29:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:16 | INFO     | Added 32 vectors (total: 288)
+2026-01-11 06:29:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:17 | INFO     | Added 32 vectors (total: 320)
+2026-01-11 06:29:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:17 | INFO     | Added 32 vectors (total: 352)
+2026-01-11 06:29:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:18 | INFO     | Added 32 vectors (total: 384)
+2026-01-11 06:29:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:18 | INFO     | Added 32 vectors (total: 416)
+2026-01-11 06:29:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:19 | INFO     | Added 32 vectors (total: 448)
+2026-01-11 06:29:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:19 | INFO     | Added 32 vectors (total: 480)
+2026-01-11 06:29:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:20 | INFO     | Added 32 vectors (total: 512)
+2026-01-11 06:29:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:20 | INFO     | Added 32 vectors (total: 544)
+2026-01-11 06:29:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:20 | INFO     | Added 32 vectors (total: 576)
+2026-01-11 06:29:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:21 | INFO     | Added 32 vectors (total: 608)
+2026-01-11 06:29:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:21 | INFO     | Added 32 vectors (total: 640)
+2026-01-11 06:29:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:22 | INFO     | Added 32 vectors (total: 672)
+2026-01-11 06:29:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:22 | INFO     | Added 32 vectors (total: 704)
+2026-01-11 06:29:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:23 | INFO     | Added 32 vectors (total: 736)
+2026-01-11 06:29:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:23 | INFO     | Added 32 vectors (total: 768)
+2026-01-11 06:29:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:24 | INFO     | Added 32 vectors (total: 800)
+2026-01-11 06:29:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:24 | INFO     | Added 32 vectors (total: 832)
+2026-01-11 06:29:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:25 | INFO     | Added 32 vectors (total: 864)
+2026-01-11 06:29:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:25 | INFO     | Added 32 vectors (total: 896)
+2026-01-11 06:29:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:26 | INFO     | Added 32 vectors (total: 928)
+2026-01-11 06:29:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:26 | INFO     | Added 32 vectors (total: 960)
+2026-01-11 06:29:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:27 | INFO     | Added 32 vectors (total: 992)
+2026-01-11 06:29:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:27 | INFO     | Added 32 vectors (total: 1024)
+2026-01-11 06:29:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:27 | INFO     | Added 32 vectors (total: 1056)
+2026-01-11 06:29:28 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:28 | INFO     | Added 32 vectors (total: 1088)
+2026-01-11 06:29:28 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:28 | INFO     | Added 32 vectors (total: 1120)
+2026-01-11 06:29:29 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:29 | INFO     | Added 32 vectors (total: 1152)
+2026-01-11 06:29:29 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:29 | INFO     | Added 32 vectors (total: 1184)
+2026-01-11 06:29:30 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:30 | INFO     | Added 32 vectors (total: 1216)
+2026-01-11 06:29:30 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:30 | INFO     | Added 32 vectors (total: 1248)
+2026-01-11 06:29:31 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:31 | INFO     | Added 32 vectors (total: 1280)
+2026-01-11 06:29:31 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:31 | INFO     | Added 32 vectors (total: 1312)
+2026-01-11 06:29:32 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:32 | INFO     | Added 32 vectors (total: 1344)
+2026-01-11 06:29:32 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:32 | INFO     | Added 32 vectors (total: 1376)
+2026-01-11 06:29:32 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:32 | INFO     | Added 32 vectors (total: 1408)
+2026-01-11 06:29:33 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:33 | INFO     | Added 32 vectors (total: 1440)
+2026-01-11 06:29:33 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:33 | INFO     | Added 32 vectors (total: 1472)
+2026-01-11 06:29:34 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:34 | INFO     | Added 32 vectors (total: 1504)
+2026-01-11 06:29:34 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:34 | INFO     | Added 32 vectors (total: 1536)
+2026-01-11 06:29:35 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:35 | INFO     | Added 32 vectors (total: 1568)
+2026-01-11 06:29:35 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:35 | INFO     | Added 32 vectors (total: 1600)
+2026-01-11 06:29:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:36 | INFO     | Added 32 vectors (total: 1632)
+2026-01-11 06:29:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:36 | INFO     | Added 32 vectors (total: 1664)
+2026-01-11 06:29:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:36 | INFO     | Added 32 vectors (total: 1696)
+2026-01-11 06:29:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:36 | INFO     | Added 32 vectors (total: 1728)
+2026-01-11 06:29:37 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:37 | INFO     | Added 32 vectors (total: 1760)
+2026-01-11 06:29:37 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:37 | INFO     | Added 32 vectors (total: 1792)
+2026-01-11 06:29:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:38 | INFO     | Added 32 vectors (total: 1824)
+2026-01-11 06:29:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:38 | INFO     | Added 32 vectors (total: 1856)
+2026-01-11 06:29:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:38 | INFO     | Added 32 vectors (total: 1888)
+2026-01-11 06:29:39 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:39 | INFO     | Added 32 vectors (total: 1920)
+2026-01-11 06:29:39 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:39 | INFO     | Added 32 vectors (total: 1952)
+2026-01-11 06:29:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:40 | INFO     | Added 32 vectors (total: 1984)
+2026-01-11 06:29:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:40 | INFO     | Added 32 vectors (total: 2016)
+2026-01-11 06:29:41 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:41 | INFO     | Added 32 vectors (total: 2048)
+2026-01-11 06:29:41 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:41 | INFO     | Added 32 vectors (total: 2080)
+2026-01-11 06:29:41 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:41 | INFO     | Added 32 vectors (total: 2112)
+2026-01-11 06:29:42 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:42 | INFO     | Added 32 vectors (total: 2144)
+2026-01-11 06:29:42 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:42 | INFO     | Added 32 vectors (total: 2176)
+2026-01-11 06:29:43 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:43 | INFO     | Added 32 vectors (total: 2208)
+2026-01-11 06:29:43 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:43 | INFO     | Added 32 vectors (total: 2240)
+2026-01-11 06:29:44 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:44 | INFO     | Added 32 vectors (total: 2272)
+2026-01-11 06:29:44 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:44 | INFO     | Added 32 vectors (total: 2304)
+2026-01-11 06:29:44 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:44 | INFO     | Added 32 vectors (total: 2336)
+2026-01-11 06:29:45 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:45 | INFO     | Added 32 vectors (total: 2368)
+2026-01-11 06:29:45 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:45 | INFO     | Added 32 vectors (total: 2400)
+2026-01-11 06:29:46 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:46 | INFO     | Added 32 vectors (total: 2432)
+2026-01-11 06:29:46 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:46 | INFO     | Added 32 vectors (total: 2464)
+2026-01-11 06:29:47 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:47 | INFO     | Added 32 vectors (total: 2496)
+2026-01-11 06:29:47 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:47 | INFO     | Added 32 vectors (total: 2528)
+2026-01-11 06:29:48 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:48 | INFO     | Added 32 vectors (total: 2560)
+2026-01-11 06:29:48 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:48 | INFO     | Added 32 vectors (total: 2592)
+2026-01-11 06:29:49 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:49 | INFO     | Added 32 vectors (total: 2624)
+2026-01-11 06:29:49 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:49 | INFO     | Added 32 vectors (total: 2656)
+2026-01-11 06:29:49 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:49 | INFO     | Added 32 vectors (total: 2688)
+2026-01-11 06:29:50 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:50 | INFO     | Added 32 vectors (total: 2720)
+2026-01-11 06:29:50 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:50 | INFO     | Added 32 vectors (total: 2752)
+2026-01-11 06:29:51 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:51 | INFO     | Added 32 vectors (total: 2784)
+2026-01-11 06:29:51 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:51 | INFO     | Added 32 vectors (total: 2816)
+2026-01-11 06:29:52 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:52 | INFO     | Added 32 vectors (total: 2848)
+2026-01-11 06:29:52 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:52 | INFO     | Added 32 vectors (total: 2880)
+2026-01-11 06:29:53 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:53 | INFO     | Added 32 vectors (total: 2912)
+2026-01-11 06:29:53 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:53 | INFO     | Added 32 vectors (total: 2944)
+2026-01-11 06:29:54 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:54 | INFO     | Added 32 vectors (total: 2976)
+2026-01-11 06:29:56 | INFO     | ✅ Encoded 32 images
+2026-01-11 06:29:56 | INFO     | Added 32 vectors (total: 3008)
+2026-01-11 06:30:02 | INFO     | ✅ Encoded 15 images
+2026-01-11 06:30:02 | INFO     | Added 15 vectors (total: 3023)
+2026-01-11 06:30:02 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 06:30:02 | INFO     | 💾 All data saved
+2026-01-11 06:30:03 | INFO     | Indexing complete: {'found': 3023, 'valid': 3023, 'new': 3023, 'processed': 3023, 'failed': 0}
+2026-01-11 06:30:13 | INFO     | Searching: 'nipple' (top_k=50, threshold=0.0)
+2026-01-11 06:30:13 | INFO     | Adaptive filtering: 150 → 20 results (top: 23.05%, threshold: 13.83%)
+2026-01-11 06:30:13 | INFO     | Found 20 results
+2026-01-11 06:30:22 | INFO     | Searching: 'gorilla' (top_k=50, threshold=0.0)
+2026-01-11 06:30:22 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.70%, threshold: 15.42%)
+2026-01-11 06:30:22 | INFO     | Found 20 results
+2026-01-11 06:30:28 | INFO     | Application closed
+2026-01-11 06:30:28 | INFO     | Cleaning up...
+2026-01-11 06:30:28 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 06:30:28 | INFO     | Cleanup complete
+2026-01-11 06:31:47 | INFO     | Starting QID application
+2026-01-11 06:31:47 | INFO     | Initializing components...
+2026-01-11 06:31:47 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 06:31:55 | INFO     | ✅ Image encoder ready
+2026-01-11 06:31:55 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 06:32:00 | INFO     | ✅ Text encoder ready
+2026-01-11 06:32:00 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 06:32:00 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 06:32:00 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3023 vectors)
+2026-01-11 06:32:00 | INFO     | Loaded 3023 vectors
+2026-01-11 06:32:00 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 06:32:00 | INFO     | ✅ Batch indexer initialized
+2026-01-11 06:32:00 | INFO     | ✅ Search engine initialized
+2026-01-11 06:32:00 | INFO     | ✅ Components initialized
+2026-01-11 06:32:01 | INFO     | ✅ QID application initialized
+2026-01-11 06:32:01 | INFO     | Starting main loop
+2026-01-11 07:02:35 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 07:02:35 | INFO     | Initializing AI components...
+2026-01-11 07:02:35 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:02:40 | INFO     | ✅ Image encoder ready
+2026-01-11 07:02:40 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:02:43 | INFO     | ✅ Text encoder ready
+2026-01-11 07:02:43 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 07:02:43 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 07:02:43 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3023 vectors)
+2026-01-11 07:02:43 | INFO     | 📂 Loaded 3023 vectors
+2026-01-11 07:02:43 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 07:02:43 | INFO     | ✅ Batch indexer initialized
+2026-01-11 07:02:43 | INFO     | ✅ Search engine initialized
+2026-01-11 07:02:43 | INFO     | ✅ Components initialized
+2026-01-11 07:02:44 | INFO     | ✅ QID Qt application initialized
+2026-01-11 07:02:44 | INFO     | 🎨 Application running
+2026-01-11 07:04:06 | INFO     | Cleaning up...
+2026-01-11 07:04:06 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 07:04:06 | INFO     | 👋 Cleanup complete
+2026-01-11 07:17:35 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 07:17:35 | INFO     | Initializing AI components...
+2026-01-11 07:17:35 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:17:40 | INFO     | ✅ Image encoder ready
+2026-01-11 07:17:40 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:17:42 | INFO     | ✅ Text encoder ready
+2026-01-11 07:17:42 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 07:17:42 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 07:17:42 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3023 vectors)
+2026-01-11 07:17:42 | INFO     | 📂 Loaded 3023 vectors
+2026-01-11 07:17:42 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 07:17:42 | INFO     | ✅ Batch indexer initialized
+2026-01-11 07:17:42 | INFO     | ✅ Search engine initialized
+2026-01-11 07:17:42 | INFO     | ✅ Components initialized
+2026-01-11 07:17:43 | INFO     | ✅ QID Qt application initialized
+2026-01-11 07:17:43 | INFO     | 🎨 Application running
+2026-01-11 07:18:28 | INFO     | Cleaning up...
+2026-01-11 07:18:28 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 07:18:28 | INFO     | 👋 Cleanup complete
+2026-01-11 07:26:20 | INFO     | Starting QID application
+2026-01-11 07:26:20 | INFO     | Initializing components...
+2026-01-11 07:26:20 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:26:23 | INFO     | ✅ Image encoder ready
+2026-01-11 07:26:23 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:26:25 | INFO     | ✅ Text encoder ready
+2026-01-11 07:26:25 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 07:26:25 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 07:26:25 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3023 vectors)
+2026-01-11 07:26:25 | INFO     | Loaded 3023 vectors
+2026-01-11 07:26:25 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 07:26:25 | INFO     | ✅ Batch indexer initialized
+2026-01-11 07:26:25 | INFO     | ✅ Search engine initialized
+2026-01-11 07:26:25 | INFO     | ✅ Components initialized
+2026-01-11 07:26:26 | INFO     | ✅ QID application initialized
+2026-01-11 07:26:26 | INFO     | Starting main loop
+2026-01-11 07:26:32 | INFO     | Starting indexing: data/images
+2026-01-11 07:26:32 | INFO     | Scanning directory: data\images
+2026-01-11 07:26:32 | INFO     | Found 3029 image files
+2026-01-11 07:26:35 | INFO     | Validation complete: 3029 valid, 0 invalid
+2026-01-11 07:26:35 | INFO     | Skipped 3023 already-processed images
+2026-01-11 07:26:35 | INFO     | 6 new images to process
+2026-01-11 07:26:42 | INFO     | ✅ Encoded 6 images
+2026-01-11 07:26:42 | INFO     | Added 6 vectors (total: 3029)
+2026-01-11 07:26:42 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 07:26:42 | INFO     | 💾 All data saved
+2026-01-11 07:26:42 | INFO     | Indexing complete: {'found': 3029, 'valid': 3029, 'new': 6, 'processed': 6, 'failed': 0}
+2026-01-11 07:26:51 | INFO     | Searching: 'phallus' (top_k=50, threshold=0.0)
+2026-01-11 07:26:51 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.86%, threshold: 16.72%)
+2026-01-11 07:26:51 | INFO     | Found 20 results
+2026-01-11 07:26:57 | INFO     | Searching: 'buildings' (top_k=50, threshold=0.0)
+2026-01-11 07:26:57 | INFO     | Adaptive filtering: 150 → 20 results (top: 30.88%, threshold: 18.53%)
+2026-01-11 07:26:57 | INFO     | Found 20 results
+2026-01-11 07:27:01 | INFO     | Searching: 'balls' (top_k=50, threshold=0.0)
+2026-01-11 07:27:01 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.31%, threshold: 15.19%)
+2026-01-11 07:27:01 | INFO     | Found 20 results
+2026-01-11 07:27:09 | INFO     | Searching: 'testicles' (top_k=50, threshold=0.0)
+2026-01-11 07:27:09 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.34%, threshold: 15.21%)
+2026-01-11 07:27:09 | INFO     | Found 20 results
+2026-01-11 07:27:18 | INFO     | Searching: 'dick' (top_k=50, threshold=0.0)
+2026-01-11 07:27:18 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.78%, threshold: 17.27%)
+2026-01-11 07:27:18 | INFO     | Found 20 results
+2026-01-11 07:27:28 | INFO     | Searching: 'blue' (top_k=50, threshold=0.0)
+2026-01-11 07:27:28 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.87%, threshold: 16.12%)
+2026-01-11 07:27:28 | INFO     | Found 20 results
+2026-01-11 07:27:33 | INFO     | Searching: 'sunny' (top_k=50, threshold=0.0)
+2026-01-11 07:27:33 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.67%, threshold: 16.00%)
+2026-01-11 07:27:33 | INFO     | Found 20 results
+2026-01-11 07:27:38 | INFO     | Searching: 'sunny leone' (top_k=50, threshold=0.0)
+2026-01-11 07:27:38 | INFO     | Adaptive filtering: 150 → 20 results (top: 31.15%, threshold: 18.69%)
+2026-01-11 07:27:38 | INFO     | Found 20 results
+2026-01-11 07:27:49 | INFO     | Searching: 'mountain' (top_k=50, threshold=0.0)
+2026-01-11 07:27:49 | INFO     | Adaptive filtering: 150 → 20 results (top: 30.48%, threshold: 18.29%)
+2026-01-11 07:27:49 | INFO     | Found 20 results
+2026-01-11 07:27:52 | INFO     | Searching: 'porn' (top_k=50, threshold=0.0)
+2026-01-11 07:27:52 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.10%, threshold: 16.86%)
+2026-01-11 07:27:52 | INFO     | Found 20 results
+2026-01-11 07:27:58 | INFO     | Searching: 'cartoon' (top_k=50, threshold=0.0)
+2026-01-11 07:27:58 | INFO     | Adaptive filtering: 150 → 20 results (top: 23.85%, threshold: 14.31%)
+2026-01-11 07:27:58 | INFO     | Found 20 results
+2026-01-11 07:28:06 | INFO     | Searching: 'asshole' (top_k=50, threshold=0.0)
+2026-01-11 07:28:06 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.48%, threshold: 15.89%)
+2026-01-11 07:28:06 | INFO     | Found 20 results
+2026-01-11 07:28:13 | INFO     | Searching: 'hole' (top_k=50, threshold=0.0)
+2026-01-11 07:28:13 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.64%, threshold: 17.18%)
+2026-01-11 07:28:13 | INFO     | Found 20 results
+2026-01-11 07:28:21 | INFO     | Searching: 'pussy' (top_k=50, threshold=0.0)
+2026-01-11 07:28:21 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.22%, threshold: 16.93%)
+2026-01-11 07:28:21 | INFO     | Found 20 results
+2026-01-11 07:28:30 | INFO     | Application closed
+2026-01-11 07:28:30 | INFO     | Cleaning up...
+2026-01-11 07:28:30 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 07:28:30 | INFO     | Cleanup complete
+2026-01-11 07:29:30 | INFO     | Starting QID application
+2026-01-11 07:29:30 | INFO     | Initializing components...
+2026-01-11 07:29:30 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:29:33 | INFO     | ✅ Image encoder ready
+2026-01-11 07:29:33 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 07:29:35 | INFO     | ✅ Text encoder ready
+2026-01-11 07:29:35 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 07:29:35 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 07:29:35 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3029 vectors)
+2026-01-11 07:29:35 | INFO     | Loaded 3029 vectors
+2026-01-11 07:29:35 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 07:29:35 | INFO     | ✅ Batch indexer initialized
+2026-01-11 07:29:35 | INFO     | ✅ Search engine initialized
+2026-01-11 07:29:35 | INFO     | ✅ Components initialized
+2026-01-11 07:29:35 | INFO     | ✅ QID application initialized
+2026-01-11 07:29:35 | INFO     | Starting main loop
+2026-01-11 07:29:43 | INFO     | Starting indexing: data/images
+2026-01-11 07:29:43 | INFO     | Scanning directory: data\images
+2026-01-11 07:29:43 | INFO     | Found 3023 image files
+2026-01-11 07:29:45 | INFO     | Validation complete: 3023 valid, 0 invalid
+2026-01-11 07:29:45 | INFO     | Skipped 3023 already-processed images
+2026-01-11 07:29:45 | INFO     | 0 new images to process
+2026-01-11 07:29:55 | INFO     | Searching: 'boobs' (top_k=50, threshold=0.0)
+2026-01-11 07:29:57 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.60%, threshold: 17.16%)
+2026-01-11 07:29:57 | INFO     | Found 20 results
+2026-01-11 07:30:03 | INFO     | Application closed
+2026-01-11 07:30:03 | INFO     | Cleaning up...
+2026-01-11 07:30:03 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 07:30:03 | INFO     | Cleanup complete
+2026-01-11 16:03:47 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 16:03:47 | INFO     | Initializing AI components...
+2026-01-11 16:03:47 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:03:54 | INFO     | ✅ Image encoder ready
+2026-01-11 16:03:54 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:03:58 | INFO     | ✅ Text encoder ready
+2026-01-11 16:03:58 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 16:03:58 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 16:03:58 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3029 vectors)
+2026-01-11 16:03:58 | INFO     | 📂 Loaded 3029 vectors
+2026-01-11 16:03:58 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 16:03:58 | INFO     | ✅ Batch indexer initialized
+2026-01-11 16:03:58 | INFO     | ✅ Search engine initialized
+2026-01-11 16:03:58 | INFO     | ✅ Components initialized
+2026-01-11 16:04:00 | INFO     | ✅ QID Qt application initialized
+2026-01-11 16:04:00 | INFO     | 🎨 Application running
+2026-01-11 16:04:50 | INFO     | Cleaning up...
+2026-01-11 16:04:50 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 16:04:50 | INFO     | 👋 Cleanup complete
+2026-01-11 16:15:37 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 16:15:37 | INFO     | Initializing AI components...
+2026-01-11 16:15:37 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:15:47 | INFO     | ✅ Image encoder ready
+2026-01-11 16:15:47 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:15:53 | INFO     | ✅ Text encoder ready
+2026-01-11 16:15:53 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 16:15:53 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 16:15:53 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3029 vectors)
+2026-01-11 16:15:53 | INFO     | 📂 Loaded 3029 vectors
+2026-01-11 16:15:53 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 16:15:53 | INFO     | ✅ Batch indexer initialized
+2026-01-11 16:15:53 | INFO     | ✅ Search engine initialized
+2026-01-11 16:15:53 | INFO     | ✅ Components initialized
+2026-01-11 16:15:54 | INFO     | ✅ QID Qt application initialized
+2026-01-11 16:15:55 | INFO     | 🎨 Application running
+2026-01-11 16:18:03 | INFO     | Searching: 'Sunset into the ocean' (top_k=50, threshold=0.0)
+2026-01-11 16:18:07 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.36%, threshold: 17.01%)
+2026-01-11 16:18:07 | INFO     | Found 20 results
+2026-01-11 16:18:28 | INFO     | Searching: 'Black man' (top_k=50, threshold=0.0)
+2026-01-11 16:18:28 | INFO     | Adaptive filtering: 150 → 20 results (top: 23.72%, threshold: 14.23%)
+2026-01-11 16:18:28 | INFO     | Found 20 results
+2026-01-11 16:21:24 | INFO     | 🗑️  Cleared vector store
+2026-01-11 16:21:24 | WARNING  | 🗑️  Cleared all metadata
+2026-01-11 16:21:56 | INFO     | Searching: 'Ironman' (top_k=50, threshold=0.0)
+2026-01-11 16:21:56 | WARNING  | Vector store is empty!
+2026-01-11 16:21:56 | INFO     | No results found
+2026-01-11 16:21:58 | INFO     | Cleaning up...
+2026-01-11 16:21:58 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 16:21:58 | INFO     | 👋 Cleanup complete
+2026-01-11 16:33:10 | INFO     | Starting QID application
+2026-01-11 16:33:10 | INFO     | Initializing components...
+2026-01-11 16:33:10 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:33:15 | INFO     | ✅ Image encoder ready
+2026-01-11 16:33:15 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:33:19 | INFO     | ✅ Text encoder ready
+2026-01-11 16:33:19 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 16:33:19 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 16:33:19 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (0 vectors)
+2026-01-11 16:33:19 | INFO     | Loaded 0 vectors
+2026-01-11 16:33:19 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 16:33:19 | INFO     | ✅ Batch indexer initialized
+2026-01-11 16:33:19 | INFO     | ✅ Search engine initialized
+2026-01-11 16:33:19 | INFO     | ✅ Components initialized
+2026-01-11 16:35:58 | INFO     | ✅ QID application initialized
+2026-01-11 16:35:58 | INFO     | Starting main loop
+2026-01-11 16:36:03 | INFO     | Starting indexing: data/images
+2026-01-11 16:36:03 | INFO     | Scanning directory: data\images
+2026-01-11 16:36:03 | INFO     | Found 819 image files
+2026-01-11 16:36:04 | INFO     | Validation complete: 819 valid, 0 invalid
+2026-01-11 16:36:04 | INFO     | 819 new images to process
+2026-01-11 16:36:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:16 | INFO     | Added 32 vectors (total: 32)
+2026-01-11 16:36:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:16 | INFO     | Added 32 vectors (total: 64)
+2026-01-11 16:36:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:16 | INFO     | Added 32 vectors (total: 96)
+2026-01-11 16:36:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:17 | INFO     | Added 32 vectors (total: 128)
+2026-01-11 16:36:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:17 | INFO     | Added 32 vectors (total: 160)
+2026-01-11 16:36:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:18 | INFO     | Added 32 vectors (total: 192)
+2026-01-11 16:36:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:18 | INFO     | Added 32 vectors (total: 224)
+2026-01-11 16:36:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:19 | INFO     | Added 32 vectors (total: 256)
+2026-01-11 16:36:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:19 | INFO     | Added 32 vectors (total: 288)
+2026-01-11 16:36:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:20 | INFO     | Added 32 vectors (total: 320)
+2026-01-11 16:36:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:20 | INFO     | Added 32 vectors (total: 352)
+2026-01-11 16:36:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:21 | INFO     | Added 32 vectors (total: 384)
+2026-01-11 16:36:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:21 | INFO     | Added 32 vectors (total: 416)
+2026-01-11 16:36:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:22 | INFO     | Added 32 vectors (total: 448)
+2026-01-11 16:36:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:22 | INFO     | Added 32 vectors (total: 480)
+2026-01-11 16:36:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:22 | INFO     | Added 32 vectors (total: 512)
+2026-01-11 16:36:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:23 | INFO     | Added 32 vectors (total: 544)
+2026-01-11 16:36:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:23 | INFO     | Added 32 vectors (total: 576)
+2026-01-11 16:36:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:24 | INFO     | Added 32 vectors (total: 608)
+2026-01-11 16:36:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:24 | INFO     | Added 32 vectors (total: 640)
+2026-01-11 16:36:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:25 | INFO     | Added 32 vectors (total: 672)
+2026-01-11 16:36:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:25 | INFO     | Added 32 vectors (total: 704)
+2026-01-11 16:36:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:26 | INFO     | Added 32 vectors (total: 736)
+2026-01-11 16:36:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:26 | INFO     | Added 32 vectors (total: 768)
+2026-01-11 16:36:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 16:36:27 | INFO     | Added 32 vectors (total: 800)
+2026-01-11 16:36:27 | INFO     | ✅ Encoded 19 images
+2026-01-11 16:36:27 | INFO     | Added 19 vectors (total: 819)
+2026-01-11 16:36:27 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 16:36:27 | INFO     | 💾 All data saved
+2026-01-11 16:36:27 | INFO     | Indexing complete: {'found': 819, 'valid': 819, 'new': 819, 'processed': 819, 'failed': 0}
+2026-01-11 16:36:39 | INFO     | Searching: 'gengar' (top_k=50, threshold=0.0)
+2026-01-11 16:36:39 | INFO     | Adaptive filtering: 150 → 20 results (top: 34.20%, threshold: 20.52%)
+2026-01-11 16:36:39 | INFO     | Found 20 results
+2026-01-11 16:36:53 | INFO     | Searching: 'pikachu' (top_k=50, threshold=0.0)
+2026-01-11 16:36:53 | INFO     | Adaptive filtering: 150 → 20 results (top: 29.17%, threshold: 17.50%)
+2026-01-11 16:36:53 | INFO     | Found 20 results
+2026-01-11 16:36:58 | INFO     | Searching: 'mewtwo' (top_k=50, threshold=0.0)
+2026-01-11 16:36:58 | INFO     | Adaptive filtering: 150 → 20 results (top: 35.67%, threshold: 21.40%)
+2026-01-11 16:36:58 | INFO     | Found 20 results
+2026-01-11 16:37:05 | INFO     | Searching: 'rayquaza' (top_k=50, threshold=0.0)
+2026-01-11 16:37:05 | INFO     | Adaptive filtering: 150 → 20 results (top: 36.17%, threshold: 21.70%)
+2026-01-11 16:37:05 | INFO     | Found 20 results
+2026-01-11 16:37:10 | INFO     | Searching: 'dugtrio' (top_k=50, threshold=0.0)
+2026-01-11 16:37:11 | INFO     | Adaptive filtering: 150 → 20 results (top: 36.51%, threshold: 21.91%)
+2026-01-11 16:37:11 | INFO     | Found 20 results
+2026-01-11 16:37:18 | INFO     | Searching: 'psyduck' (top_k=50, threshold=0.0)
+2026-01-11 16:37:18 | INFO     | Adaptive filtering: 150 → 20 results (top: 35.33%, threshold: 21.20%)
+2026-01-11 16:37:18 | INFO     | Found 20 results
+2026-01-11 16:37:32 | INFO     | Searching: 'squrtle' (top_k=50, threshold=0.0)
+2026-01-11 16:37:32 | INFO     | Adaptive filtering: 150 → 20 results (top: 30.24%, threshold: 18.15%)
+2026-01-11 16:37:32 | INFO     | Found 20 results
+2026-01-11 16:37:38 | INFO     | Searching: 'squirtle' (top_k=50, threshold=0.0)
+2026-01-11 16:37:38 | INFO     | Adaptive filtering: 150 → 20 results (top: 34.18%, threshold: 20.51%)
+2026-01-11 16:37:38 | INFO     | Found 20 results
+2026-01-11 16:37:46 | INFO     | Searching: 'charizard' (top_k=50, threshold=0.0)
+2026-01-11 16:37:46 | INFO     | Adaptive filtering: 150 → 20 results (top: 33.57%, threshold: 20.14%)
+2026-01-11 16:37:46 | INFO     | Found 20 results
+2026-01-11 16:37:56 | INFO     | Searching: 'ash' (top_k=50, threshold=0.0)
+2026-01-11 16:37:56 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.49%, threshold: 16.49%)
+2026-01-11 16:37:56 | INFO     | Found 20 results
+2026-01-11 16:38:03 | INFO     | Searching: 'raichu' (top_k=50, threshold=0.0)
+2026-01-11 16:38:03 | INFO     | Adaptive filtering: 150 → 20 results (top: 33.08%, threshold: 19.85%)
+2026-01-11 16:38:03 | INFO     | Found 20 results
+2026-01-11 16:38:08 | INFO     | Searching: 'eevee' (top_k=50, threshold=0.0)
+2026-01-11 16:38:08 | INFO     | Adaptive filtering: 150 → 20 results (top: 34.66%, threshold: 20.80%)
+2026-01-11 16:38:08 | INFO     | Found 20 results
+2026-01-11 16:38:19 | INFO     | Searching: 'voltaire' (top_k=50, threshold=0.0)
+2026-01-11 16:38:19 | INFO     | Adaptive filtering: 150 → 20 results (top: 23.88%, threshold: 14.33%)
+2026-01-11 16:38:19 | INFO     | Found 20 results
+2026-01-11 16:38:27 | INFO     | Application closed
+2026-01-11 16:38:27 | INFO     | Cleaning up...
+2026-01-11 16:38:27 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 16:38:27 | INFO     | Cleanup complete
+2026-01-11 16:41:39 | INFO     | Starting QID application
+2026-01-11 16:41:39 | INFO     | Initializing components...
+2026-01-11 16:41:39 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:41:44 | INFO     | ✅ Image encoder ready
+2026-01-11 16:41:44 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:41:47 | INFO     | ✅ Text encoder ready
+2026-01-11 16:41:47 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 16:41:47 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 16:41:47 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (819 vectors)
+2026-01-11 16:41:47 | INFO     | Loaded 819 vectors
+2026-01-11 16:41:47 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 16:41:47 | INFO     | ✅ Batch indexer initialized
+2026-01-11 16:41:47 | INFO     | ✅ Search engine initialized
+2026-01-11 16:41:47 | INFO     | ✅ Components initialized
+2026-01-11 16:41:48 | INFO     | ✅ QID application initialized
+2026-01-11 16:41:48 | INFO     | Starting main loop
+2026-01-11 16:41:52 | INFO     | Application closed
+2026-01-11 16:41:52 | INFO     | Cleaning up...
+2026-01-11 16:41:52 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 16:41:52 | INFO     | Cleanup complete
+2026-01-11 16:42:02 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 16:42:02 | INFO     | Initializing AI components...
+2026-01-11 16:42:02 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:42:06 | INFO     | ✅ Image encoder ready
+2026-01-11 16:42:06 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 16:42:09 | INFO     | ✅ Text encoder ready
+2026-01-11 16:42:09 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 16:42:09 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 16:42:09 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (819 vectors)
+2026-01-11 16:42:09 | INFO     | 📂 Loaded 819 vectors
+2026-01-11 16:42:09 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 16:42:09 | INFO     | ✅ Batch indexer initialized
+2026-01-11 16:42:09 | INFO     | ✅ Search engine initialized
+2026-01-11 16:42:09 | INFO     | ✅ Components initialized
+2026-01-11 16:42:09 | INFO     | ✅ QID Qt application initialized
+2026-01-11 16:42:10 | INFO     | 🎨 Application running
+2026-01-11 17:12:00 | INFO     | Searching: 'Pikachu' (top_k=50, threshold=0.0)
+2026-01-11 17:12:02 | INFO     | Adaptive filtering: 150 → 20 results (top: 29.17%, threshold: 17.50%)
+2026-01-11 17:12:02 | INFO     | Found 20 results
+2026-01-11 17:12:20 | INFO     | Searching: 'psychic' (top_k=50, threshold=0.0)
+2026-01-11 17:12:20 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.94%, threshold: 15.57%)
+2026-01-11 17:12:20 | INFO     | Found 20 results
+2026-01-11 17:12:31 | INFO     | Searching: 'togepi' (top_k=50, threshold=0.0)
+2026-01-11 17:12:31 | INFO     | Adaptive filtering: 150 → 20 results (top: 32.72%, threshold: 19.63%)
+2026-01-11 17:12:31 | INFO     | Found 20 results
+2026-01-11 17:12:47 | INFO     | Cleaning up...
+2026-01-11 17:12:47 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 17:12:47 | INFO     | 👋 Cleanup complete
+2026-01-11 17:48:38 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 17:48:38 | INFO     | Initializing AI components...
+2026-01-11 17:48:38 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 17:48:49 | INFO     | ✅ Image encoder ready
+2026-01-11 17:48:49 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 17:48:54 | INFO     | ✅ Text encoder ready
+2026-01-11 17:48:54 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 17:48:54 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 17:48:54 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (819 vectors)
+2026-01-11 17:48:54 | INFO     | 📂 Loaded 819 vectors
+2026-01-11 17:48:54 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 17:48:54 | INFO     | ✅ Batch indexer initialized
+2026-01-11 17:48:54 | INFO     | ✅ Search engine initialized
+2026-01-11 17:48:54 | INFO     | ✅ Components initialized
+2026-01-11 17:48:56 | INFO     | ✅ QID Qt application initialized
+2026-01-11 17:48:56 | INFO     | 🎨 Application running
+2026-01-11 17:49:59 | INFO     | Cleaning up...
+2026-01-11 17:49:59 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 17:49:59 | INFO     | 👋 Cleanup complete
+2026-01-11 17:50:24 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 17:50:24 | INFO     | Initializing AI components...
+2026-01-11 17:50:24 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 17:50:33 | INFO     | ✅ Image encoder ready
+2026-01-11 17:50:33 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 17:50:38 | INFO     | ✅ Text encoder ready
+2026-01-11 17:50:38 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 17:50:38 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 17:50:38 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (819 vectors)
+2026-01-11 17:50:38 | INFO     | 📂 Loaded 819 vectors
+2026-01-11 17:50:38 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 17:50:38 | INFO     | ✅ Batch indexer initialized
+2026-01-11 17:50:38 | INFO     | ✅ Search engine initialized
+2026-01-11 17:50:38 | INFO     | ✅ Components initialized
+2026-01-11 17:50:39 | INFO     | ✅ QID Qt application initialized
+2026-01-11 17:50:40 | INFO     | 🎨 Application running
+2026-01-11 17:51:19 | INFO     | Cleaning up...
+2026-01-11 17:51:19 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 17:51:19 | INFO     | 👋 Cleanup complete
+2026-01-11 20:00:26 | INFO     | Starting QID application
+2026-01-11 20:00:26 | INFO     | Initializing components...
+2026-01-11 20:00:26 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 20:00:32 | INFO     | ✅ Image encoder ready
+2026-01-11 20:00:32 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 20:00:34 | INFO     | ✅ Text encoder ready
+2026-01-11 20:00:34 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 20:00:34 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 20:00:34 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (819 vectors)
+2026-01-11 20:00:34 | INFO     | Loaded 819 vectors
+2026-01-11 20:00:34 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 20:00:34 | INFO     | ✅ Batch indexer initialized
+2026-01-11 20:00:34 | INFO     | ✅ Search engine initialized
+2026-01-11 20:00:34 | INFO     | ✅ Components initialized
+2026-01-11 20:00:36 | INFO     | ✅ QID application initialized
+2026-01-11 20:00:36 | INFO     | Starting main loop
+2026-01-11 20:00:44 | INFO     | 🗑️  Cleared vector store
+2026-01-11 20:00:44 | WARNING  | 🗑️  Cleared all metadata
+2026-01-11 20:00:51 | INFO     | Starting indexing: data/images
+2026-01-11 20:00:51 | INFO     | Scanning directory: data\images
+2026-01-11 20:00:51 | INFO     | Found 3489 image files
+2026-01-11 20:00:52 | INFO     | Validation complete: 3489 valid, 0 invalid
+2026-01-11 20:00:52 | INFO     | 3489 new images to process
+2026-01-11 20:00:57 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:57 | INFO     | Added 32 vectors (total: 32)
+2026-01-11 20:00:57 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:57 | INFO     | Added 32 vectors (total: 64)
+2026-01-11 20:00:57 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:57 | INFO     | Added 32 vectors (total: 96)
+2026-01-11 20:00:57 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:57 | INFO     | Added 32 vectors (total: 128)
+2026-01-11 20:00:58 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:58 | INFO     | Added 32 vectors (total: 160)
+2026-01-11 20:00:58 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:58 | INFO     | Added 32 vectors (total: 192)
+2026-01-11 20:00:58 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:58 | INFO     | Added 32 vectors (total: 224)
+2026-01-11 20:00:58 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:58 | INFO     | Added 32 vectors (total: 256)
+2026-01-11 20:00:59 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:59 | INFO     | Added 32 vectors (total: 288)
+2026-01-11 20:00:59 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:59 | INFO     | Added 32 vectors (total: 320)
+2026-01-11 20:00:59 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:59 | INFO     | Added 32 vectors (total: 352)
+2026-01-11 20:00:59 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:00:59 | INFO     | Added 32 vectors (total: 384)
+2026-01-11 20:01:00 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:00 | INFO     | Added 32 vectors (total: 416)
+2026-01-11 20:01:00 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:00 | INFO     | Added 32 vectors (total: 448)
+2026-01-11 20:01:00 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:01 | INFO     | Added 32 vectors (total: 480)
+2026-01-11 20:01:01 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:01 | INFO     | Added 32 vectors (total: 512)
+2026-01-11 20:01:01 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:01 | INFO     | Added 32 vectors (total: 544)
+2026-01-11 20:01:02 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:02 | INFO     | Added 32 vectors (total: 576)
+2026-01-11 20:01:02 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:02 | INFO     | Added 32 vectors (total: 608)
+2026-01-11 20:01:03 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:03 | INFO     | Added 32 vectors (total: 640)
+2026-01-11 20:01:03 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:03 | INFO     | Added 32 vectors (total: 672)
+2026-01-11 20:01:04 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:04 | INFO     | Added 32 vectors (total: 704)
+2026-01-11 20:01:04 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:04 | INFO     | Added 32 vectors (total: 736)
+2026-01-11 20:01:04 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:04 | INFO     | Added 32 vectors (total: 768)
+2026-01-11 20:01:05 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:05 | INFO     | Added 32 vectors (total: 800)
+2026-01-11 20:01:05 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:05 | INFO     | Added 32 vectors (total: 832)
+2026-01-11 20:01:06 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:06 | INFO     | Added 32 vectors (total: 864)
+2026-01-11 20:01:06 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:06 | INFO     | Added 32 vectors (total: 896)
+2026-01-11 20:01:07 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:07 | INFO     | Added 32 vectors (total: 928)
+2026-01-11 20:01:07 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:07 | INFO     | Added 32 vectors (total: 960)
+2026-01-11 20:01:08 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:08 | INFO     | Added 32 vectors (total: 992)
+2026-01-11 20:01:08 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:08 | INFO     | Added 32 vectors (total: 1024)
+2026-01-11 20:01:09 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:09 | INFO     | Added 32 vectors (total: 1056)
+2026-01-11 20:01:09 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:09 | INFO     | Added 32 vectors (total: 1088)
+2026-01-11 20:01:09 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:09 | INFO     | Added 32 vectors (total: 1120)
+2026-01-11 20:01:10 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:10 | INFO     | Added 32 vectors (total: 1152)
+2026-01-11 20:01:10 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:10 | INFO     | Added 32 vectors (total: 1184)
+2026-01-11 20:01:11 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:11 | INFO     | Added 32 vectors (total: 1216)
+2026-01-11 20:01:11 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:11 | INFO     | Added 32 vectors (total: 1248)
+2026-01-11 20:01:12 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:12 | INFO     | Added 32 vectors (total: 1280)
+2026-01-11 20:01:12 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:12 | INFO     | Added 32 vectors (total: 1312)
+2026-01-11 20:01:12 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:12 | INFO     | Added 32 vectors (total: 1344)
+2026-01-11 20:01:13 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:13 | INFO     | Added 32 vectors (total: 1376)
+2026-01-11 20:01:13 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:13 | INFO     | Added 32 vectors (total: 1408)
+2026-01-11 20:01:14 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:14 | INFO     | Added 32 vectors (total: 1440)
+2026-01-11 20:01:14 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:14 | INFO     | Added 32 vectors (total: 1472)
+2026-01-11 20:01:15 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:15 | INFO     | Added 32 vectors (total: 1504)
+2026-01-11 20:01:15 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:15 | INFO     | Added 32 vectors (total: 1536)
+2026-01-11 20:01:15 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:15 | INFO     | Added 32 vectors (total: 1568)
+2026-01-11 20:01:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:16 | INFO     | Added 32 vectors (total: 1600)
+2026-01-11 20:01:16 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:16 | INFO     | Added 32 vectors (total: 1632)
+2026-01-11 20:01:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:17 | INFO     | Added 32 vectors (total: 1664)
+2026-01-11 20:01:17 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:17 | INFO     | Added 32 vectors (total: 1696)
+2026-01-11 20:01:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:18 | INFO     | Added 32 vectors (total: 1728)
+2026-01-11 20:01:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:18 | INFO     | Added 32 vectors (total: 1760)
+2026-01-11 20:01:18 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:18 | INFO     | Added 32 vectors (total: 1792)
+2026-01-11 20:01:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:19 | INFO     | Added 32 vectors (total: 1824)
+2026-01-11 20:01:19 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:19 | INFO     | Added 32 vectors (total: 1856)
+2026-01-11 20:01:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:20 | INFO     | Added 32 vectors (total: 1888)
+2026-01-11 20:01:20 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:20 | INFO     | Added 32 vectors (total: 1920)
+2026-01-11 20:01:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:21 | INFO     | Added 32 vectors (total: 1952)
+2026-01-11 20:01:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:21 | INFO     | Added 32 vectors (total: 1984)
+2026-01-11 20:01:21 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:21 | INFO     | Added 32 vectors (total: 2016)
+2026-01-11 20:01:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:22 | INFO     | Added 32 vectors (total: 2048)
+2026-01-11 20:01:22 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:22 | INFO     | Added 32 vectors (total: 2080)
+2026-01-11 20:01:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:23 | INFO     | Added 32 vectors (total: 2112)
+2026-01-11 20:01:23 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:23 | INFO     | Added 32 vectors (total: 2144)
+2026-01-11 20:01:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:24 | INFO     | Added 32 vectors (total: 2176)
+2026-01-11 20:01:24 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:24 | INFO     | Added 32 vectors (total: 2208)
+2026-01-11 20:01:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:25 | INFO     | Added 32 vectors (total: 2240)
+2026-01-11 20:01:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:25 | INFO     | Added 32 vectors (total: 2272)
+2026-01-11 20:01:25 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:25 | INFO     | Added 32 vectors (total: 2304)
+2026-01-11 20:01:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:26 | INFO     | Added 32 vectors (total: 2336)
+2026-01-11 20:01:26 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:26 | INFO     | Added 32 vectors (total: 2368)
+2026-01-11 20:01:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:27 | INFO     | Added 32 vectors (total: 2400)
+2026-01-11 20:01:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:27 | INFO     | Added 32 vectors (total: 2432)
+2026-01-11 20:01:27 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:27 | INFO     | Added 32 vectors (total: 2464)
+2026-01-11 20:01:28 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:28 | INFO     | Added 32 vectors (total: 2496)
+2026-01-11 20:01:28 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:28 | INFO     | Added 32 vectors (total: 2528)
+2026-01-11 20:01:29 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:29 | INFO     | Added 32 vectors (total: 2560)
+2026-01-11 20:01:29 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:29 | INFO     | Added 32 vectors (total: 2592)
+2026-01-11 20:01:30 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:30 | INFO     | Added 32 vectors (total: 2624)
+2026-01-11 20:01:30 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:30 | INFO     | Added 32 vectors (total: 2656)
+2026-01-11 20:01:30 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:30 | INFO     | Added 32 vectors (total: 2688)
+2026-01-11 20:01:31 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:31 | INFO     | Added 32 vectors (total: 2720)
+2026-01-11 20:01:31 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:31 | INFO     | Added 32 vectors (total: 2752)
+2026-01-11 20:01:32 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:32 | INFO     | Added 32 vectors (total: 2784)
+2026-01-11 20:01:32 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:32 | INFO     | Added 32 vectors (total: 2816)
+2026-01-11 20:01:33 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:33 | INFO     | Added 32 vectors (total: 2848)
+2026-01-11 20:01:33 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:33 | INFO     | Added 32 vectors (total: 2880)
+2026-01-11 20:01:33 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:33 | INFO     | Added 32 vectors (total: 2912)
+2026-01-11 20:01:34 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:34 | INFO     | Added 32 vectors (total: 2944)
+2026-01-11 20:01:34 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:34 | INFO     | Added 32 vectors (total: 2976)
+2026-01-11 20:01:35 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:35 | INFO     | Added 32 vectors (total: 3008)
+2026-01-11 20:01:35 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:35 | INFO     | Added 32 vectors (total: 3040)
+2026-01-11 20:01:35 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:35 | INFO     | Added 32 vectors (total: 3072)
+2026-01-11 20:01:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:36 | INFO     | Added 32 vectors (total: 3104)
+2026-01-11 20:01:36 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:36 | INFO     | Added 32 vectors (total: 3136)
+2026-01-11 20:01:37 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:37 | INFO     | Added 32 vectors (total: 3168)
+2026-01-11 20:01:37 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:37 | INFO     | Added 32 vectors (total: 3200)
+2026-01-11 20:01:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:38 | INFO     | Added 32 vectors (total: 3232)
+2026-01-11 20:01:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:38 | INFO     | Added 32 vectors (total: 3264)
+2026-01-11 20:01:38 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:38 | INFO     | Added 32 vectors (total: 3296)
+2026-01-11 20:01:39 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:39 | INFO     | Added 32 vectors (total: 3328)
+2026-01-11 20:01:39 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:39 | INFO     | Added 32 vectors (total: 3360)
+2026-01-11 20:01:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:40 | INFO     | Added 32 vectors (total: 3392)
+2026-01-11 20:01:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:40 | INFO     | Added 32 vectors (total: 3424)
+2026-01-11 20:01:40 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:40 | INFO     | Added 32 vectors (total: 3456)
+2026-01-11 20:01:41 | INFO     | ✅ Encoded 32 images
+2026-01-11 20:01:41 | INFO     | Added 32 vectors (total: 3488)
+2026-01-11 20:01:41 | INFO     | ✅ Encoded 1 images
+2026-01-11 20:01:41 | INFO     | Added 1 vectors (total: 3489)
+2026-01-11 20:01:41 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 20:01:41 | INFO     | 💾 All data saved
+2026-01-11 20:01:41 | INFO     | Indexing complete: {'found': 3489, 'valid': 3489, 'new': 3489, 'processed': 3489, 'failed': 0}
+2026-01-11 20:02:12 | INFO     | Searching: 'parrot' (top_k=50, threshold=0.0)
+2026-01-11 20:02:12 | INFO     | Adaptive filtering: 150 → 20 results (top: 29.68%, threshold: 17.81%)
+2026-01-11 20:02:12 | INFO     | Found 20 results
+2026-01-11 20:02:18 | INFO     | Searching: 'macaw' (top_k=50, threshold=0.0)
+2026-01-11 20:02:18 | INFO     | Adaptive filtering: 150 → 20 results (top: 32.71%, threshold: 19.63%)
+2026-01-11 20:02:18 | INFO     | Found 20 results
+2026-01-11 20:02:33 | INFO     | Searching: 'soccer' (top_k=50, threshold=0.0)
+2026-01-11 20:02:33 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.78%, threshold: 17.27%)
+2026-01-11 20:02:33 | INFO     | Found 20 results
+2026-01-11 20:03:49 | INFO     | Starting indexing: data/images
+2026-01-11 20:03:49 | INFO     | Scanning directory: data\images
+2026-01-11 20:03:49 | INFO     | Found 3490 image files
+2026-01-11 20:03:50 | INFO     | Validation complete: 3490 valid, 0 invalid
+2026-01-11 20:03:50 | INFO     | Skipped 3489 already-processed images
+2026-01-11 20:03:50 | INFO     | 1 new images to process
+2026-01-11 20:03:50 | INFO     | ✅ Encoded 1 images
+2026-01-11 20:03:50 | INFO     | Added 1 vectors (total: 3490)
+2026-01-11 20:03:50 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 20:03:50 | INFO     | 💾 All data saved
+2026-01-11 20:03:50 | INFO     | Indexing complete: {'found': 3490, 'valid': 3490, 'new': 1, 'processed': 1, 'failed': 0}
+2026-01-11 20:05:01 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-11 20:05:01 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.31%, threshold: 21.18%)
+2026-01-11 20:05:01 | INFO     | Found 3 results
+2026-01-11 20:05:30 | INFO     | Searching: 'red sports car' (top_k=50, threshold=0.0)
+2026-01-11 20:05:30 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.66%, threshold: 16.00%)
+2026-01-11 20:05:30 | INFO     | Found 20 results
+2026-01-11 20:05:50 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-11 20:05:50 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.31%, threshold: 21.18%)
+2026-01-11 20:05:50 | INFO     | Found 3 results
+2026-01-11 20:08:45 | INFO     | Application closed
+2026-01-11 20:08:45 | INFO     | Cleaning up...
+2026-01-11 20:08:45 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 20:08:45 | INFO     | Cleanup complete
+2026-01-11 20:09:00 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 20:09:00 | INFO     | Initializing AI components...
+2026-01-11 20:09:00 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 20:09:05 | INFO     | ✅ Image encoder ready
+2026-01-11 20:09:05 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 20:09:07 | INFO     | ✅ Text encoder ready
+2026-01-11 20:09:07 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 20:09:07 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 20:09:07 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3490 vectors)
+2026-01-11 20:09:07 | INFO     | 📂 Loaded 3490 vectors
+2026-01-11 20:09:07 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 20:09:07 | INFO     | ✅ Batch indexer initialized
+2026-01-11 20:09:07 | INFO     | ✅ Search engine initialized
+2026-01-11 20:09:07 | INFO     | ✅ Components initialized
+2026-01-11 20:09:08 | INFO     | ✅ QID Qt application initialized
+2026-01-11 20:09:09 | INFO     | 🎨 Application running
+2026-01-11 20:09:29 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-11 20:09:31 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.31%, threshold: 21.18%)
+2026-01-11 20:09:31 | INFO     | Found 3 results
+2026-01-11 20:12:56 | INFO     | Cleaning up...
+2026-01-11 20:12:56 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-11 20:12:56 | INFO     | 👋 Cleanup complete
+2026-01-11 23:55:14 | INFO     | 🚀 Starting QID Qt application
+2026-01-11 23:55:14 | INFO     | Initializing AI components...
+2026-01-11 23:55:14 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 23:55:27 | INFO     | ✅ Image encoder ready
+2026-01-11 23:55:27 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-11 23:55:34 | INFO     | ✅ Text encoder ready
+2026-01-11 23:55:34 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-11 23:55:34 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-11 23:55:34 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3490 vectors)
+2026-01-11 23:55:34 | INFO     | 📂 Loaded 3490 vectors
+2026-01-11 23:55:34 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-11 23:55:34 | INFO     | ✅ Batch indexer initialized
+2026-01-11 23:55:34 | INFO     | ✅ Search engine initialized
+2026-01-11 23:55:34 | INFO     | ✅ Components initialized
+2026-01-12 00:03:14 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 00:03:14 | INFO     | Initializing AI components...
+2026-01-12 00:03:14 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 00:03:21 | INFO     | ✅ Image encoder ready
+2026-01-12 00:03:21 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 00:03:25 | INFO     | ✅ Text encoder ready
+2026-01-12 00:03:25 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 00:03:25 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 00:03:25 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3490 vectors)
+2026-01-12 00:03:25 | INFO     | 📂 Loaded 3490 vectors
+2026-01-12 00:03:25 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 00:03:25 | INFO     | ✅ Batch indexer initialized
+2026-01-12 00:03:25 | INFO     | ✅ Search engine initialized
+2026-01-12 00:03:25 | INFO     | ✅ Components initialized
+2026-01-12 00:03:26 | INFO     | ✅ QID Qt application initialized
+2026-01-12 00:03:26 | INFO     | 🎨 Application running
+2026-01-12 00:04:02 | INFO     | Searching: 'SunSet' (top_k=50, threshold=0.0)
+2026-01-12 00:04:08 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.31%, threshold: 16.38%)
+2026-01-12 00:04:08 | INFO     | Found 20 results
+2026-01-12 00:04:36 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-12 00:04:37 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.31%, threshold: 21.18%)
+2026-01-12 00:04:37 | INFO     | Found 3 results
+2026-01-12 00:30:32 | INFO     | Cleaning up...
+2026-01-12 00:30:32 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 00:30:32 | INFO     | 👋 Cleanup complete
+2026-01-12 00:30:51 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 00:30:51 | INFO     | Initializing AI components...
+2026-01-12 00:30:51 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 00:31:01 | INFO     | ✅ Image encoder ready
+2026-01-12 00:31:01 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 00:31:06 | INFO     | ✅ Text encoder ready
+2026-01-12 00:31:06 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 00:31:06 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 00:31:06 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3490 vectors)
+2026-01-12 00:31:06 | INFO     | 📂 Loaded 3490 vectors
+2026-01-12 00:31:06 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 00:31:06 | INFO     | ✅ Batch indexer initialized
+2026-01-12 00:31:06 | INFO     | ✅ Search engine initialized
+2026-01-12 00:31:06 | INFO     | ✅ Components initialized
+2026-01-12 00:31:08 | INFO     | ✅ QID Qt application initialized
+2026-01-12 00:31:08 | INFO     | 🎨 Application running
+2026-01-12 00:32:33 | INFO     | Starting indexing: data/images
+2026-01-12 00:32:33 | INFO     | Scanning directory: data\images
+2026-01-12 00:32:33 | INFO     | Found 3490 image files
+2026-01-12 00:32:36 | INFO     | Validation complete: 3490 valid, 0 invalid
+2026-01-12 00:32:37 | INFO     | Skipped 3490 already-processed images
+2026-01-12 00:32:37 | INFO     | 0 new images to process
+2026-01-12 00:33:28 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-12 00:33:32 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.31%, threshold: 21.18%)
+2026-01-12 00:33:32 | INFO     | Found 3 results
+2026-01-12 00:34:21 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-12 00:34:21 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.31%, threshold: 21.18%)
+2026-01-12 00:34:21 | INFO     | Found 3 results
+2026-01-12 00:34:22 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-12 00:34:22 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.31%, threshold: 21.18%)
+2026-01-12 00:34:22 | INFO     | Found 3 results
+2026-01-12 00:34:32 | INFO     | Searching: 'Hello' (top_k=50, threshold=0.0)
+2026-01-12 00:34:32 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.72%, threshold: 14.83%)
+2026-01-12 00:34:32 | INFO     | Found 20 results
+2026-01-12 00:35:17 | INFO     | Searching: 'night in morning' (top_k=50, threshold=0.0)
+2026-01-12 00:35:18 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.40%, threshold: 15.24%)
+2026-01-12 00:35:18 | INFO     | Found 20 results
+2026-01-12 00:35:24 | INFO     | Searching: 'don' (top_k=50, threshold=0.0)
+2026-01-12 00:35:24 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.90%, threshold: 14.94%)
+2026-01-12 00:35:24 | INFO     | Found 20 results
+2026-01-12 00:35:27 | INFO     | Searching: 'don' (top_k=50, threshold=0.0)
+2026-01-12 00:35:27 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.90%, threshold: 14.94%)
+2026-01-12 00:35:27 | INFO     | Found 20 results
+2026-01-12 00:35:30 | INFO     | Searching: 'srk' (top_k=50, threshold=0.0)
+2026-01-12 00:35:30 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.84%, threshold: 14.90%)
+2026-01-12 00:35:30 | INFO     | Found 20 results
+2026-01-12 00:35:35 | INFO     | Searching: 'salman' (top_k=50, threshold=0.0)
+2026-01-12 00:35:35 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.19%, threshold: 15.72%)
+2026-01-12 00:35:35 | INFO     | Found 20 results
+2026-01-12 00:35:46 | INFO     | Searching: 'dinner' (top_k=50, threshold=0.0)
+2026-01-12 00:35:46 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.08%, threshold: 15.05%)
+2026-01-12 00:35:46 | INFO     | Found 20 results
+2026-01-12 00:35:53 | INFO     | Searching: 'good dinner' (top_k=50, threshold=0.0)
+2026-01-12 00:35:53 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.31%, threshold: 15.78%)
+2026-01-12 00:35:53 | INFO     | Found 20 results
+2026-01-12 00:35:59 | INFO     | Searching: 'bas dinner' (top_k=50, threshold=0.0)
+2026-01-12 00:35:59 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.77%, threshold: 16.06%)
+2026-01-12 00:35:59 | INFO     | Found 20 results
+2026-01-12 00:36:03 | INFO     | Searching: 'jail' (top_k=50, threshold=0.0)
+2026-01-12 00:36:03 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.39%, threshold: 15.23%)
+2026-01-12 00:36:03 | INFO     | Found 20 results
+2026-01-12 00:36:09 | INFO     | Searching: 'ishqa ve' (top_k=50, threshold=0.0)
+2026-01-12 00:36:09 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.42%, threshold: 15.25%)
+2026-01-12 00:36:09 | INFO     | Found 20 results
+2026-01-12 00:36:18 | INFO     | Searching: 'bad girl' (top_k=50, threshold=0.0)
+2026-01-12 00:36:19 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.08%, threshold: 15.65%)
+2026-01-12 00:36:19 | INFO     | Found 20 results
+2026-01-12 00:36:33 | INFO     | Cleaning up...
+2026-01-12 00:36:33 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 00:36:33 | INFO     | 👋 Cleanup complete
+2026-01-12 00:36:49 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 00:36:49 | INFO     | Initializing AI components...
+2026-01-12 00:36:49 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 00:36:56 | INFO     | ✅ Image encoder ready
+2026-01-12 00:36:56 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 00:37:00 | INFO     | ✅ Text encoder ready
+2026-01-12 00:37:00 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 00:37:00 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 00:37:00 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (3490 vectors)
+2026-01-12 00:37:00 | INFO     | 📂 Loaded 3490 vectors
+2026-01-12 00:37:00 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 00:37:00 | INFO     | ✅ Batch indexer initialized
+2026-01-12 00:37:00 | INFO     | ✅ Search engine initialized
+2026-01-12 00:37:00 | INFO     | ✅ Components initialized
+2026-01-12 00:37:01 | INFO     | ✅ QID Qt application initialized
+2026-01-12 00:37:01 | INFO     | 🎨 Application running
+2026-01-12 00:38:01 | INFO     | 🗑️  Cleared vector store
+2026-01-12 00:38:01 | WARNING  | 🗑️  Cleared all metadata
+2026-01-12 00:39:16 | INFO     | Starting indexing: data/images
+2026-01-12 00:39:16 | INFO     | Scanning directory: data\images
+2026-01-12 00:39:16 | INFO     | Found 820 image files
+2026-01-12 00:39:18 | INFO     | Validation complete: 820 valid, 0 invalid
+2026-01-12 00:39:18 | INFO     | 820 new images to process
+2026-01-12 00:39:28 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:28 | INFO     | Added 32 vectors (total: 32)
+2026-01-12 00:39:28 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:28 | INFO     | Added 32 vectors (total: 64)
+2026-01-12 00:39:28 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:28 | INFO     | Added 32 vectors (total: 96)
+2026-01-12 00:39:29 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:29 | INFO     | Added 32 vectors (total: 128)
+2026-01-12 00:39:29 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:29 | INFO     | Added 32 vectors (total: 160)
+2026-01-12 00:39:29 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:29 | INFO     | Added 32 vectors (total: 192)
+2026-01-12 00:39:30 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:30 | INFO     | Added 32 vectors (total: 224)
+2026-01-12 00:39:30 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:30 | INFO     | Added 32 vectors (total: 256)
+2026-01-12 00:39:30 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:30 | INFO     | Added 32 vectors (total: 288)
+2026-01-12 00:39:31 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:31 | INFO     | Added 32 vectors (total: 320)
+2026-01-12 00:39:31 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:31 | INFO     | Added 32 vectors (total: 352)
+2026-01-12 00:39:32 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:32 | INFO     | Added 32 vectors (total: 384)
+2026-01-12 00:39:32 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:32 | INFO     | Added 32 vectors (total: 416)
+2026-01-12 00:39:32 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:32 | INFO     | Added 32 vectors (total: 448)
+2026-01-12 00:39:33 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:33 | INFO     | Added 32 vectors (total: 480)
+2026-01-12 00:39:33 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:33 | INFO     | Added 32 vectors (total: 512)
+2026-01-12 00:39:34 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:34 | INFO     | Added 32 vectors (total: 544)
+2026-01-12 00:39:34 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:34 | INFO     | Added 32 vectors (total: 576)
+2026-01-12 00:39:34 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:34 | INFO     | Added 32 vectors (total: 608)
+2026-01-12 00:39:35 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:35 | INFO     | Added 32 vectors (total: 640)
+2026-01-12 00:39:35 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:35 | INFO     | Added 32 vectors (total: 672)
+2026-01-12 00:39:36 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:36 | INFO     | Added 32 vectors (total: 704)
+2026-01-12 00:39:36 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:36 | INFO     | Added 32 vectors (total: 736)
+2026-01-12 00:39:37 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:37 | INFO     | Added 32 vectors (total: 768)
+2026-01-12 00:39:37 | INFO     | ✅ Encoded 32 images
+2026-01-12 00:39:37 | INFO     | Added 32 vectors (total: 800)
+2026-01-12 00:39:38 | INFO     | ✅ Encoded 20 images
+2026-01-12 00:39:38 | INFO     | Added 20 vectors (total: 820)
+2026-01-12 00:39:38 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 00:39:38 | INFO     | 💾 All data saved
+2026-01-12 00:39:38 | INFO     | Indexing complete: {'found': 820, 'valid': 820, 'new': 820, 'processed': 820, 'failed': 0}
+2026-01-12 00:40:03 | INFO     | Searching: 'charmander' (top_k=50, threshold=0.0)
+2026-01-12 00:40:04 | INFO     | Adaptive filtering: 150 → 20 results (top: 33.30%, threshold: 19.98%)
+2026-01-12 00:40:04 | INFO     | Found 20 results
+2026-01-12 00:40:23 | INFO     | Searching: 'bulbasaur' (top_k=50, threshold=0.0)
+2026-01-12 00:40:24 | INFO     | Adaptive filtering: 150 → 20 results (top: 31.67%, threshold: 19.00%)
+2026-01-12 00:40:24 | INFO     | Found 20 results
+2026-01-12 00:40:34 | INFO     | Searching: 'ash' (top_k=50, threshold=0.0)
+2026-01-12 00:40:35 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.49%, threshold: 16.49%)
+2026-01-12 00:40:35 | INFO     | Found 20 results
+2026-01-12 00:41:01 | INFO     | Searching: 'meowth' (top_k=50, threshold=0.0)
+2026-01-12 00:41:01 | INFO     | Adaptive filtering: 150 → 20 results (top: 33.83%, threshold: 20.30%)
+2026-01-12 00:41:01 | INFO     | Found 20 results
+2026-01-12 00:43:01 | INFO     | Searching: 'a 22 year old young man, wearing a blue shirt standin in front of an old fort on a beach wearing blue sunglasses ,smiling' (top_k=50, threshold=0.0)
+2026-01-12 00:43:02 | INFO     | Adaptive filtering: 150 → 3 results (top: 35.32%, threshold: 21.19%)
+2026-01-12 00:43:02 | INFO     | Found 3 results
+2026-01-12 02:44:34 | INFO     | Cleaning up...
+2026-01-12 02:44:34 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 02:44:34 | INFO     | 👋 Cleanup complete
+2026-01-12 02:48:42 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 02:48:42 | INFO     | Initializing AI components...
+2026-01-12 02:48:42 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 02:48:59 | INFO     | ✅ Image encoder ready
+2026-01-12 02:48:59 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 02:49:06 | INFO     | ✅ Text encoder ready
+2026-01-12 02:49:06 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 02:49:06 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 02:49:06 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (820 vectors)
+2026-01-12 02:49:06 | INFO     | 📂 Loaded 820 vectors
+2026-01-12 02:49:06 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 02:49:06 | INFO     | ✅ Batch indexer initialized
+2026-01-12 02:49:06 | INFO     | ✅ Search engine initialized
+2026-01-12 02:49:06 | INFO     | ✅ Components initialized
+2026-01-12 02:49:08 | INFO     | ✅ QID Qt application initialized
+2026-01-12 02:49:08 | INFO     | 🎨 Application running
+2026-01-12 02:50:37 | INFO     | Cleaning up...
+2026-01-12 02:50:37 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 02:50:37 | INFO     | 👋 Cleanup complete
+2026-01-12 02:51:47 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 02:51:47 | INFO     | Initializing AI components...
+2026-01-12 02:51:47 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 02:51:58 | INFO     | ✅ Image encoder ready
+2026-01-12 02:51:58 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 02:52:04 | INFO     | ✅ Text encoder ready
+2026-01-12 02:52:04 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 02:52:04 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 02:52:04 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (820 vectors)
+2026-01-12 02:52:04 | INFO     | 📂 Loaded 820 vectors
+2026-01-12 02:52:04 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 02:52:04 | INFO     | ✅ Batch indexer initialized
+2026-01-12 02:52:04 | INFO     | ✅ Search engine initialized
+2026-01-12 02:52:04 | INFO     | ✅ Components initialized
+2026-01-12 02:52:05 | INFO     | ✅ QID Qt application initialized
+2026-01-12 02:52:05 | INFO     | 🎨 Application running
+2026-01-12 02:53:50 | INFO     | Starting indexing: data/images
+2026-01-12 02:53:50 | INFO     | Scanning directory: data\images
+2026-01-12 02:53:50 | INFO     | Found 638 image files
+2026-01-12 02:55:18 | INFO     | Validation complete: 638 valid, 0 invalid
+2026-01-12 02:55:18 | INFO     | 638 new images to process
+2026-01-12 02:55:35 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:55:35 | INFO     | Added 32 vectors (total: 852)
+2026-01-12 02:55:44 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:55:44 | INFO     | Added 32 vectors (total: 884)
+2026-01-12 02:55:52 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:55:52 | INFO     | Added 32 vectors (total: 916)
+2026-01-12 02:56:00 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:56:00 | INFO     | Added 32 vectors (total: 948)
+2026-01-12 02:56:06 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:56:06 | INFO     | Added 32 vectors (total: 980)
+2026-01-12 02:56:14 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:56:14 | INFO     | Added 32 vectors (total: 1012)
+2026-01-12 02:56:24 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:56:24 | INFO     | Added 32 vectors (total: 1044)
+2026-01-12 02:56:34 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:56:34 | INFO     | Added 32 vectors (total: 1076)
+2026-01-12 02:56:48 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:56:48 | INFO     | Added 32 vectors (total: 1108)
+2026-01-12 02:57:05 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:57:05 | INFO     | Added 32 vectors (total: 1140)
+2026-01-12 02:57:12 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:57:12 | INFO     | Added 32 vectors (total: 1172)
+2026-01-12 02:57:20 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:57:20 | INFO     | Added 32 vectors (total: 1204)
+2026-01-12 02:57:27 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:57:27 | INFO     | Added 32 vectors (total: 1236)
+2026-01-12 02:57:34 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:57:34 | INFO     | Added 32 vectors (total: 1268)
+2026-01-12 02:57:44 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:57:44 | INFO     | Added 32 vectors (total: 1300)
+2026-01-12 02:57:54 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:57:54 | INFO     | Added 32 vectors (total: 1332)
+2026-01-12 02:58:03 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:58:03 | INFO     | Added 32 vectors (total: 1364)
+2026-01-12 02:58:12 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:58:12 | INFO     | Added 32 vectors (total: 1396)
+2026-01-12 02:58:20 | INFO     | ✅ Encoded 32 images
+2026-01-12 02:58:20 | INFO     | Added 32 vectors (total: 1428)
+2026-01-12 02:58:26 | INFO     | ✅ Encoded 30 images
+2026-01-12 02:58:26 | INFO     | Added 30 vectors (total: 1458)
+2026-01-12 02:58:26 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 02:58:26 | INFO     | 💾 All data saved
+2026-01-12 02:58:26 | INFO     | Indexing complete: {'found': 638, 'valid': 638, 'new': 638, 'processed': 638, 'failed': 0}
+2026-01-12 02:58:44 | INFO     | Searching: 'Couple' (top_k=50, threshold=0.0)
+2026-01-12 02:58:44 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.53%, threshold: 17.12%)
+2026-01-12 02:58:44 | INFO     | Found 20 results
+2026-01-12 02:58:56 | INFO     | Searching: 'Couple' (top_k=50, threshold=0.0)
+2026-01-12 02:58:56 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.53%, threshold: 17.12%)
+2026-01-12 02:58:56 | INFO     | Found 20 results
+2026-01-12 02:59:19 | INFO     | Searching: 'a young 22-23year old couple' (top_k=50, threshold=0.0)
+2026-01-12 02:59:19 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.58%, threshold: 17.15%)
+2026-01-12 02:59:19 | INFO     | Found 20 results
+2026-01-12 03:00:24 | INFO     | Searching: 'a young 22-23year old couple, looking happy' (top_k=50, threshold=0.0)
+2026-01-12 03:00:24 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.99%, threshold: 17.39%)
+2026-01-12 03:00:24 | INFO     | Found 20 results
+2026-01-12 03:01:13 | INFO     | Cleaning up...
+2026-01-12 03:01:13 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 03:01:13 | INFO     | 👋 Cleanup complete
