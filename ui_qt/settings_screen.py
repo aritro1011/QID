@@ -5,10 +5,10 @@ Application settings and database management.
 
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel,
-    QPushButton, QFrame, QComboBox, QMessageBox
+    QPushButton, QFrame, QComboBox, QMessageBox, QScrollArea
 )
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtGui import QFont
+from PySide6.QtGui import QFont, QShortcut, QKeySequence
 
 from .theme import COLORS
 
@@ -171,14 +171,62 @@ class SettingsScreen(QWidget):
         self.setStyleSheet(f"background: {COLORS['background']};")
         
         self._create_ui()
+        self._setup_shortcuts()
+    
+    def _setup_shortcuts(self):
+        """Setup keyboard shortcuts."""
+        # Ctrl+, to open settings (standard shortcut)
+        settings_shortcut = QShortcut(QKeySequence("Ctrl+,"), self)
+        settings_shortcut.activated.connect(lambda: self.setFocus())
+        
+        # Ctrl+Shift+S alternative
+        alt_shortcut = QShortcut(QKeySequence("Ctrl+Shift+S"), self)
+        alt_shortcut.activated.connect(lambda: self.setFocus())
     
     def _create_ui(self):
-        """Create settings UI."""
-        layout = QVBoxLayout(self)
+        """Create settings UI with scrollability."""
+        # Main layout
+        main_layout = QVBoxLayout(self)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        
+        # Scroll area
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setStyleSheet(f"""
+            QScrollArea {{
+                background: {COLORS['background']};
+                border: none;
+            }}
+            QScrollBar:vertical {{
+                background: {COLORS['background_elevated']};
+                width: 12px;
+                border-radius: 6px;
+            }}
+            QScrollBar::handle:vertical {{
+                background: {COLORS['border']};
+                border-radius: 6px;
+                min-height: 20px;
+            }}
+            QScrollBar::handle:vertical:hover {{
+                background: {COLORS['text_tertiary']};
+            }}
+        """)
+        
+        # Container for scrollable content
+        container = QWidget()
+        layout = QVBoxLayout(container)
         layout.setContentsMargins(60, 40, 60, 40)
         layout.setSpacing(32)
         
+        scroll.setWidget(container)
+        main_layout.addWidget(scroll)
+        
         # Header
+        header_container = QWidget()
+        header_layout = QVBoxLayout(header_container)
+        header_layout.setContentsMargins(0, 0, 0, 0)
+        header_layout.setSpacing(8)
+        
         header = QLabel("Application Settings")
         font = QFont("Inter, Segoe UI", 28, QFont.Bold)
         header.setFont(font)
@@ -189,8 +237,11 @@ class SettingsScreen(QWidget):
         subtitle.setFont(font)
         subtitle.setStyleSheet(f"color: {COLORS['text_secondary']};")
         
-        layout.addWidget(header)
-        layout.addWidget(subtitle)
+        header_layout.addWidget(header)
+        header_layout.addWidget(subtitle)
+        
+        layout.addWidget(header_container)
+        layout.addSpacing(12)
         
         # Model Configuration Section
         model_header = QLabel("🤖 Model Configuration")
@@ -298,6 +349,7 @@ class SettingsScreen(QWidget):
         for btn in [self.gpu_btn, self.cpu_btn]:
             btn.setCursor(Qt.PointingHandCursor)
             btn.setMinimumHeight(44)
+            btn.setMinimumWidth(150)
             font = QFont("Inter, Segoe UI", 12, QFont.Medium)
             btn.setFont(font)
             btn.setStyleSheet(f"""
@@ -381,9 +433,9 @@ class SettingsScreen(QWidget):
         
         layout.addLayout(cards_layout)
         
-        # System Info Footer
-        layout.addStretch()
+        layout.addSpacing(20)
         
+        # System Info Footer
         info_frame = QFrame()
         info_frame.setStyleSheet(f"""
             QFrame {{
@@ -411,6 +463,8 @@ class SettingsScreen(QWidget):
         info_layout.addWidget(library_size)
         
         layout.addWidget(info_frame)
+        
+        layout.addSpacing(40)
     
     def _on_gpu_selected(self):
         """Handle GPU selection."""

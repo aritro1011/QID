@@ -2,19 +2,24 @@
 QID - Frameless Main Window
 Professional single-window interface with custom title bar and integrated navigation.
 """
-
+from pathlib import Path
 from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget,
     QLabel, QPushButton, QFrame, QMessageBox, QFileDialog, QGraphicsDropShadowEffect
 )
-from PySide6.QtCore import Qt, QPoint, Signal
+from PySide6.QtCore import Qt, QPoint, Signal, QSize
 from PySide6.QtGui import QFont, QShortcut, QKeySequence, QMouseEvent
 
 from .theme import COLORS, SPACING
 from .home_screen import HomeScreen
 from .search_screen import SearchScreen
 from .index_screen import IndexScreen
-from .settings_screen import SettingsScreen  # Fixed: was IndexDialogQt
+from .settings_screen import SettingsScreen
+from PySide6.QtGui import QIcon, QPixmap
+from PySide6.QtWidgets import QStyle
+
+from PySide6.QtWidgets import QGraphicsOpacityEffect, QSizePolicy
+from PySide6.QtCore import QPropertyAnimation
 
 
 class CustomTitleBar(QWidget):
@@ -35,9 +40,11 @@ class CustomTitleBar(QWidget):
         
         self.setFixedHeight(60)
         self.setStyleSheet(f"""
-            QWidget {{
+            CustomTitleBar {{
                 background: {COLORS['background_elevated']};
                 border-bottom: 1px solid {COLORS['border']};
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
             }}
         """)
         
@@ -45,92 +52,111 @@ class CustomTitleBar(QWidget):
         self.drag_position = QPoint()
         
         self._create_ui()
-    
+        from .theme import get_stylesheet
+
     def _create_ui(self):
-        """Create title bar UI."""
+        """Create title bar UI with perfectly centered stats label."""
         layout = QHBoxLayout(self)
-        layout.setContentsMargins(20, 0, 10, 0)
+        layout.setContentsMargins(12, 0, 12, 0)
         layout.setSpacing(0)
-        
-        # Logo and title
-        logo_container = QHBoxLayout()
-        logo_container.setSpacing(12)
-        
-        logo = QLabel("🔍")
-        logo.setStyleSheet("font-size: 24px;")
-        
-        title = QLabel("QID")
-        font = QFont("Inter, Segoe UI", 16, QFont.Bold)
-        title.setFont(font)
-        title.setStyleSheet(f"color: {COLORS['text_primary']};")
-        
-        logo_container.addWidget(logo)
-        logo_container.addWidget(title)
-        
-        layout.addLayout(logo_container)
-        layout.addSpacing(40)
-        
-        # Navigation tabs
-        nav_container = QHBoxLayout()
-        nav_container.setSpacing(8)
-        
+
+        # ---------- LEFT CLUSTER ----------
+        left_container = QHBoxLayout()
+        left_container.setSpacing(10)
+
+        logo = QLabel()
+        root = Path(__file__).resolve().parents[1]
+        logo_path = root / "assets" / "logo.png"
+        pix = QPixmap(str(logo_path))
+        TARGET_HEIGHT = 36
+        if not pix.isNull():
+            pix = pix.scaledToHeight(TARGET_HEIGHT, Qt.SmoothTransformation)
+            logo.setPixmap(pix)
+        else:
+            logo.setText("QID")
+        logo.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
+        logo.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        logo.setStyleSheet("background: transparent; border: none;")
+        left_container.addWidget(logo)
+
+        # Nav buttons
         self.home_btn = self._create_nav_button("🏠 Home")
-        self.home_btn.clicked.connect(self.home_clicked.emit)
-        
         self.search_btn = self._create_nav_button("🔍 Search")
-        self.search_btn.clicked.connect(self.search_clicked.emit)
-        
         self.index_btn = self._create_nav_button("📁 Index")
-        self.index_btn.clicked.connect(self.index_clicked.emit)
-        
         self.settings_btn = self._create_nav_button("⚙️ Settings")
-        self.settings_btn.clicked.connect(lambda: self.parent().window()._show_settings() if self.parent() else None)
+        self.home_btn.clicked.connect(self.home_clicked.emit)
+        self.search_btn.clicked.connect(self.search_clicked.emit)
+        self.index_btn.clicked.connect(self.index_clicked.emit)
+
+        for btn in [self.home_btn, self.search_btn, self.index_btn, self.settings_btn]:
+            left_container.addWidget(btn)
+
+        left_widget = QWidget()
+        left_widget.setLayout(left_container)
+        left_widget.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+
+        # ---------- RIGHT CLUSTER ----------
+        right_container = QHBoxLayout()
+        right_container.setSpacing(6)
+        right_container.setAlignment(Qt.AlignRight)
+
+        minimize_btn = self._create_control_button("min")
+        maximize_btn = self._create_control_button("max")
+        close_btn = self._create_control_button("close")
+        minimize_btn.clicked.connect(self.minimize_clicked.emit)
+        maximize_btn.clicked.connect(self.maximize_clicked.emit)
+        close_btn.clicked.connect(self.close_clicked.emit)
+
+        for btn in [minimize_btn, maximize_btn, close_btn]:
+            right_container.addWidget(btn)
+
+        right_widget = QWidget()
+        right_widget.setLayout(right_container)
         
-        nav_container.addWidget(self.home_btn)
-        nav_container.addWidget(self.search_btn)
-        nav_container.addWidget(self.index_btn)
-        nav_container.addWidget(self.settings_btn)
-        
-        layout.addLayout(nav_container)
-        layout.addStretch()
-        
-        # Database stats
+        # MATCH WIDTH OF LEFT CLUSTER
+        right_widget.setFixedWidth(left_widget.sizeHint().width())
+
+        # ---------- CENTER STATS ----------
         self.stats_label = QLabel("Database: 0 images")
         font = QFont("Inter, Segoe UI", 11)
         self.stats_label.setFont(font)
         self.stats_label.setStyleSheet(f"""
             color: {COLORS['text_primary']};
-            background: {COLORS['background_hover']};
-            padding: 6px 12px;
-            border-radius: 6px;
+            background: transparent;
+            padding: 0;
+            border: none;
         """)
-        
+        self.stats_label.setAlignment(Qt.AlignCenter)
+        self.stats_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+
+        # ---------- MAIN LAYOUT ----------
+        layout.addWidget(left_widget)
+        layout.addStretch()
         layout.addWidget(self.stats_label)
-        layout.addSpacing(20)
-        
-        # Window controls
-        controls_container = QHBoxLayout()
-        controls_container.setSpacing(8)
-        
-        minimize_btn = self._create_control_button("−")
-        minimize_btn.clicked.connect(self.minimize_clicked.emit)
-        
-        maximize_btn = self._create_control_button("□")
-        maximize_btn.clicked.connect(self.maximize_clicked.emit)
-        
-        close_btn = self._create_control_button("✕")
-        close_btn.setObjectName("close_btn")
-        close_btn.clicked.connect(self.close_clicked.emit)
-        
-        controls_container.addWidget(minimize_btn)
-        controls_container.addWidget(maximize_btn)
-        controls_container.addWidget(close_btn)
-        
-        layout.addLayout(controls_container)
-        
-        # Set active tab
-        self.set_active_tab("home")
-    
+        layout.addStretch()
+        layout.addWidget(right_widget)
+
+    def update_for_maximized(self, is_maximized: bool):
+        """Update title bar styling for maximized state."""
+        if is_maximized:
+            self.setStyleSheet(f"""
+                CustomTitleBar {{
+                    background: {COLORS['background_elevated']};
+                    border-bottom: 1px solid {COLORS['border']};
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                }}
+            """)
+        else:
+            self.setStyleSheet(f"""
+                CustomTitleBar {{
+                    background: {COLORS['background_elevated']};
+                    border-bottom: 1px solid {COLORS['border']};
+                    border-top-left-radius: 12px;
+                    border-top-right-radius: 12px;
+                }}
+            """)
+
     def _create_nav_button(self, text: str) -> QPushButton:
         """Create navigation button."""
         btn = QPushButton(text)
@@ -158,15 +184,22 @@ class CustomTitleBar(QWidget):
         """)
         return btn
     
-    def _create_control_button(self, text: str) -> QPushButton:
-        """Create window control button."""
-        btn = QPushButton(text)
+    def _create_control_button(self, role: str) -> QPushButton:
+        btn = QPushButton()
         btn.setCursor(Qt.PointingHandCursor)
         btn.setFixedSize(40, 40)
-        font = QFont("Inter, Segoe UI", 16, QFont.Bold)
+
+        font = QFont("Inter, Segoe UI", 14, QFont.Bold)
         btn.setFont(font)
-        
-        # Apply style BEFORE checking objectName
+
+        if role == "min":
+            btn.setIcon(self.style().standardIcon(QStyle.SP_TitleBarMinButton))
+        elif role == "max":
+            btn.setIcon(self.style().standardIcon(QStyle.SP_TitleBarMaxButton))
+        elif role == "close":
+            btn.setIcon(self.style().standardIcon(QStyle.SP_TitleBarCloseButton))
+            btn.setObjectName("close_btn")
+
         base_style = f"""
             QPushButton {{
                 background: transparent;
@@ -179,13 +212,12 @@ class CustomTitleBar(QWidget):
                 color: white;
             }}
         """
-        
-        if text == "✕":
-            btn.setObjectName("close_btn")
-            btn.setStyleSheet(base_style.replace("{hover_color}", "#ff5252"))
+
+        if role == "close":
+            btn.setStyleSheet(base_style.replace("{hover_color}", "#ff4d4f"))
         else:
             btn.setStyleSheet(base_style.replace("{hover_color}", COLORS['background_hover']))
-        
+
         return btn
     
     def set_active_tab(self, tab: str):
@@ -204,14 +236,21 @@ class CustomTitleBar(QWidget):
         elif tab == "settings":
             self.settings_btn.setProperty("active", "true")
         
-        # Refresh styles
         for btn in [self.home_btn, self.search_btn, self.index_btn, self.settings_btn]:
             btn.style().unpolish(btn)
             btn.style().polish(btn)
     
     def update_stats(self, text: str):
-        """Update database stats."""
         self.stats_label.setText(text)
+
+        effect = QGraphicsOpacityEffect()
+        self.stats_label.setGraphicsEffect(effect)
+
+        anim = QPropertyAnimation(effect, b"opacity")
+        anim.setDuration(350)
+        anim.setStartValue(0.3)
+        anim.setEndValue(1.0)
+        anim.start()
     
     def mousePressEvent(self, event: QMouseEvent):
         """Start window drag."""
@@ -238,47 +277,35 @@ class MainWindowQt(QMainWindow):
         self.batch_indexer = batch_indexer
         self.config = config
         
-        # Remove default title bar
+        self.is_maximized = False
+        
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         
-        # Window setup
         self.setMinimumSize(1200, 800)
         
-        # Setup UI
         self._create_ui()
         self._setup_shortcuts()
         
-        # Show home screen
         self._show_home()
     
     def _create_ui(self):
         """Create main UI structure."""
-        # Main container with rounded corners
-        main_container = QWidget()
-        main_container.setObjectName("main_container")
-        main_container.setStyleSheet(f"""
+        self.main_container = QWidget()
+        self.main_container.setObjectName("main_container")
+        self.main_container.setStyleSheet(f"""
             #main_container {{
                 background: {COLORS['background']};
                 border-radius: 12px;
             }}
         """)
         
-        # Add shadow effect
-        shadow = QGraphicsDropShadowEffect()
-        shadow.setBlurRadius(30)
-        shadow.setColor(Qt.black)
-        shadow.setOffset(0, 0)
-        main_container.setGraphicsEffect(shadow)
+        self.setCentralWidget(self.main_container)
         
-        self.setCentralWidget(main_container)
-        
-        # Main layout
-        main_layout = QVBoxLayout(main_container)
+        main_layout = QVBoxLayout(self.main_container)
         main_layout.setContentsMargins(0, 0, 0, 0)
         main_layout.setSpacing(0)
         
-        # Custom title bar
         self.title_bar = CustomTitleBar()
         self.title_bar.minimize_clicked.connect(self.showMinimized)
         self.title_bar.maximize_clicked.connect(self._toggle_maximize)
@@ -286,18 +313,27 @@ class MainWindowQt(QMainWindow):
         self.title_bar.home_clicked.connect(self._show_home)
         self.title_bar.search_clicked.connect(self._show_search)
         self.title_bar.index_clicked.connect(self._show_index)
-        
-        # Connect settings button properly
-        self.title_bar.settings_btn.clicked.disconnect()
         self.title_bar.settings_btn.clicked.connect(self._show_settings)
         
         main_layout.addWidget(self.title_bar)
         
-        # Content Stack
-        self.content_stack = QStackedWidget()
-        main_layout.addWidget(self.content_stack)
+        self.content_container = QWidget()
+        self.content_container.setStyleSheet(f"""
+            QWidget {{
+                background: {COLORS['background']};
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }}
+        """)
+        content_layout = QVBoxLayout(self.content_container)
+        content_layout.setContentsMargins(0, 0, 0, 0)
+        content_layout.setSpacing(0)
         
-        # Create screens
+        self.content_stack = QStackedWidget()
+        content_layout.addWidget(self.content_stack)
+        
+        main_layout.addWidget(self.content_container)
+        
         self.home_screen = HomeScreen()
         self.home_screen.index_clicked.connect(self._show_index)
         self.home_screen.search_clicked.connect(self._show_search)
@@ -312,21 +348,56 @@ class MainWindowQt(QMainWindow):
         self.settings_screen.clear_cache.connect(self._clear_cache)
         self.settings_screen.delete_index.connect(self._delete_index)
         
-        # Add to stack
         self.content_stack.addWidget(self.home_screen)
         self.content_stack.addWidget(self.search_screen)
         self.content_stack.addWidget(self.index_screen)
         self.content_stack.addWidget(self.settings_screen)
         
-        # Update stats
         self._update_stats()
     
     def _toggle_maximize(self):
         """Toggle maximize/restore."""
         if self.isMaximized():
             self.showNormal()
+            self.is_maximized = False
         else:
             self.showMaximized()
+            self.is_maximized = True
+        
+        self._update_container_style()
+    
+    def _update_container_style(self):
+        """Update container styling based on window state."""
+        if self.is_maximized:
+            self.main_container.setStyleSheet(f"""
+                #main_container {{
+                    background: {COLORS['background']};
+                    border-radius: 0px;
+                }}
+            """)
+            self.content_container.setStyleSheet(f"""
+                QWidget {{
+                    background: {COLORS['background']};
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }}
+            """)
+            self.title_bar.update_for_maximized(True)
+        else:
+            self.main_container.setStyleSheet(f"""
+                #main_container {{
+                    background: {COLORS['background']};
+                    border-radius: 12px;
+                }}
+            """)
+            self.content_container.setStyleSheet(f"""
+                QWidget {{
+                    background: {COLORS['background']};
+                    border-bottom-left-radius: 12px;
+                    border-bottom-right-radius: 12px;
+                }}
+            """)
+            self.title_bar.update_for_maximized(False)
     
     def _setup_shortcuts(self):
         """Setup keyboard shortcuts."""
@@ -344,8 +415,6 @@ class MainWindowQt(QMainWindow):
         """Update title bar statistics."""
         self.title_bar.update_stats(self._get_stats_text())
     
-    # Navigation Methods
-    
     def _show_home(self):
         """Show home screen."""
         self.content_stack.setCurrentWidget(self.home_screen)
@@ -360,7 +429,6 @@ class MainWindowQt(QMainWindow):
         """Show index screen."""
         self.content_stack.setCurrentWidget(self.index_screen)
         self.title_bar.set_active_tab("index")
-        # Reset to folder selection
         self.index_screen.reset_to_folder_selection()
     
     def _show_settings(self):
@@ -380,13 +448,10 @@ class MainWindowQt(QMainWindow):
     
     def _rebuild_index(self):
         """Rebuild entire index."""
-        # Show index screen and start
         self._show_index()
-        # TODO: Implement automatic start
     
     def _clear_cache(self):
         """Clear cache."""
-        # TODO: Implement cache clearing
         QMessageBox.information(self, "Success", "Cache cleared successfully!")
         self._update_stats()
     

@@ -255,9 +255,11 @@ class SearchScreen(QWidget):
         self.results_label.setText(f"Searching...")
         self.results_count.setText("")
         
-        # Force UI update
-        self.repaint()
-        
+        # Use QTimer to perform search asynchronously for better performance
+        QTimer.singleShot(0, lambda: self._perform_search(query))
+    
+    def _perform_search(self, query: str):
+        """Perform the actual search operation."""
         # Perform search with adaptive threshold
         results = self.search_engine.search(
             query,

@@ -10,12 +10,13 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt, QThread, Signal, QTimer
 from PySide6.QtGui import QFont
 import time
+from pathlib import Path
 
 from .theme import COLORS, SPACING, RADIUS
 
 
 class IndexWorker(QThread):
-    """Background thread for indexing."""
+    """Background thread for indexing with proper progress tracking."""
     
     progress = Signal(int, int)  # current, total
     status = Signal(str)
@@ -31,90 +32,163 @@ class IndexWorker(QThread):
         self.folder = folder
         self.options = options
         self.start_time = None
-        self.processed_count = 0
-        self.last_update_time = None
-        self.last_processed_count = 0
+        self.last_speed_update = None
+        self.last_speed_count = 0
+        
+        # Stats tracking
+        self.stats = {
+            'found': 0,
+            'processed': 0,
+            'new': 0,
+            'skipped': 0,
+            'errors': 0
+        }
     
     def run(self):
-        """Run indexing in background."""
+        """Run indexing in background with live updates."""
         try:
             self.start_time = time.time()
-            self.last_update_time = self.start_time
+            self.last_speed_update = self.start_time
             
             self.status.emit("Scanning for images...")
             self.log.emit("🔍 Scanning for images...")
             
-            # Override the batch indexer's methods to capture progress
-            original_process = self.batch_indexer._process_batch
+            # Find all images
+            image_paths = self._find_images()
             
-            def custom_process(image_paths):
-                total = len(image_paths)
-                processed = 0
+            if not image_paths:
+                self.log.emit("⚠️ No images found in directory")
+                self.finished.emit(self.stats)
+                return
+            
+            self.stats['found'] = len(image_paths)
+            self.log.emit(f"📊 Found {len(image_paths)} images")
+            self.stats_update.emit(self.stats.copy())
+            
+            # Check which are already indexed
+            self.status.emit("Checking for existing images...")
+            self.log.emit("🔍 Checking for already indexed images...")
+            
+            if self.options.get('skip_existing', True):
+                images_to_process = []
+                for path in image_paths:
+                    if not self.batch_indexer.metadata_store.exists(str(path.absolute())):
+                        images_to_process.append(path)
+                    else:
+                        self.stats['skipped'] += 1
                 
-                for i in range(0, total, self.batch_indexer.batch_size):
-                    batch = image_paths[i:i + self.batch_indexer.batch_size]
-                    
-                    # Process batch
-                    try:
-                        embeddings = self.batch_indexer.image_encoder.encode_batch(
-                            [str(p) for p in batch],
-                            batch_size=len(batch),
-                            show_progress=False
-                        )
-                        
-                        vector_ids = self.batch_indexer.vector_store.add(embeddings)
-                        
-                        for vector_id, path in zip(vector_ids, batch):
-                            success = self.batch_indexer.metadata_store.add(
-                                vector_id=vector_id,
-                                file_path=str(path.absolute())
-                            )
-                            if success:
-                                processed += 1
-                                self.processed_count += 1
-                        
-                        # Update progress
-                        self.progress.emit(i + len(batch), total)
-                        
-                        # Calculate speed
-                        current_time = time.time()
-                        if current_time - self.last_update_time >= 1.0:
-                            elapsed = current_time - self.last_update_time
-                            count_diff = self.processed_count - self.last_processed_count
-                            speed = count_diff / elapsed if elapsed > 0 else 0
-                            self.speed.emit(speed)
-                            
-                            self.last_update_time = current_time
-                            self.last_processed_count = self.processed_count
-                        
-                        # Log progress
-                        self.log.emit(f"✅ Processed batch {i//self.batch_indexer.batch_size + 1}: {len(batch)} images")
-                        
-                    except Exception as e:
-                        self.log.emit(f"❌ Error in batch: {str(e)}")
-                        continue
-                
-                return processed
+                self.stats['new'] = len(images_to_process)
+                self.log.emit(f"⏭️ Skipping {self.stats['skipped']} already indexed images")
+                self.log.emit(f"🆕 Processing {len(images_to_process)} new images")
+            else:
+                images_to_process = image_paths
+                self.stats['new'] = len(images_to_process)
             
-            # Temporarily replace the method
-            self.batch_indexer._process_batch = custom_process
+            self.stats_update.emit(self.stats.copy())
             
-            stats = self.batch_indexer.index_directory(
-                self.folder,
-                recursive=self.options.get('recursive', True),
-                validate=self.options.get('validate', True),
-                skip_existing=self.options.get('skip_existing', True)
-            )
+            if not images_to_process:
+                self.log.emit("✅ All images already indexed!")
+                self.finished.emit(self.stats)
+                return
             
-            # Restore original method
-            self.batch_indexer._process_batch = original_process
+            # Process images in batches
+            self.status.emit("Processing images...")
+            self._process_images(images_to_process)
             
-            # Send final stats
-            self.stats_update.emit(stats)
-            self.finished.emit(stats)
+            # Final update
+            self.log.emit(f"✅ Indexing complete! Processed {self.stats['processed']} images")
+            self.finished.emit(self.stats)
             
         except Exception as e:
+            import traceback
+            self.log.emit(f"❌ Error: {str(e)}")
+            self.log.emit(traceback.format_exc())
             self.error.emit(str(e))
+    
+    def _find_images(self):
+        """Find all image files in directory."""
+        folder = Path(self.folder)
+        extensions = {'.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp'}
+        
+        image_paths = []
+        
+        if self.options.get('recursive', True):
+            for ext in extensions:
+                image_paths.extend(folder.rglob(f"*{ext}"))
+                image_paths.extend(folder.rglob(f"*{ext.upper()}"))
+        else:
+            for ext in extensions:
+                image_paths.extend(folder.glob(f"*{ext}"))
+                image_paths.extend(folder.glob(f"*{ext.upper()}"))
+        
+        return sorted(set(image_paths))
+    
+    def _process_images(self, image_paths):
+        """Process images in batches with live progress updates."""
+        total = len(image_paths)
+        batch_size = self.batch_indexer.batch_size
+        
+        for i in range(0, total, batch_size):
+            batch = image_paths[i:i + batch_size]
+            batch_num = i // batch_size + 1
+            total_batches = (total + batch_size - 1) // batch_size
+            
+            self.status.emit(f"Processing batch {batch_num}/{total_batches}...")
+            
+            try:
+                # Encode images
+                embeddings = self.batch_indexer.image_encoder.encode_batch(
+                    [str(p) for p in batch],
+                    batch_size=len(batch),
+                    show_progress=False
+                )
+                
+                # Add to vector store
+                vector_ids = self.batch_indexer.vector_store.add(embeddings)
+                
+                # Add metadata
+                batch_processed = 0
+                for vector_id, path in zip(vector_ids, batch):
+                    success = self.batch_indexer.metadata_store.add(
+                        vector_id=vector_id,
+                        file_path=str(path.absolute())
+                    )
+                    if success:
+                        batch_processed += 1
+                        self.stats['processed'] += 1
+                
+                # Update progress
+                current_total = min(i + len(batch), total)
+                self.progress.emit(current_total, total)
+                
+                # Update speed
+                self._update_speed()
+                
+                # Update stats
+                self.stats_update.emit(self.stats.copy())
+                
+                # Log batch completion
+                self.log.emit(f"✅ Batch {batch_num}/{total_batches}: {batch_processed}/{len(batch)} images indexed")
+                
+            except Exception as e:
+                self.stats['errors'] += len(batch)
+                self.log.emit(f"❌ Error in batch {batch_num}: {str(e)}")
+                continue
+    
+    def _update_speed(self):
+        """Calculate and emit processing speed."""
+        current_time = time.time()
+        
+        if current_time - self.last_speed_update >= 0.5:  # Update every 0.5s
+            elapsed = current_time - self.last_speed_update
+            count_diff = self.stats['processed'] - self.last_speed_count
+            
+            if elapsed > 0:
+                speed = count_diff / elapsed
+                self.speed.emit(speed)
+            
+            self.last_speed_update = current_time
+            self.last_speed_count = self.stats['processed']
 
 
 class StatCard(QFrame):
@@ -180,23 +254,59 @@ class IndexScreen(QWidget):
     
     def _create_ui(self):
         """Create UI."""
-        layout = QVBoxLayout(self)
-        layout.setContentsMargins(60, 40, 60, 40)
-        layout.setSpacing(32)
+        # Make the entire screen scrollable
+        from PySide6.QtWidgets import QScrollArea
         
-        # Header
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setStyleSheet(f"""
+            QScrollArea {{
+                background: {COLORS['background']};
+                border: none;
+            }}
+            QScrollBar:vertical {{
+                background: {COLORS['background_elevated']};
+                width: 12px;
+                border-radius: 6px;
+            }}
+            QScrollBar::handle:vertical {{
+                background: {COLORS['border']};
+                border-radius: 6px;
+                min-height: 20px;
+            }}
+            QScrollBar::handle:vertical:hover {{
+                background: {COLORS['text_tertiary']};
+            }}
+        """)
+        
+        # Container for scrollable content
+        container = QWidget()
+        layout = QVBoxLayout(container)
+        layout.setContentsMargins(60, 40, 60, 40)
+        layout.setSpacing(0)  # Remove default spacing
+        
+        scroll.setWidget(container)
+        
+        # Main layout
+        main_layout = QVBoxLayout(self)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.addWidget(scroll)
+        
+        # Header (compact)
         header = QLabel("Image Indexing")
         font = QFont("Inter, Segoe UI", 28, QFont.Bold)
         header.setFont(font)
         header.setStyleSheet(f"color: {COLORS['text_primary']};")
+        layout.addWidget(header)
         
+        # Subtitle (minimal spacing)
         subtitle = QLabel("Extract AI features and index metadata from your local library")
         font = QFont("Inter, Segoe UI", 14)
         subtitle.setFont(font)
-        subtitle.setStyleSheet(f"color: {COLORS['text_secondary']};")
-        
-        layout.addWidget(header)
+        subtitle.setStyleSheet(f"color: {COLORS['text_secondary']}; margin-top: 4px;")
         layout.addWidget(subtitle)
+        
+        # Small gap before folder card
         layout.addSpacing(20)
         
         # Folder selection
@@ -256,10 +366,13 @@ class IndexScreen(QWidget):
         
         layout.addWidget(folder_frame)
         
+        layout.addSpacing(20)
+        
         # Progress section (initially hidden)
         self.progress_container = QWidget()
         progress_layout = QVBoxLayout(self.progress_container)
         progress_layout.setSpacing(20)
+        progress_layout.setContentsMargins(0, 0, 0, 0)
         
         # Progress header
         progress_header = QLabel("📊 INDEXING PROGRESS")
@@ -289,6 +402,7 @@ class IndexScreen(QWidget):
         
         # Status and speed
         status_row = QHBoxLayout()
+        status_row.setSpacing(20)
         
         self.status_label = QLabel("Ready to index")
         font = QFont("Inter, Segoe UI", 13)
@@ -311,10 +425,13 @@ class IndexScreen(QWidget):
         self.progress_container.setVisible(False)
         layout.addWidget(self.progress_container)
         
+        layout.addSpacing(20)
+        
         # Statistics cards
         self.stats_container = QWidget()
         stats_layout = QVBoxLayout(self.stats_container)
         stats_layout.setSpacing(16)
+        stats_layout.setContentsMargins(0, 0, 0, 0)
         
         stats_header = QLabel("📈 LIVE STATISTICS")
         font = QFont("Inter, Segoe UI", 12, QFont.Bold)
@@ -338,10 +455,13 @@ class IndexScreen(QWidget):
         self.stats_container.setVisible(False)
         layout.addWidget(self.stats_container)
         
+        layout.addSpacing(20)
+        
         # Time and log
         self.info_container = QWidget()
         info_layout = QVBoxLayout(self.info_container)
         info_layout.setSpacing(16)
+        info_layout.setContentsMargins(0, 0, 0, 0)
         
         self.time_label = QLabel("⏱️  Time Elapsed: 00:00:00")
         font = QFont("Inter, Segoe UI", 12)
@@ -356,7 +476,7 @@ class IndexScreen(QWidget):
         
         self.log_area = QTextEdit()
         self.log_area.setReadOnly(True)
-        self.log_area.setMaximumHeight(150)
+        self.log_area.setMinimumHeight(200)
         font = QFont("Consolas, Monaco, monospace", 10)
         self.log_area.setFont(font)
         self.log_area.setStyleSheet(f"""
@@ -376,7 +496,7 @@ class IndexScreen(QWidget):
         self.info_container.setVisible(False)
         layout.addWidget(self.info_container)
         
-        layout.addStretch()
+        layout.addSpacing(40)
         
         # Start button
         self.start_btn = QPushButton("🚀 Start Indexing")
@@ -424,6 +544,7 @@ class IndexScreen(QWidget):
             self.folder = folder
             self.folder_label.setText(folder)
             self.start_btn.setEnabled(True)
+            self.log_area.clear()
             self._add_log(f"📁 Selected folder: {folder}")
     
     def _start_indexing(self):
@@ -436,6 +557,13 @@ class IndexScreen(QWidget):
         self.stats_container.setVisible(True)
         self.info_container.setVisible(True)
         
+        # Reset stats
+        self.found_card.set_value("0")
+        self.processed_card.set_value("0")
+        self.skipped_card.set_value("0")
+        self.progress_bar.setValue(0)
+        self.speed_label.setText("")
+        
         # Disable controls
         self.start_btn.setEnabled(False)
         self.start_btn.setText("⏳ Indexing...")
@@ -445,7 +573,7 @@ class IndexScreen(QWidget):
         self.start_time = time.time()
         self.timer = QTimer()
         self.timer.timeout.connect(self._update_time)
-        self.timer.start(1000)
+        self.timer.start(100)  # Update every 100ms for smooth display
         
         # Create worker
         options = {
@@ -471,18 +599,18 @@ class IndexScreen(QWidget):
         if total > 0:
             percentage = int((current / total) * 100)
             self.progress_bar.setValue(percentage)
-            self.status_label.setText(f"Processing: {current}/{total} images")
+            self.status_label.setText(f"Processing: {current:,}/{total:,} images ({percentage}%)")
     
     def _update_speed(self, speed: float):
         """Update speed indicator."""
-        self.speed_label.setText(f"⚡ {speed:.1f} img/s")
+        if speed > 0:
+            self.speed_label.setText(f"⚡ {speed:.1f} img/s")
     
     def _update_stats(self, stats: dict):
         """Update statistics cards."""
         self.found_card.set_value(f"{stats.get('found', 0):,}")
         self.processed_card.set_value(f"{stats.get('processed', 0):,}")
-        skipped = stats.get('found', 0) - stats.get('new', 0)
-        self.skipped_card.set_value(f"{skipped:,}")
+        self.skipped_card.set_value(f"{stats.get('skipped', 0):,}")
     
     def _update_status(self, message: str):
         """Update status message."""
@@ -492,9 +620,8 @@ class IndexScreen(QWidget):
         """Add log message."""
         self.log_area.append(message)
         # Auto-scroll to bottom
-        self.log_area.verticalScrollBar().setValue(
-            self.log_area.verticalScrollBar().maximum()
-        )
+        scrollbar = self.log_area.verticalScrollBar()
+        scrollbar.setValue(scrollbar.maximum())
     
     def _update_time(self):
         """Update elapsed time."""
@@ -508,31 +635,43 @@ class IndexScreen(QWidget):
     
     def _on_finished(self, stats: dict):
         """Handle completion."""
-        self.timer.stop()
+        if hasattr(self, 'timer'):
+            self.timer.stop()
         
         # Update UI
         self.progress_bar.setValue(100)
         self.status_label.setText("✅ Indexing complete!")
         self.speed_label.setText("")
         
-        # Update stats
+        # Update final stats
         self.found_card.set_value(f"{stats['found']:,}")
         self.processed_card.set_value(f"{stats['processed']:,}")
-        self.skipped_card.set_value(f"{stats['found'] - stats['new']:,}")
+        self.skipped_card.set_value(f"{stats['skipped']:,}")
         
         # Re-enable controls
         self.start_btn.setText("✅ Indexing Complete")
         self.browse_btn.setEnabled(True)
         
-        self._add_log(f"✅ Successfully indexed {stats['processed']} images!")
-        self._add_log(f"📊 Total in database: {len(self.batch_indexer.metadata_store):,} images")
+        self._add_log(f"✅ Successfully indexed {stats['processed']:,} images!")
+        self._add_log(f"⏭️ Skipped {stats['skipped']:,} already indexed images")
+        
+        if stats.get('errors', 0) > 0:
+            self._add_log(f"⚠️ {stats['errors']} errors occurred")
+        
+        # Get total count from metadata store
+        try:
+            total_in_db = len(self.batch_indexer.metadata_store)
+            self._add_log(f"📊 Total in database: {total_in_db:,} images")
+        except:
+            pass
         
         # Emit signal
         self.completed.emit(stats)
     
     def _on_error(self, error: str):
         """Handle error."""
-        self.timer.stop()
+        if hasattr(self, 'timer'):
+            self.timer.stop()
         
         self.status_label.setText(f"❌ Error occurred")
         self.start_btn.setEnabled(True)
@@ -554,3 +693,4 @@ class IndexScreen(QWidget):
         self.log_area.clear()
         self.progress_bar.setValue(0)
         self.status_label.setText("Ready to index")
+        self.speed_label.setText("")

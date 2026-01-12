@@ -164,7 +164,7 @@ class ImageGridQt(QWidget):
         self.grid_layout = QGridLayout(self.grid_widget)
         self.grid_layout.setSpacing(16)
         self.grid_layout.setContentsMargins(0, 0, 0, 0)
-        self.grid_layout.setAlignment(Qt.AlignTop | Qt.AlignLeft)
+        self.grid_layout.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
         
         self.scroll_area.setWidget(self.grid_widget)
         main_layout.addWidget(self.scroll_area)

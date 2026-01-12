@@ -2530,3 +2530,1227 @@
 2026-01-12 03:40:36 | INFO     | Cleaning up...
 2026-01-12 03:40:36 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
 2026-01-12 03:40:36 | INFO     | 👋 Cleanup complete
+2026-01-12 03:48:38 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 03:48:38 | INFO     | Initializing AI components...
+2026-01-12 03:48:38 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 03:48:44 | INFO     | ✅ Image encoder ready
+2026-01-12 03:48:44 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 03:48:46 | INFO     | ✅ Text encoder ready
+2026-01-12 03:48:46 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 03:48:46 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 03:48:46 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (1458 vectors)
+2026-01-12 03:48:46 | INFO     | 📂 Loaded 1458 vectors
+2026-01-12 03:48:46 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 03:48:46 | INFO     | ✅ Batch indexer initialized
+2026-01-12 03:48:46 | INFO     | ✅ Search engine initialized
+2026-01-12 03:48:46 | INFO     | ✅ Components initialized
+2026-01-12 03:48:48 | INFO     | ✅ QID Qt application initialized
+2026-01-12 03:48:48 | INFO     | 🎨 Application running
+2026-01-12 03:52:22 | INFO     | Cleaning up...
+2026-01-12 03:52:22 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 03:52:22 | INFO     | 👋 Cleanup complete
+2026-01-12 03:53:41 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 03:53:41 | INFO     | Initializing AI components...
+2026-01-12 03:53:41 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 03:53:46 | INFO     | ✅ Image encoder ready
+2026-01-12 03:53:46 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 03:53:49 | INFO     | ✅ Text encoder ready
+2026-01-12 03:53:49 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 03:53:49 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 03:53:49 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (1458 vectors)
+2026-01-12 03:53:49 | INFO     | 📂 Loaded 1458 vectors
+2026-01-12 03:53:49 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 03:53:49 | INFO     | ✅ Batch indexer initialized
+2026-01-12 03:53:49 | INFO     | ✅ Search engine initialized
+2026-01-12 03:53:49 | INFO     | ✅ Components initialized
+2026-01-12 03:53:50 | INFO     | ✅ QID Qt application initialized
+2026-01-12 03:53:50 | INFO     | 🎨 Application running
+2026-01-12 03:54:45 | INFO     | 🗑️  Cleared vector store
+2026-01-12 03:54:45 | WARNING  | 🗑️  Cleared all metadata
+2026-01-12 03:54:57 | INFO     | Starting indexing: D:/DATA SCIENCE/Projects/QID/data/images
+2026-01-12 03:54:57 | INFO     | Scanning directory: D:\DATA SCIENCE\Projects\QID\data\images
+2026-01-12 03:54:57 | INFO     | Found 638 image files
+2026-01-12 03:56:15 | INFO     | Validation complete: 638 valid, 0 invalid
+2026-01-12 03:56:15 | INFO     | 638 new images to process
+2026-01-12 03:56:32 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:56:32 | INFO     | Added 32 vectors (total: 32)
+2026-01-12 03:56:40 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:56:40 | INFO     | Added 32 vectors (total: 64)
+2026-01-12 03:56:49 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:56:49 | INFO     | Added 32 vectors (total: 96)
+2026-01-12 03:56:58 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:56:58 | INFO     | Added 32 vectors (total: 128)
+2026-01-12 03:57:08 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:57:08 | INFO     | Added 32 vectors (total: 160)
+2026-01-12 03:57:17 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:57:17 | INFO     | Added 32 vectors (total: 192)
+2026-01-12 03:57:27 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:57:27 | INFO     | Added 32 vectors (total: 224)
+2026-01-12 03:57:36 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:57:36 | INFO     | Added 32 vectors (total: 256)
+2026-01-12 03:57:50 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:57:50 | INFO     | Added 32 vectors (total: 288)
+2026-01-12 03:58:06 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:58:06 | INFO     | Added 32 vectors (total: 320)
+2026-01-12 03:58:13 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:58:13 | INFO     | Added 32 vectors (total: 352)
+2026-01-12 03:58:21 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:58:21 | INFO     | Added 32 vectors (total: 384)
+2026-01-12 03:58:29 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:58:29 | INFO     | Added 32 vectors (total: 416)
+2026-01-12 03:58:36 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:58:36 | INFO     | Added 32 vectors (total: 448)
+2026-01-12 03:58:46 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:58:46 | INFO     | Added 32 vectors (total: 480)
+2026-01-12 03:58:56 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:58:56 | INFO     | Added 32 vectors (total: 512)
+2026-01-12 03:59:05 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:59:05 | INFO     | Added 32 vectors (total: 544)
+2026-01-12 03:59:14 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:59:14 | INFO     | Added 32 vectors (total: 576)
+2026-01-12 03:59:21 | INFO     | ✅ Encoded 32 images
+2026-01-12 03:59:21 | INFO     | Added 32 vectors (total: 608)
+2026-01-12 03:59:26 | INFO     | ✅ Encoded 30 images
+2026-01-12 03:59:26 | INFO     | Added 30 vectors (total: 638)
+2026-01-12 03:59:27 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 03:59:27 | INFO     | 💾 All data saved
+2026-01-12 03:59:27 | INFO     | Indexing complete: {'found': 638, 'valid': 638, 'new': 638, 'processed': 638, 'failed': 0}
+2026-01-12 04:03:43 | INFO     | Cleaning up...
+2026-01-12 04:03:43 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 04:03:43 | INFO     | 👋 Cleanup complete
+2026-01-12 04:04:24 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 04:04:24 | INFO     | Initializing AI components...
+2026-01-12 04:04:24 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 04:04:30 | INFO     | ✅ Image encoder ready
+2026-01-12 04:04:30 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 04:04:33 | INFO     | ✅ Text encoder ready
+2026-01-12 04:04:33 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 04:04:33 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 04:04:33 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 04:04:33 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 04:04:33 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 04:04:33 | INFO     | ✅ Batch indexer initialized
+2026-01-12 04:04:33 | INFO     | ✅ Search engine initialized
+2026-01-12 04:04:33 | INFO     | ✅ Components initialized
+2026-01-12 04:04:35 | INFO     | ✅ QID Qt application initialized
+2026-01-12 04:04:35 | INFO     | 🎨 Application running
+2026-01-12 04:18:44 | INFO     | Cleaning up...
+2026-01-12 04:18:44 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 04:18:44 | INFO     | 👋 Cleanup complete
+2026-01-12 04:19:03 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 04:19:03 | INFO     | Initializing AI components...
+2026-01-12 04:19:03 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 04:19:08 | INFO     | ✅ Image encoder ready
+2026-01-12 04:19:08 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 04:19:10 | INFO     | ✅ Text encoder ready
+2026-01-12 04:19:10 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 04:19:10 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 04:19:10 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 04:19:10 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 04:19:10 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 04:19:10 | INFO     | ✅ Batch indexer initialized
+2026-01-12 04:19:10 | INFO     | ✅ Search engine initialized
+2026-01-12 04:19:10 | INFO     | ✅ Components initialized
+2026-01-12 04:19:11 | INFO     | ✅ QID Qt application initialized
+2026-01-12 04:19:11 | INFO     | 🎨 Application running
+2026-01-12 04:19:37 | INFO     | Searching: 'bike' (top_k=50, threshold=0.0)
+2026-01-12 04:19:39 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.64%, threshold: 15.39%)
+2026-01-12 04:19:39 | INFO     | Found 20 results
+2026-01-12 04:19:58 | INFO     | Searching: 'ball' (top_k=50, threshold=0.0)
+2026-01-12 04:19:58 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.39%, threshold: 15.24%)
+2026-01-12 04:19:58 | INFO     | Found 20 results
+2026-01-12 04:20:06 | INFO     | Searching: 'animal' (top_k=50, threshold=0.0)
+2026-01-12 04:20:06 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.17%, threshold: 16.30%)
+2026-01-12 04:20:06 | INFO     | Found 20 results
+2026-01-12 04:21:12 | INFO     | Searching: 'booze' (top_k=50, threshold=0.0)
+2026-01-12 04:21:12 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.43%, threshold: 15.86%)
+2026-01-12 04:21:12 | INFO     | Found 20 results
+2026-01-12 04:21:33 | INFO     | Searching: 'ciggarette' (top_k=50, threshold=0.0)
+2026-01-12 04:21:33 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.78%, threshold: 16.07%)
+2026-01-12 04:21:33 | INFO     | Found 20 results
+2026-01-12 04:21:37 | INFO     | Searching: 'cigarette' (top_k=50, threshold=0.0)
+2026-01-12 04:21:37 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.88%, threshold: 15.53%)
+2026-01-12 04:21:37 | INFO     | Found 20 results
+2026-01-12 04:21:54 | INFO     | Searching: 'cigarette' (top_k=50, threshold=0.0)
+2026-01-12 04:21:54 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.88%, threshold: 15.53%)
+2026-01-12 04:21:54 | INFO     | Found 20 results
+2026-01-12 04:21:59 | INFO     | Searching: 'cig' (top_k=50, threshold=0.0)
+2026-01-12 04:22:00 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.38%, threshold: 15.83%)
+2026-01-12 04:22:00 | INFO     | Found 20 results
+2026-01-12 04:22:13 | INFO     | Searching: 'smoke' (top_k=50, threshold=0.0)
+2026-01-12 04:22:13 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.60%, threshold: 15.96%)
+2026-01-12 04:22:13 | INFO     | Found 20 results
+2026-01-12 04:22:27 | INFO     | Searching: 'diwali' (top_k=50, threshold=0.0)
+2026-01-12 04:22:28 | INFO     | Adaptive filtering: 150 → 20 results (top: 31.99%, threshold: 19.19%)
+2026-01-12 04:22:28 | INFO     | Found 20 results
+2026-01-12 04:22:58 | INFO     | Searching: 'india' (top_k=50, threshold=0.0)
+2026-01-12 04:22:58 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.35%, threshold: 16.41%)
+2026-01-12 04:22:58 | INFO     | Found 20 results
+2026-01-12 04:23:13 | INFO     | Searching: 'alibaug' (top_k=50, threshold=0.0)
+2026-01-12 04:23:13 | INFO     | Adaptive filtering: 150 → 20 results (top: 29.03%, threshold: 17.42%)
+2026-01-12 04:23:13 | INFO     | Found 20 results
+2026-01-12 04:23:27 | INFO     | Searching: 'beach' (top_k=50, threshold=0.0)
+2026-01-12 04:23:27 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.91%, threshold: 15.55%)
+2026-01-12 04:23:27 | INFO     | Found 20 results
+2026-01-12 04:23:36 | INFO     | Searching: 'bhopal' (top_k=50, threshold=0.0)
+2026-01-12 04:23:36 | INFO     | Adaptive filtering: 150 → 20 results (top: 31.04%, threshold: 18.62%)
+2026-01-12 04:23:36 | INFO     | Found 20 results
+2026-01-12 04:24:01 | INFO     | Searching: 'Vellore Institute Of Technology' (top_k=50, threshold=0.0)
+2026-01-12 04:24:01 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.00%, threshold: 16.80%)
+2026-01-12 04:24:01 | INFO     | Found 20 results
+2026-01-12 04:24:11 | INFO     | Searching: 'VIT' (top_k=50, threshold=0.0)
+2026-01-12 04:24:11 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.90%, threshold: 14.94%)
+2026-01-12 04:24:11 | INFO     | Found 20 results
+2026-01-12 04:24:37 | INFO     | Searching: 'deranged' (top_k=50, threshold=0.0)
+2026-01-12 04:24:37 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.59%, threshold: 15.36%)
+2026-01-12 04:24:37 | INFO     | Found 20 results
+2026-01-12 04:24:45 | INFO     | Searching: 'asshole' (top_k=50, threshold=0.0)
+2026-01-12 04:24:45 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.02%, threshold: 15.01%)
+2026-01-12 04:24:45 | INFO     | Found 20 results
+2026-01-12 04:24:52 | INFO     | Searching: 'sex' (top_k=50, threshold=0.0)
+2026-01-12 04:24:52 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.45%, threshold: 15.27%)
+2026-01-12 04:24:52 | INFO     | Found 20 results
+2026-01-12 04:25:01 | INFO     | Searching: 'nipple' (top_k=50, threshold=0.0)
+2026-01-12 04:25:01 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.05%, threshold: 15.63%)
+2026-01-12 04:25:01 | INFO     | Found 20 results
+2026-01-12 04:25:13 | INFO     | Searching: 'back' (top_k=50, threshold=0.0)
+2026-01-12 04:25:13 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.94%, threshold: 16.76%)
+2026-01-12 04:25:13 | INFO     | Found 20 results
+2026-01-12 04:25:36 | INFO     | Searching: 'saree' (top_k=50, threshold=0.0)
+2026-01-12 04:25:36 | INFO     | Adaptive filtering: 150 → 20 results (top: 29.41%, threshold: 17.65%)
+2026-01-12 04:25:36 | INFO     | Found 20 results
+2026-01-12 04:25:49 | INFO     | Cleaning up...
+2026-01-12 04:25:49 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 04:25:49 | INFO     | 👋 Cleanup complete
+2026-01-12 07:04:05 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:04:05 | INFO     | Initializing AI components...
+2026-01-12 07:04:05 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:04:14 | INFO     | ✅ Image encoder ready
+2026-01-12 07:04:14 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:04:18 | INFO     | ✅ Text encoder ready
+2026-01-12 07:04:18 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:04:18 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:04:18 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:04:18 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:04:18 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:04:18 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:04:18 | INFO     | ✅ Search engine initialized
+2026-01-12 07:04:18 | INFO     | ✅ Components initialized
+2026-01-12 07:04:22 | INFO     | ✅ QID Qt application initialized
+2026-01-12 07:04:22 | INFO     | 🎨 Application running
+2026-01-12 07:06:06 | INFO     | Starting indexing: D:/DATA SCIENCE/Projects/QID/data/images
+2026-01-12 07:06:06 | INFO     | Scanning directory: D:\DATA SCIENCE\Projects\QID\data\images
+2026-01-12 07:06:06 | INFO     | Found 638 image files
+2026-01-12 07:08:05 | INFO     | Validation complete: 638 valid, 0 invalid
+2026-01-12 07:08:05 | INFO     | Skipped 638 already-processed images
+2026-01-12 07:08:05 | INFO     | 0 new images to process
+2026-01-12 07:10:02 | INFO     | Searching: 'love letter' (top_k=50, threshold=0.0)
+2026-01-12 07:10:08 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.79%, threshold: 16.68%)
+2026-01-12 07:10:08 | INFO     | Found 20 results
+2026-01-12 07:10:59 | INFO     | Cleaning up...
+2026-01-12 07:10:59 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 07:10:59 | INFO     | 👋 Cleanup complete
+2026-01-12 07:17:32 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:17:32 | INFO     | Initializing AI components...
+2026-01-12 07:17:32 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:17:40 | INFO     | ✅ Image encoder ready
+2026-01-12 07:17:40 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:17:43 | INFO     | ✅ Text encoder ready
+2026-01-12 07:17:43 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:17:43 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:17:43 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:17:43 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:17:43 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:17:43 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:17:43 | INFO     | ✅ Search engine initialized
+2026-01-12 07:17:43 | INFO     | ✅ Components initialized
+2026-01-12 07:17:45 | INFO     | ✅ QID Qt application initialized
+2026-01-12 07:17:46 | INFO     | 🎨 Application running
+2026-01-12 07:28:30 | INFO     | Cleaning up...
+2026-01-12 07:28:30 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 07:28:30 | INFO     | 👋 Cleanup complete
+2026-01-12 07:28:44 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:28:44 | INFO     | Initializing AI components...
+2026-01-12 07:28:44 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:28:52 | INFO     | ✅ Image encoder ready
+2026-01-12 07:28:52 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:28:56 | INFO     | ✅ Text encoder ready
+2026-01-12 07:28:56 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:28:56 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:28:56 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:28:56 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:28:56 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:28:56 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:28:56 | INFO     | ✅ Search engine initialized
+2026-01-12 07:28:56 | INFO     | ✅ Components initialized
+2026-01-12 07:31:59 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:31:59 | INFO     | Initializing AI components...
+2026-01-12 07:31:59 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:32:08 | INFO     | ✅ Image encoder ready
+2026-01-12 07:32:08 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:32:12 | INFO     | ✅ Text encoder ready
+2026-01-12 07:32:12 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:32:12 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:32:12 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:32:12 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:32:12 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:32:12 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:32:12 | INFO     | ✅ Search engine initialized
+2026-01-12 07:32:12 | INFO     | ✅ Components initialized
+2026-01-12 07:35:40 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:35:40 | INFO     | Initializing AI components...
+2026-01-12 07:35:40 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:35:47 | INFO     | ✅ Image encoder ready
+2026-01-12 07:35:47 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:35:51 | INFO     | ✅ Text encoder ready
+2026-01-12 07:35:51 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:35:51 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:35:51 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:35:51 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:35:51 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:35:51 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:35:51 | INFO     | ✅ Search engine initialized
+2026-01-12 07:35:51 | INFO     | ✅ Components initialized
+2026-01-12 07:35:53 | INFO     | ✅ QID Qt application initialized
+2026-01-12 07:35:53 | INFO     | 🎨 Application running
+2026-01-12 07:44:32 | INFO     | Cleaning up...
+2026-01-12 07:44:32 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 07:44:32 | INFO     | 👋 Cleanup complete
+2026-01-12 07:50:19 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:50:19 | INFO     | Initializing AI components...
+2026-01-12 07:50:19 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:50:26 | INFO     | ✅ Image encoder ready
+2026-01-12 07:50:26 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:50:30 | INFO     | ✅ Text encoder ready
+2026-01-12 07:50:30 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:50:30 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:50:30 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:50:30 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:50:30 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:50:30 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:50:30 | INFO     | ✅ Search engine initialized
+2026-01-12 07:50:30 | INFO     | ✅ Components initialized
+2026-01-12 07:50:31 | INFO     | ✅ QID Qt application initialized
+2026-01-12 07:50:31 | INFO     | 🎨 Application running
+2026-01-12 07:52:31 | INFO     | Cleaning up...
+2026-01-12 07:52:31 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 07:52:31 | INFO     | 👋 Cleanup complete
+2026-01-12 07:56:03 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:56:03 | INFO     | Initializing AI components...
+2026-01-12 07:56:03 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:56:12 | INFO     | ✅ Image encoder ready
+2026-01-12 07:56:12 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:56:18 | INFO     | ✅ Text encoder ready
+2026-01-12 07:56:18 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:56:18 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:56:18 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:56:18 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:56:18 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:56:18 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:56:18 | INFO     | ✅ Search engine initialized
+2026-01-12 07:56:18 | INFO     | ✅ Components initialized
+2026-01-12 07:57:20 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:57:20 | INFO     | Initializing AI components...
+2026-01-12 07:57:20 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:57:30 | INFO     | ✅ Image encoder ready
+2026-01-12 07:57:30 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:57:38 | INFO     | ✅ Text encoder ready
+2026-01-12 07:57:38 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:57:38 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:57:38 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:57:38 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:57:38 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:57:38 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:57:38 | INFO     | ✅ Search engine initialized
+2026-01-12 07:57:38 | INFO     | ✅ Components initialized
+2026-01-12 07:58:00 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 07:58:00 | INFO     | Initializing AI components...
+2026-01-12 07:58:00 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:58:06 | INFO     | ✅ Image encoder ready
+2026-01-12 07:58:06 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 07:58:10 | INFO     | ✅ Text encoder ready
+2026-01-12 07:58:10 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 07:58:10 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 07:58:10 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 07:58:10 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 07:58:10 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 07:58:10 | INFO     | ✅ Batch indexer initialized
+2026-01-12 07:58:10 | INFO     | ✅ Search engine initialized
+2026-01-12 07:58:10 | INFO     | ✅ Components initialized
+2026-01-12 07:58:12 | INFO     | ✅ QID Qt application initialized
+2026-01-12 07:58:12 | INFO     | 🎨 Application running
+2026-01-12 08:05:06 | INFO     | Cleaning up...
+2026-01-12 08:05:06 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 08:05:06 | INFO     | 👋 Cleanup complete
+2026-01-12 08:05:26 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 08:05:26 | INFO     | Initializing AI components...
+2026-01-12 08:05:26 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 08:05:33 | INFO     | ✅ Image encoder ready
+2026-01-12 08:05:33 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 08:05:36 | INFO     | ✅ Text encoder ready
+2026-01-12 08:05:36 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 08:05:36 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 08:05:36 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 08:05:36 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 08:05:36 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 08:05:36 | INFO     | ✅ Batch indexer initialized
+2026-01-12 08:05:36 | INFO     | ✅ Search engine initialized
+2026-01-12 08:05:36 | INFO     | ✅ Components initialized
+2026-01-12 08:05:37 | INFO     | ✅ QID Qt application initialized
+2026-01-12 08:05:37 | INFO     | 🎨 Application running
+2026-01-12 08:05:54 | INFO     | Cleaning up...
+2026-01-12 08:05:54 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 08:05:54 | INFO     | 👋 Cleanup complete
+2026-01-12 08:06:32 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 08:06:32 | INFO     | Initializing AI components...
+2026-01-12 08:06:32 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 08:06:39 | INFO     | ✅ Image encoder ready
+2026-01-12 08:06:39 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 08:06:42 | INFO     | ✅ Text encoder ready
+2026-01-12 08:06:42 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 08:06:42 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 08:06:42 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 08:06:42 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 08:06:42 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 08:06:42 | INFO     | ✅ Batch indexer initialized
+2026-01-12 08:06:42 | INFO     | ✅ Search engine initialized
+2026-01-12 08:06:42 | INFO     | ✅ Components initialized
+2026-01-12 08:06:43 | INFO     | ✅ QID Qt application initialized
+2026-01-12 08:06:43 | INFO     | 🎨 Application running
+2026-01-12 09:38:18 | INFO     | Cleaning up...
+2026-01-12 09:38:18 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 09:38:18 | INFO     | 👋 Cleanup complete
+2026-01-12 09:39:03 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 09:39:03 | INFO     | Initializing AI components...
+2026-01-12 09:39:03 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 09:39:08 | INFO     | ✅ Image encoder ready
+2026-01-12 09:39:08 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 09:39:11 | INFO     | ✅ Text encoder ready
+2026-01-12 09:39:11 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 09:39:11 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 09:39:11 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 09:39:11 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 09:39:11 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 09:39:11 | INFO     | ✅ Batch indexer initialized
+2026-01-12 09:39:11 | INFO     | ✅ Search engine initialized
+2026-01-12 09:39:11 | INFO     | ✅ Components initialized
+2026-01-12 09:39:12 | INFO     | ✅ QID Qt application initialized
+2026-01-12 09:39:13 | INFO     | 🎨 Application running
+2026-01-12 09:39:58 | INFO     | Searching: 'penis' (top_k=50, threshold=0.0)
+2026-01-12 09:40:02 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.62%, threshold: 15.37%)
+2026-01-12 09:40:02 | INFO     | Found 20 results
+2026-01-12 09:40:19 | INFO     | Searching: 'gold' (top_k=50, threshold=0.0)
+2026-01-12 09:40:19 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.50%, threshold: 14.70%)
+2026-01-12 09:40:19 | INFO     | Found 20 results
+2026-01-12 23:10:50 | INFO     | Cleaning up...
+2026-01-12 23:10:50 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:10:50 | INFO     | 👋 Cleanup complete
+2026-01-12 23:12:06 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:12:06 | INFO     | Initializing AI components...
+2026-01-12 23:12:06 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:12:13 | INFO     | ✅ Image encoder ready
+2026-01-12 23:12:13 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:12:16 | INFO     | ✅ Text encoder ready
+2026-01-12 23:12:16 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:12:16 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:12:16 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:12:16 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:12:16 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:12:16 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:12:16 | INFO     | ✅ Search engine initialized
+2026-01-12 23:12:16 | INFO     | ✅ Components initialized
+2026-01-12 23:13:14 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:13:14 | INFO     | Initializing AI components...
+2026-01-12 23:13:14 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:13:18 | INFO     | ✅ Image encoder ready
+2026-01-12 23:13:18 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:13:21 | INFO     | ✅ Text encoder ready
+2026-01-12 23:13:21 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:13:21 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:13:21 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:13:21 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:13:21 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:13:21 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:13:21 | INFO     | ✅ Search engine initialized
+2026-01-12 23:13:21 | INFO     | ✅ Components initialized
+2026-01-12 23:13:22 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:13:22 | INFO     | 🎨 Application running
+2026-01-12 23:13:44 | INFO     | Cleaning up...
+2026-01-12 23:13:44 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:13:44 | INFO     | 👋 Cleanup complete
+2026-01-12 23:14:15 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:14:15 | INFO     | Initializing AI components...
+2026-01-12 23:14:15 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:14:20 | INFO     | ✅ Image encoder ready
+2026-01-12 23:14:20 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:14:22 | INFO     | ✅ Text encoder ready
+2026-01-12 23:14:22 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:14:22 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:14:22 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:14:22 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:14:22 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:14:22 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:14:22 | INFO     | ✅ Search engine initialized
+2026-01-12 23:14:22 | INFO     | ✅ Components initialized
+2026-01-12 23:14:23 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:14:23 | INFO     | 🎨 Application running
+2026-01-12 23:14:37 | INFO     | Cleaning up...
+2026-01-12 23:14:37 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:14:37 | INFO     | 👋 Cleanup complete
+2026-01-12 23:15:08 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:15:08 | INFO     | Initializing AI components...
+2026-01-12 23:15:08 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:15:13 | INFO     | ✅ Image encoder ready
+2026-01-12 23:15:13 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:15:15 | INFO     | ✅ Text encoder ready
+2026-01-12 23:15:15 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:15:15 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:15:15 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:15:15 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:15:15 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:15:15 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:15:15 | INFO     | ✅ Search engine initialized
+2026-01-12 23:15:15 | INFO     | ✅ Components initialized
+2026-01-12 23:15:16 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:15:16 | INFO     | 🎨 Application running
+2026-01-12 23:15:40 | INFO     | Cleaning up...
+2026-01-12 23:15:40 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:15:40 | INFO     | 👋 Cleanup complete
+2026-01-12 23:16:42 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:16:42 | INFO     | Initializing AI components...
+2026-01-12 23:16:42 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:16:46 | INFO     | ✅ Image encoder ready
+2026-01-12 23:16:46 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:16:49 | INFO     | ✅ Text encoder ready
+2026-01-12 23:16:49 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:16:49 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:16:49 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:16:49 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:16:49 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:16:49 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:16:49 | INFO     | ✅ Search engine initialized
+2026-01-12 23:16:49 | INFO     | ✅ Components initialized
+2026-01-12 23:16:49 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:16:50 | INFO     | 🎨 Application running
+2026-01-12 23:17:01 | INFO     | Cleaning up...
+2026-01-12 23:17:01 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:17:01 | INFO     | 👋 Cleanup complete
+2026-01-12 23:17:20 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:17:20 | INFO     | Initializing AI components...
+2026-01-12 23:17:20 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:17:24 | INFO     | ✅ Image encoder ready
+2026-01-12 23:17:24 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:17:27 | INFO     | ✅ Text encoder ready
+2026-01-12 23:17:27 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:17:27 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:17:27 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:17:27 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:17:27 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:17:27 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:17:27 | INFO     | ✅ Search engine initialized
+2026-01-12 23:17:27 | INFO     | ✅ Components initialized
+2026-01-12 23:17:28 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:17:28 | INFO     | 🎨 Application running
+2026-01-12 23:17:46 | INFO     | Cleaning up...
+2026-01-12 23:17:46 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:17:46 | INFO     | 👋 Cleanup complete
+2026-01-12 23:18:30 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:18:30 | INFO     | Initializing AI components...
+2026-01-12 23:18:30 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:18:35 | INFO     | ✅ Image encoder ready
+2026-01-12 23:18:35 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:18:37 | INFO     | ✅ Text encoder ready
+2026-01-12 23:18:37 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:18:37 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:18:37 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:18:37 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:18:37 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:18:37 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:18:37 | INFO     | ✅ Search engine initialized
+2026-01-12 23:18:37 | INFO     | ✅ Components initialized
+2026-01-12 23:18:38 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:18:38 | INFO     | 🎨 Application running
+2026-01-12 23:18:50 | INFO     | Cleaning up...
+2026-01-12 23:18:50 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:18:50 | INFO     | 👋 Cleanup complete
+2026-01-12 23:19:28 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:19:28 | INFO     | Initializing AI components...
+2026-01-12 23:19:28 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:19:33 | INFO     | ✅ Image encoder ready
+2026-01-12 23:19:33 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:19:36 | INFO     | ✅ Text encoder ready
+2026-01-12 23:19:36 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:19:36 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:19:36 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:19:36 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:19:36 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:19:36 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:19:36 | INFO     | ✅ Search engine initialized
+2026-01-12 23:19:36 | INFO     | ✅ Components initialized
+2026-01-12 23:19:37 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:19:37 | INFO     | 🎨 Application running
+2026-01-12 23:20:30 | INFO     | Cleaning up...
+2026-01-12 23:20:30 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:20:30 | INFO     | 👋 Cleanup complete
+2026-01-12 23:20:39 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:20:39 | INFO     | Initializing AI components...
+2026-01-12 23:20:39 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:20:44 | INFO     | ✅ Image encoder ready
+2026-01-12 23:20:44 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:20:47 | INFO     | ✅ Text encoder ready
+2026-01-12 23:20:47 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:20:47 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:20:47 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:20:47 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:20:47 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:20:47 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:20:47 | INFO     | ✅ Search engine initialized
+2026-01-12 23:20:47 | INFO     | ✅ Components initialized
+2026-01-12 23:21:44 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:21:44 | INFO     | Initializing AI components...
+2026-01-12 23:21:44 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:21:49 | INFO     | ✅ Image encoder ready
+2026-01-12 23:21:49 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:21:51 | INFO     | ✅ Text encoder ready
+2026-01-12 23:21:51 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:21:51 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:21:51 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:21:51 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:21:51 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:21:51 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:21:51 | INFO     | ✅ Search engine initialized
+2026-01-12 23:21:51 | INFO     | ✅ Components initialized
+2026-01-12 23:21:52 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:21:52 | INFO     | 🎨 Application running
+2026-01-12 23:27:23 | INFO     | Cleaning up...
+2026-01-12 23:27:23 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:27:23 | INFO     | 👋 Cleanup complete
+2026-01-12 23:27:32 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:27:32 | INFO     | Initializing AI components...
+2026-01-12 23:27:32 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:27:37 | INFO     | ✅ Image encoder ready
+2026-01-12 23:27:37 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:27:39 | INFO     | ✅ Text encoder ready
+2026-01-12 23:27:39 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:27:39 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:27:39 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:27:39 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:27:39 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:27:39 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:27:39 | INFO     | ✅ Search engine initialized
+2026-01-12 23:27:39 | INFO     | ✅ Components initialized
+2026-01-12 23:29:37 | INFO     | 🚀 Starting QID Qt application
+2026-01-12 23:29:37 | INFO     | Initializing AI components...
+2026-01-12 23:29:37 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:29:42 | INFO     | ✅ Image encoder ready
+2026-01-12 23:29:42 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-12 23:29:45 | INFO     | ✅ Text encoder ready
+2026-01-12 23:29:45 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-12 23:29:45 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-12 23:29:45 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-12 23:29:45 | INFO     | 📂 Loaded 638 vectors
+2026-01-12 23:29:45 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-12 23:29:45 | INFO     | ✅ Batch indexer initialized
+2026-01-12 23:29:45 | INFO     | ✅ Search engine initialized
+2026-01-12 23:29:45 | INFO     | ✅ Components initialized
+2026-01-12 23:29:46 | INFO     | ✅ QID Qt application initialized
+2026-01-12 23:29:46 | INFO     | 🎨 Application running
+2026-01-12 23:49:21 | INFO     | Cleaning up...
+2026-01-12 23:49:21 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-12 23:49:21 | INFO     | 👋 Cleanup complete
+2026-01-13 00:03:17 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 00:03:17 | INFO     | Initializing AI components...
+2026-01-13 00:03:17 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:03:23 | INFO     | ✅ Image encoder ready
+2026-01-13 00:03:23 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:03:25 | INFO     | ✅ Text encoder ready
+2026-01-13 00:03:25 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 00:03:25 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 00:03:25 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 00:03:25 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 00:03:25 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 00:03:25 | INFO     | ✅ Batch indexer initialized
+2026-01-13 00:03:25 | INFO     | ✅ Search engine initialized
+2026-01-13 00:03:25 | INFO     | ✅ Components initialized
+2026-01-13 00:07:40 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 00:07:40 | INFO     | Initializing AI components...
+2026-01-13 00:07:40 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:07:44 | INFO     | ✅ Image encoder ready
+2026-01-13 00:07:44 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:07:47 | INFO     | ✅ Text encoder ready
+2026-01-13 00:07:47 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 00:07:47 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 00:07:47 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 00:07:47 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 00:07:47 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 00:07:47 | INFO     | ✅ Batch indexer initialized
+2026-01-13 00:07:47 | INFO     | ✅ Search engine initialized
+2026-01-13 00:07:47 | INFO     | ✅ Components initialized
+2026-01-13 00:07:48 | INFO     | ✅ QID Qt application initialized
+2026-01-13 00:07:49 | INFO     | 🎨 Application running
+2026-01-13 00:12:21 | INFO     | Cleaning up...
+2026-01-13 00:12:21 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 00:12:21 | INFO     | 👋 Cleanup complete
+2026-01-13 00:12:29 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 00:12:29 | INFO     | Initializing AI components...
+2026-01-13 00:12:29 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:12:34 | INFO     | ✅ Image encoder ready
+2026-01-13 00:12:34 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:12:37 | INFO     | ✅ Text encoder ready
+2026-01-13 00:12:37 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 00:12:37 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 00:12:37 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 00:12:37 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 00:12:37 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 00:12:37 | INFO     | ✅ Batch indexer initialized
+2026-01-13 00:12:37 | INFO     | ✅ Search engine initialized
+2026-01-13 00:12:37 | INFO     | ✅ Components initialized
+2026-01-13 00:12:37 | INFO     | ✅ QID Qt application initialized
+2026-01-13 00:12:38 | INFO     | 🎨 Application running
+2026-01-13 00:26:35 | INFO     | Cleaning up...
+2026-01-13 00:26:35 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 00:26:35 | INFO     | 👋 Cleanup complete
+2026-01-13 00:26:38 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 00:26:38 | INFO     | Initializing AI components...
+2026-01-13 00:26:38 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:26:42 | INFO     | ✅ Image encoder ready
+2026-01-13 00:26:42 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:26:45 | INFO     | ✅ Text encoder ready
+2026-01-13 00:26:45 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 00:26:45 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 00:26:45 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 00:26:45 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 00:26:45 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 00:26:45 | INFO     | ✅ Batch indexer initialized
+2026-01-13 00:26:45 | INFO     | ✅ Search engine initialized
+2026-01-13 00:26:45 | INFO     | ✅ Components initialized
+2026-01-13 00:26:46 | INFO     | ✅ QID Qt application initialized
+2026-01-13 00:26:46 | INFO     | 🎨 Application running
+2026-01-13 00:33:08 | INFO     | Cleaning up...
+2026-01-13 00:33:08 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 00:33:08 | INFO     | 👋 Cleanup complete
+2026-01-13 00:33:17 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 00:33:17 | INFO     | Initializing AI components...
+2026-01-13 00:33:17 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:33:22 | INFO     | ✅ Image encoder ready
+2026-01-13 00:33:22 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:33:25 | INFO     | ✅ Text encoder ready
+2026-01-13 00:33:25 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 00:33:25 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 00:33:25 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 00:33:25 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 00:33:25 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 00:33:25 | INFO     | ✅ Batch indexer initialized
+2026-01-13 00:33:25 | INFO     | ✅ Search engine initialized
+2026-01-13 00:33:25 | INFO     | ✅ Components initialized
+2026-01-13 00:33:25 | INFO     | ✅ QID Qt application initialized
+2026-01-13 00:33:26 | INFO     | 🎨 Application running
+2026-01-13 00:38:26 | INFO     | Cleaning up...
+2026-01-13 00:38:26 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 00:38:26 | INFO     | 👋 Cleanup complete
+2026-01-13 00:38:34 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 00:38:34 | INFO     | Initializing AI components...
+2026-01-13 00:38:34 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:38:38 | INFO     | ✅ Image encoder ready
+2026-01-13 00:38:38 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:38:41 | INFO     | ✅ Text encoder ready
+2026-01-13 00:38:41 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 00:38:41 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 00:38:41 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 00:38:41 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 00:38:41 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 00:38:41 | INFO     | ✅ Batch indexer initialized
+2026-01-13 00:38:41 | INFO     | ✅ Search engine initialized
+2026-01-13 00:38:41 | INFO     | ✅ Components initialized
+2026-01-13 00:38:42 | INFO     | ✅ QID Qt application initialized
+2026-01-13 00:38:42 | INFO     | 🎨 Application running
+2026-01-13 00:41:47 | INFO     | Searching: 'girl' (top_k=50, threshold=0.0)
+2026-01-13 00:41:52 | INFO     | Adaptive filtering: 150 → 20 results (top: 24.93%, threshold: 14.96%)
+2026-01-13 00:41:52 | INFO     | Found 20 results
+2026-01-13 00:50:08 | INFO     | Cleaning up...
+2026-01-13 00:50:08 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 00:50:08 | INFO     | 👋 Cleanup complete
+2026-01-13 00:50:12 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 00:50:12 | INFO     | Initializing AI components...
+2026-01-13 00:50:12 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:50:22 | INFO     | ✅ Image encoder ready
+2026-01-13 00:50:22 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 00:50:27 | INFO     | ✅ Text encoder ready
+2026-01-13 00:50:27 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 00:50:27 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 00:50:27 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 00:50:27 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 00:50:27 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 00:50:27 | INFO     | ✅ Batch indexer initialized
+2026-01-13 00:50:27 | INFO     | ✅ Search engine initialized
+2026-01-13 00:50:27 | INFO     | ✅ Components initialized
+2026-01-13 00:50:28 | INFO     | ✅ QID Qt application initialized
+2026-01-13 00:50:29 | INFO     | 🎨 Application running
+2026-01-13 01:03:58 | INFO     | Cleaning up...
+2026-01-13 01:03:58 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 01:03:58 | INFO     | 👋 Cleanup complete
+2026-01-13 01:04:11 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:04:11 | INFO     | Initializing AI components...
+2026-01-13 01:04:11 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:04:16 | INFO     | ✅ Image encoder ready
+2026-01-13 01:04:16 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:04:18 | INFO     | ✅ Text encoder ready
+2026-01-13 01:04:18 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:04:18 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:04:18 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:04:18 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:04:18 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:04:18 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:04:18 | INFO     | ✅ Search engine initialized
+2026-01-13 01:04:18 | INFO     | ✅ Components initialized
+2026-01-13 01:04:19 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:04:19 | INFO     | 🎨 Application running
+2026-01-13 01:07:52 | INFO     | Cleaning up...
+2026-01-13 01:07:52 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 01:07:52 | INFO     | 👋 Cleanup complete
+2026-01-13 01:08:07 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:08:07 | INFO     | Initializing AI components...
+2026-01-13 01:08:07 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:08:12 | INFO     | ✅ Image encoder ready
+2026-01-13 01:08:12 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:08:14 | INFO     | ✅ Text encoder ready
+2026-01-13 01:08:14 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:08:14 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:08:14 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:08:14 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:08:14 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:08:14 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:08:14 | INFO     | ✅ Search engine initialized
+2026-01-13 01:08:14 | INFO     | ✅ Components initialized
+2026-01-13 01:08:15 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:08:15 | INFO     | 🎨 Application running
+2026-01-13 01:11:28 | INFO     | Cleaning up...
+2026-01-13 01:11:28 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 01:11:28 | INFO     | 👋 Cleanup complete
+2026-01-13 01:12:35 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:12:35 | INFO     | Initializing AI components...
+2026-01-13 01:12:35 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:12:42 | INFO     | ✅ Image encoder ready
+2026-01-13 01:12:42 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:12:45 | INFO     | ✅ Text encoder ready
+2026-01-13 01:12:45 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:12:45 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:12:45 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:12:45 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:12:45 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:12:45 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:12:45 | INFO     | ✅ Search engine initialized
+2026-01-13 01:12:45 | INFO     | ✅ Components initialized
+2026-01-13 01:12:46 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:12:47 | INFO     | 🎨 Application running
+2026-01-13 01:16:49 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:16:49 | INFO     | Initializing AI components...
+2026-01-13 01:16:49 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:16:55 | INFO     | ✅ Image encoder ready
+2026-01-13 01:16:55 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:16:59 | INFO     | ✅ Text encoder ready
+2026-01-13 01:16:59 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:16:59 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:16:59 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:16:59 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:16:59 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:16:59 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:16:59 | INFO     | ✅ Search engine initialized
+2026-01-13 01:16:59 | INFO     | ✅ Components initialized
+2026-01-13 01:17:00 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:17:00 | INFO     | 🎨 Application running
+2026-01-13 01:20:17 | INFO     | Cleaning up...
+2026-01-13 01:20:17 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 01:20:17 | INFO     | 👋 Cleanup complete
+2026-01-13 01:22:18 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:22:18 | INFO     | Initializing AI components...
+2026-01-13 01:22:18 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:22:26 | INFO     | ✅ Image encoder ready
+2026-01-13 01:22:26 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:22:29 | INFO     | ✅ Text encoder ready
+2026-01-13 01:22:29 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:22:29 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:22:29 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:22:29 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:22:29 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:22:29 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:22:29 | INFO     | ✅ Search engine initialized
+2026-01-13 01:22:29 | INFO     | ✅ Components initialized
+2026-01-13 01:22:30 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:22:30 | INFO     | 🎨 Application running
+2026-01-13 01:32:00 | INFO     | Cleaning up...
+2026-01-13 01:32:00 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 01:32:00 | INFO     | 👋 Cleanup complete
+2026-01-13 01:39:50 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:39:50 | INFO     | Initializing AI components...
+2026-01-13 01:39:50 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:39:56 | INFO     | ✅ Image encoder ready
+2026-01-13 01:39:56 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:40:00 | INFO     | ✅ Text encoder ready
+2026-01-13 01:40:00 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:40:00 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:40:00 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:40:00 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:40:00 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:40:00 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:40:00 | INFO     | ✅ Search engine initialized
+2026-01-13 01:40:00 | INFO     | ✅ Components initialized
+2026-01-13 01:40:01 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:40:02 | INFO     | 🎨 Application running
+2026-01-13 01:41:27 | INFO     | Searching: 'cat' (top_k=50, threshold=0.0)
+2026-01-13 01:41:32 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.42%, threshold: 15.85%)
+2026-01-13 01:41:32 | INFO     | Found 20 results
+2026-01-13 01:41:48 | INFO     | Searching: 'rocket' (top_k=50, threshold=0.0)
+2026-01-13 01:41:48 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.63%, threshold: 15.98%)
+2026-01-13 01:41:48 | INFO     | Found 20 results
+2026-01-13 01:41:57 | INFO     | Searching: 'shorts' (top_k=50, threshold=0.0)
+2026-01-13 01:41:57 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.96%, threshold: 16.18%)
+2026-01-13 01:41:57 | INFO     | Found 20 results
+2026-01-13 01:42:09 | INFO     | Searching: 'parasailing' (top_k=50, threshold=0.0)
+2026-01-13 01:42:09 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.82%, threshold: 16.09%)
+2026-01-13 01:42:09 | INFO     | Found 20 results
+2026-01-13 01:42:24 | INFO     | Searching: 'animals' (top_k=50, threshold=0.0)
+2026-01-13 01:42:24 | INFO     | Adaptive filtering: 150 → 20 results (top: 27.61%, threshold: 16.57%)
+2026-01-13 01:42:24 | INFO     | Found 20 results
+2026-01-13 01:51:53 | INFO     | Cleaning up...
+2026-01-13 01:51:53 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 01:51:53 | INFO     | 👋 Cleanup complete
+2026-01-13 01:52:07 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:52:07 | INFO     | Initializing AI components...
+2026-01-13 01:52:07 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:52:12 | INFO     | ✅ Image encoder ready
+2026-01-13 01:52:12 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:52:15 | INFO     | ✅ Text encoder ready
+2026-01-13 01:52:15 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:52:15 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:52:15 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:52:15 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:52:15 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:52:15 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:52:15 | INFO     | ✅ Search engine initialized
+2026-01-13 01:52:15 | INFO     | ✅ Components initialized
+2026-01-13 01:52:16 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:52:16 | INFO     | 🎨 Application running
+2026-01-13 01:52:33 | INFO     | Searching: 'monkey' (top_k=50, threshold=0.0)
+2026-01-13 01:52:35 | INFO     | Adaptive filtering: 150 → 20 results (top: 25.23%, threshold: 15.14%)
+2026-01-13 01:52:35 | INFO     | Found 20 results
+2026-01-13 01:53:23 | INFO     | Cleaning up...
+2026-01-13 01:53:23 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 01:53:23 | INFO     | 👋 Cleanup complete
+2026-01-13 01:54:13 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 01:54:13 | INFO     | Initializing AI components...
+2026-01-13 01:54:13 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:54:18 | INFO     | ✅ Image encoder ready
+2026-01-13 01:54:18 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 01:54:21 | INFO     | ✅ Text encoder ready
+2026-01-13 01:54:21 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 01:54:21 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 01:54:21 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 01:54:21 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 01:54:21 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 01:54:21 | INFO     | ✅ Batch indexer initialized
+2026-01-13 01:54:21 | INFO     | ✅ Search engine initialized
+2026-01-13 01:54:21 | INFO     | ✅ Components initialized
+2026-01-13 01:54:22 | INFO     | ✅ QID Qt application initialized
+2026-01-13 01:54:22 | INFO     | 🎨 Application running
+2026-01-13 01:58:10 | INFO     | Searching: 'sunset' (top_k=50, threshold=0.0)
+2026-01-13 01:58:12 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.59%, threshold: 17.15%)
+2026-01-13 01:58:12 | INFO     | Found 20 results
+2026-01-13 02:01:01 | INFO     | Cleaning up...
+2026-01-13 02:01:01 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 02:01:01 | INFO     | 👋 Cleanup complete
+2026-01-13 02:02:09 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 02:02:09 | INFO     | Initializing AI components...
+2026-01-13 02:02:09 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:02:14 | INFO     | ✅ Image encoder ready
+2026-01-13 02:02:14 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:02:16 | INFO     | ✅ Text encoder ready
+2026-01-13 02:02:16 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 02:02:16 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 02:02:16 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 02:02:16 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 02:02:16 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 02:02:16 | INFO     | ✅ Batch indexer initialized
+2026-01-13 02:02:16 | INFO     | ✅ Search engine initialized
+2026-01-13 02:02:16 | INFO     | ✅ Components initialized
+2026-01-13 02:04:18 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 02:04:18 | INFO     | Initializing AI components...
+2026-01-13 02:04:18 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:04:23 | INFO     | ✅ Image encoder ready
+2026-01-13 02:04:23 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:04:26 | INFO     | ✅ Text encoder ready
+2026-01-13 02:04:26 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 02:04:26 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 02:04:26 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 02:04:26 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 02:04:26 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 02:04:26 | INFO     | ✅ Batch indexer initialized
+2026-01-13 02:04:26 | INFO     | ✅ Search engine initialized
+2026-01-13 02:04:26 | INFO     | ✅ Components initialized
+2026-01-13 02:04:27 | INFO     | ✅ QID Qt application initialized
+2026-01-13 02:04:27 | INFO     | 🎨 Application running
+2026-01-13 02:05:35 | INFO     | Searching: 'sunset' (top_k=50, threshold=0.0)
+2026-01-13 02:05:37 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.59%, threshold: 17.15%)
+2026-01-13 02:05:37 | INFO     | Found 20 results
+2026-01-13 02:13:58 | INFO     | Starting indexing: D:/DATA SCIENCE/Projects/QID/data/images
+2026-01-13 02:13:58 | INFO     | Scanning directory: D:\DATA SCIENCE\Projects\QID\data\images
+2026-01-13 02:13:58 | INFO     | Found 638 image files
+2026-01-13 02:14:38 | INFO     | Validation complete: 638 valid, 0 invalid
+2026-01-13 02:14:38 | INFO     | Skipped 638 already-processed images
+2026-01-13 02:14:38 | INFO     | 0 new images to process
+2026-01-13 02:15:10 | INFO     | Starting indexing: D:/DATA SCIENCE/Projects/QID/data/images
+2026-01-13 02:15:10 | INFO     | Scanning directory: D:\DATA SCIENCE\Projects\QID\data\images
+2026-01-13 02:15:10 | INFO     | Found 638 image files
+2026-01-13 02:16:25 | INFO     | Validation complete: 638 valid, 0 invalid
+2026-01-13 02:16:25 | INFO     | Skipped 638 already-processed images
+2026-01-13 02:16:25 | INFO     | 0 new images to process
+2026-01-13 02:17:43 | INFO     | Cleaning up...
+2026-01-13 02:17:43 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 02:17:43 | INFO     | 👋 Cleanup complete
+2026-01-13 02:18:03 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 02:18:03 | INFO     | Initializing AI components...
+2026-01-13 02:18:03 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:18:14 | INFO     | ✅ Image encoder ready
+2026-01-13 02:18:14 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:18:19 | INFO     | ✅ Text encoder ready
+2026-01-13 02:18:19 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 02:18:19 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 02:18:19 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 02:18:19 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 02:18:19 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 02:18:19 | INFO     | ✅ Batch indexer initialized
+2026-01-13 02:18:19 | INFO     | ✅ Search engine initialized
+2026-01-13 02:18:19 | INFO     | ✅ Components initialized
+2026-01-13 02:18:20 | INFO     | ✅ QID Qt application initialized
+2026-01-13 02:18:21 | INFO     | 🎨 Application running
+2026-01-13 02:21:16 | INFO     | Searching: 'family' (top_k=50, threshold=0.0)
+2026-01-13 02:21:18 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.13%, threshold: 15.68%)
+2026-01-13 02:21:18 | INFO     | Found 20 results
+2026-01-13 02:32:14 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 02:32:14 | INFO     | Initializing AI components...
+2026-01-13 02:32:14 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:32:22 | INFO     | ✅ Image encoder ready
+2026-01-13 02:32:22 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:32:28 | INFO     | ✅ Text encoder ready
+2026-01-13 02:32:28 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 02:32:28 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 02:32:28 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (638 vectors)
+2026-01-13 02:32:28 | INFO     | 📂 Loaded 638 vectors
+2026-01-13 02:32:28 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 02:32:28 | INFO     | ✅ Batch indexer initialized
+2026-01-13 02:32:28 | INFO     | ✅ Search engine initialized
+2026-01-13 02:32:28 | INFO     | ✅ Components initialized
+2026-01-13 02:32:29 | INFO     | ✅ QID Qt application initialized
+2026-01-13 02:32:29 | INFO     | 🎨 Application running
+2026-01-13 02:32:50 | INFO     | Searching: 'flower' (top_k=50, threshold=0.0)
+2026-01-13 02:32:52 | INFO     | Adaptive filtering: 150 → 20 results (top: 28.00%, threshold: 16.80%)
+2026-01-13 02:32:52 | INFO     | Found 20 results
+2026-01-13 02:37:32 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:32 | INFO     | Added 32 vectors (total: 670)
+2026-01-13 02:37:32 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:32 | INFO     | Added 32 vectors (total: 702)
+2026-01-13 02:37:32 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:32 | INFO     | Added 32 vectors (total: 734)
+2026-01-13 02:37:33 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:33 | INFO     | Added 32 vectors (total: 766)
+2026-01-13 02:37:33 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:33 | INFO     | Added 32 vectors (total: 798)
+2026-01-13 02:37:33 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:33 | INFO     | Added 32 vectors (total: 830)
+2026-01-13 02:37:34 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:34 | INFO     | Added 32 vectors (total: 862)
+2026-01-13 02:37:34 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:34 | INFO     | Added 32 vectors (total: 894)
+2026-01-13 02:37:34 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:34 | INFO     | Added 32 vectors (total: 926)
+2026-01-13 02:37:35 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:35 | INFO     | Added 32 vectors (total: 958)
+2026-01-13 02:37:35 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:35 | INFO     | Added 32 vectors (total: 990)
+2026-01-13 02:37:35 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:35 | INFO     | Added 32 vectors (total: 1022)
+2026-01-13 02:37:36 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:36 | INFO     | Added 32 vectors (total: 1054)
+2026-01-13 02:37:36 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:36 | INFO     | Added 32 vectors (total: 1086)
+2026-01-13 02:37:36 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:36 | INFO     | Added 32 vectors (total: 1118)
+2026-01-13 02:37:37 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:37 | INFO     | Added 32 vectors (total: 1150)
+2026-01-13 02:37:37 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:37 | INFO     | Added 32 vectors (total: 1182)
+2026-01-13 02:37:38 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:38 | INFO     | Added 32 vectors (total: 1214)
+2026-01-13 02:37:38 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:38 | INFO     | Added 32 vectors (total: 1246)
+2026-01-13 02:37:38 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:38 | INFO     | Added 32 vectors (total: 1278)
+2026-01-13 02:37:39 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:39 | INFO     | Added 32 vectors (total: 1310)
+2026-01-13 02:37:39 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:39 | INFO     | Added 32 vectors (total: 1342)
+2026-01-13 02:37:39 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:39 | INFO     | Added 32 vectors (total: 1374)
+2026-01-13 02:37:40 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:40 | INFO     | Added 32 vectors (total: 1406)
+2026-01-13 02:37:40 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:37:40 | INFO     | Added 32 vectors (total: 1438)
+2026-01-13 02:37:40 | INFO     | ✅ Encoded 19 images
+2026-01-13 02:37:40 | INFO     | Added 19 vectors (total: 1457)
+2026-01-13 02:41:19 | INFO     | Searching: 'mewtwo' (top_k=50, threshold=0.0)
+2026-01-13 02:41:19 | INFO     | Adaptive filtering: 150 → 20 results (top: 35.67%, threshold: 21.40%)
+2026-01-13 02:41:19 | INFO     | Found 20 results
+2026-01-13 02:49:24 | INFO     | Cleaning up...
+2026-01-13 02:49:24 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 02:49:24 | INFO     | 👋 Cleanup complete
+2026-01-13 02:50:27 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 02:50:27 | INFO     | Initializing AI components...
+2026-01-13 02:50:27 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:50:34 | INFO     | ✅ Image encoder ready
+2026-01-13 02:50:34 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 02:50:37 | INFO     | ✅ Text encoder ready
+2026-01-13 02:50:37 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 02:50:37 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 02:50:37 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (1457 vectors)
+2026-01-13 02:50:37 | INFO     | 📂 Loaded 1457 vectors
+2026-01-13 02:50:37 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 02:50:37 | INFO     | ✅ Batch indexer initialized
+2026-01-13 02:50:37 | INFO     | ✅ Search engine initialized
+2026-01-13 02:50:37 | INFO     | ✅ Components initialized
+2026-01-13 02:50:38 | INFO     | ✅ QID Qt application initialized
+2026-01-13 02:50:38 | INFO     | 🎨 Application running
+2026-01-13 02:51:05 | INFO     | 🗑️  Cleared vector store
+2026-01-13 02:51:05 | WARNING  | 🗑️  Cleared all metadata
+2026-01-13 02:51:13 | INFO     | Searching: 'car' (top_k=50, threshold=0.0)
+2026-01-13 02:51:15 | WARNING  | Vector store is empty!
+2026-01-13 02:51:15 | INFO     | No results found
+2026-01-13 02:51:38 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:51:38 | INFO     | Added 32 vectors (total: 32)
+2026-01-13 02:51:41 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:51:41 | INFO     | Added 32 vectors (total: 64)
+2026-01-13 02:51:46 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:51:46 | INFO     | Added 32 vectors (total: 96)
+2026-01-13 02:51:51 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:51:51 | INFO     | Added 32 vectors (total: 128)
+2026-01-13 02:51:56 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:51:56 | INFO     | Added 32 vectors (total: 160)
+2026-01-13 02:52:01 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:01 | INFO     | Added 32 vectors (total: 192)
+2026-01-13 02:52:11 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:11 | INFO     | Added 32 vectors (total: 224)
+2026-01-13 02:52:16 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:16 | INFO     | Added 32 vectors (total: 256)
+2026-01-13 02:52:21 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:21 | INFO     | Added 32 vectors (total: 288)
+2026-01-13 02:52:28 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:28 | INFO     | Added 32 vectors (total: 320)
+2026-01-13 02:52:36 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:36 | INFO     | Added 32 vectors (total: 352)
+2026-01-13 02:52:40 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:40 | INFO     | Added 32 vectors (total: 384)
+2026-01-13 02:52:44 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:44 | INFO     | Added 32 vectors (total: 416)
+2026-01-13 02:52:48 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:48 | INFO     | Added 32 vectors (total: 448)
+2026-01-13 02:52:52 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:52 | INFO     | Added 32 vectors (total: 480)
+2026-01-13 02:52:57 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:52:57 | INFO     | Added 32 vectors (total: 512)
+2026-01-13 02:53:01 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:53:01 | INFO     | Added 32 vectors (total: 544)
+2026-01-13 02:53:06 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:53:06 | INFO     | Added 32 vectors (total: 576)
+2026-01-13 02:53:11 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:53:11 | INFO     | Added 32 vectors (total: 608)
+2026-01-13 02:53:12 | INFO     | Searching: 'car' (top_k=50, threshold=0.0)
+2026-01-13 02:53:12 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.43%, threshold: 15.86%)
+2026-01-13 02:53:12 | INFO     | Found 20 results
+2026-01-13 02:53:14 | INFO     | Searching: 'car' (top_k=50, threshold=0.0)
+2026-01-13 02:53:14 | INFO     | Adaptive filtering: 150 → 20 results (top: 26.43%, threshold: 15.86%)
+2026-01-13 02:53:14 | INFO     | Found 20 results
+2026-01-13 02:53:18 | INFO     | ✅ Encoded 32 images
+2026-01-13 02:53:18 | INFO     | Added 32 vectors (total: 640)
+2026-01-13 02:53:21 | INFO     | ✅ Encoded 29 images
+2026-01-13 02:53:21 | INFO     | Added 29 vectors (total: 669)
+2026-01-13 03:14:28 | INFO     | Cleaning up...
+2026-01-13 03:14:28 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 03:14:28 | INFO     | 👋 Cleanup complete
+2026-01-13 03:21:50 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 03:21:50 | INFO     | Initializing AI components...
+2026-01-13 03:21:50 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:21:56 | INFO     | ✅ Image encoder ready
+2026-01-13 03:21:56 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:22:02 | INFO     | ✅ Text encoder ready
+2026-01-13 03:22:02 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 03:22:02 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 03:22:02 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (669 vectors)
+2026-01-13 03:22:02 | INFO     | 📂 Loaded 669 vectors
+2026-01-13 03:22:02 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 03:22:02 | INFO     | ✅ Batch indexer initialized
+2026-01-13 03:22:02 | INFO     | ✅ Search engine initialized
+2026-01-13 03:22:02 | INFO     | ✅ Components initialized
+2026-01-13 03:22:03 | INFO     | ✅ QID Qt application initialized
+2026-01-13 03:22:04 | INFO     | 🎨 Application running
+2026-01-13 03:22:26 | INFO     | Searching: 'briwn' (top_k=50, threshold=0.0)
+2026-01-13 03:22:28 | INFO     | Adaptive filtering: 150 → 20 results (top: 23.98%, threshold: 14.39%)
+2026-01-13 03:22:28 | INFO     | Found 20 results
+2026-01-13 03:34:19 | INFO     | Cleaning up...
+2026-01-13 03:34:19 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 03:34:19 | INFO     | 👋 Cleanup complete
+2026-01-13 03:34:39 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 03:34:39 | INFO     | Initializing AI components...
+2026-01-13 03:34:39 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:34:49 | INFO     | ✅ Image encoder ready
+2026-01-13 03:34:49 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:34:54 | INFO     | ✅ Text encoder ready
+2026-01-13 03:34:54 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 03:34:54 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 03:34:54 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (669 vectors)
+2026-01-13 03:34:54 | INFO     | 📂 Loaded 669 vectors
+2026-01-13 03:34:54 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 03:34:54 | INFO     | ✅ Batch indexer initialized
+2026-01-13 03:34:54 | INFO     | ✅ Search engine initialized
+2026-01-13 03:34:54 | INFO     | ✅ Components initialized
+2026-01-13 03:34:56 | INFO     | ✅ QID Qt application initialized
+2026-01-13 03:34:57 | INFO     | 🎨 Application running
+2026-01-13 03:37:52 | INFO     | Cleaning up...
+2026-01-13 03:37:52 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 03:37:52 | INFO     | 👋 Cleanup complete
+2026-01-13 03:38:24 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 03:38:24 | INFO     | Initializing AI components...
+2026-01-13 03:38:24 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:38:30 | INFO     | ✅ Image encoder ready
+2026-01-13 03:38:30 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:38:35 | INFO     | ✅ Text encoder ready
+2026-01-13 03:38:35 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 03:38:35 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 03:38:35 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (669 vectors)
+2026-01-13 03:38:35 | INFO     | 📂 Loaded 669 vectors
+2026-01-13 03:38:35 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 03:38:35 | INFO     | ✅ Batch indexer initialized
+2026-01-13 03:38:35 | INFO     | ✅ Search engine initialized
+2026-01-13 03:38:35 | INFO     | ✅ Components initialized
+2026-01-13 03:38:36 | INFO     | ✅ QID Qt application initialized
+2026-01-13 03:38:36 | INFO     | 🎨 Application running
+2026-01-13 03:43:30 | INFO     | Cleaning up...
+2026-01-13 03:43:30 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 03:43:30 | INFO     | 👋 Cleanup complete
+2026-01-13 03:43:44 | INFO     | 🚀 Starting QID Qt application
+2026-01-13 03:43:44 | INFO     | Initializing AI components...
+2026-01-13 03:43:44 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:43:54 | INFO     | ✅ Image encoder ready
+2026-01-13 03:43:54 | INFO     | Loading CLIP model: ViT-B/32 on cuda
+2026-01-13 03:43:59 | INFO     | ✅ Text encoder ready
+2026-01-13 03:43:59 | INFO     | ✅ Vector store initialized: Flat, dim=512
+2026-01-13 03:43:59 | INFO     | ✅ Metadata store initialized: ./data/metadata/image_metadata.db
+2026-01-13 03:43:59 | INFO     | 📂 Loaded vector store from data\embeddings\image_embeddings.index (669 vectors)
+2026-01-13 03:43:59 | INFO     | 📂 Loaded 669 vectors
+2026-01-13 03:43:59 | INFO     | Image processor initialized with formats: ['.jpg', '.jpeg', '.png', '.bmp', '.gif', '.webp', '.tiff']
+2026-01-13 03:43:59 | INFO     | ✅ Batch indexer initialized
+2026-01-13 03:43:59 | INFO     | ✅ Search engine initialized
+2026-01-13 03:43:59 | INFO     | ✅ Components initialized
+2026-01-13 03:43:59 | INFO     | ✅ QID Qt application initialized
+2026-01-13 03:44:00 | INFO     | 🎨 Application running
+2026-01-13 03:48:13 | INFO     | Cleaning up...
+2026-01-13 03:48:13 | INFO     | 💾 Saved vector store to data\embeddings\image_embeddings.index
+2026-01-13 03:48:13 | INFO     | 👋 Cleanup complete

@@ -8,7 +8,8 @@ from PySide6.QtWidgets import (
     QPushButton, QFrame, QGraphicsOpacityEffect
 )
 from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, Signal
-from PySide6.QtGui import QFont
+from PySide6.QtGui import QFont, QPixmap
+from pathlib import Path
 
 from .theme import COLORS, SPACING, RADIUS
 
@@ -48,7 +49,10 @@ class FeatureCard(QFrame):
         # Icon
         icon_label = QLabel(icon)
         icon_label.setAlignment(Qt.AlignCenter)
-        icon_label.setStyleSheet("font-size: 56px;")
+        icon_label.setStyleSheet("""
+            font-size: 56px;
+            background: transparent;
+        """)
         
         # Title - Professional font
         title_label = QLabel(title)
@@ -58,6 +62,7 @@ class FeatureCard(QFrame):
         title_label.setStyleSheet(f"""
             color: {COLORS['text_primary']};
             margin-top: 8px;
+            background: transparent;
         """)
         
         # Description - Refined
@@ -69,7 +74,7 @@ class FeatureCard(QFrame):
         desc_label.setFont(font)
         desc_label.setStyleSheet(f"""
             color: {COLORS['text_secondary']};
-            line-height: 22px;
+            background: transparent;
         """)
         
         # Button - More professional
@@ -170,17 +175,27 @@ class HomeScreen(QWidget):
         # Hero Section
         hero_layout = QVBoxLayout()
         hero_layout.setAlignment(Qt.AlignCenter)
-        hero_layout.setSpacing(12)
+        hero_layout.setSpacing(20)
         
-        # Title - Professional gradient
-        title = QLabel("QID")
-        title.setAlignment(Qt.AlignCenter)
-        font = QFont("Inter, Segoe UI, sans-serif", 56, QFont.Bold)
-        title.setFont(font)
-        title.setStyleSheet(f"""
-            color: white;
-            margin-bottom: 8px;
-        """)
+        # Logo image (replacing "QID" text)
+        logo = QLabel()
+        logo_path = Path("assets/logo.png")
+        if logo_path.exists():
+            pixmap = QPixmap(str(logo_path))
+            # Scale logo to appropriate size (128x128 for hero)
+            scaled_pixmap = pixmap.scaled(128, 128, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            logo.setPixmap(scaled_pixmap)
+            logo.setAlignment(Qt.AlignCenter)
+        else:
+            # Fallback to text if logo not found
+            logo.setText("QID")
+            font = QFont("Inter, Segoe UI, sans-serif", 56, QFont.Bold)
+            logo.setFont(font)
+            logo.setStyleSheet("""
+                color: white;
+                background: transparent;
+            """)
+            logo.setAlignment(Qt.AlignCenter)
         
         # Subtitle - Clean
         subtitle = QLabel("Query Images by Description")
@@ -190,20 +205,21 @@ class HomeScreen(QWidget):
         subtitle.setStyleSheet(f"""
             color: {COLORS['text_primary']};
             font-weight: 400;
+            background: transparent;
         """)
         
         # Tagline - Subtle
-        tagline = QLabel("POWERED BY LOCAL AI • PRIVACY FOCUSED")
+        tagline = QLabel("LOCAL • PRIVACY FOCUSED")
         tagline.setAlignment(Qt.AlignCenter)
         font = QFont("Inter, Segoe UI, sans-serif", 11, QFont.Medium)
         tagline.setFont(font)
         tagline.setStyleSheet(f"""
             color: {COLORS['text_tertiary']};
             letter-spacing: 1.5px;
-            margin-top: 16px;
+            background: transparent;
         """)
         
-        hero_layout.addWidget(title)
+        hero_layout.addWidget(logo)
         hero_layout.addWidget(subtitle)
         hero_layout.addWidget(tagline)
         
@@ -226,9 +242,9 @@ class HomeScreen(QWidget):
         
         # Search Card
         self.search_card = FeatureCard(
-            icon="🔍",
+            icon="🖼️",
             title="Search My Images",
-            description='Find specific photos using natural language queries like "Sunset at the beach" or "Cat sleeping".'
+            description='Find specific photos using natural language queries.'
         )
         self.search_card.clicked.connect(self.search_clicked.emit)
         self.search_card.setFixedSize(340, 400)
@@ -239,43 +255,12 @@ class HomeScreen(QWidget):
         content_layout.addLayout(cards_layout)
         content_layout.addSpacing(72)
         
-        # Features Footer - FIXED: Proper spacing
+        # Features Footer
         features_container = QWidget()
         features_layout = QHBoxLayout(features_container)
         features_layout.setContentsMargins(0, 0, 0, 0)
         features_layout.setSpacing(64)
         features_layout.setAlignment(Qt.AlignCenter)
         
-        # Feature badges
-        for icon, text in [
-            ("🔒", "100% Offline"),
-            ("⚡", "Instant Results"),
-            ("🧠", "Neural Engine")
-        ]:
-            badge = QWidget()
-            badge_layout = QVBoxLayout(badge)
-            badge_layout.setContentsMargins(0, 0, 0, 0)
-            badge_layout.setSpacing(8)
-            badge_layout.setAlignment(Qt.AlignCenter)
-            
-            feature_icon = QLabel(icon)
-            feature_icon.setAlignment(Qt.AlignCenter)
-            feature_icon.setStyleSheet("font-size: 28px;")
-            
-            feature_text = QLabel(text)
-            feature_text.setAlignment(Qt.AlignCenter)
-            font = QFont("Inter, Segoe UI, sans-serif", 12, QFont.Medium)
-            feature_text.setFont(font)
-            feature_text.setStyleSheet(f"""
-                color: {COLORS['text_secondary']};
-            """)
-            
-            badge_layout.addWidget(feature_icon)
-            badge_layout.addWidget(feature_text)
-            
-            features_layout.addWidget(badge)
-        
-        content_layout.addWidget(features_container)
-        content_layout.addStretch()
         
         main_layout.addWidget(content)

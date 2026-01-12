@@ -6,8 +6,8 @@ Beautiful, animated interface with PySide6.
 import sys
 from pathlib import Path
 from PySide6.QtWidgets import QApplication
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QIcon, QFont
+from PySide6.QtCore import Qt, QSize
+from PySide6.QtGui import QIcon, QFont, QPixmap
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -41,6 +41,52 @@ class QIDAppQt:
         self.app.setOrganizationName("QID Intelligence")
         self.app.setApplicationDisplayName("QID - Query Images by Description")
         
+        # Set application icon with proper scaling
+        icon_path = Path(__file__).parent / "assets" / "logo.png"
+        if icon_path.exists():
+            # Load the original image
+            original = QPixmap(str(icon_path))
+            
+            if not original.isNull():
+                # Create icon
+                icon = QIcon()
+                
+                # Define target sizes for different contexts
+                sizes = [16, 20, 24, 32, 40, 48, 64, 96, 128, 256]
+                
+                for size in sizes:
+                    # Calculate the scaling to maintain aspect ratio
+                    # and fit within a square of 'size'
+                    scaled = original.scaled(
+                        size, size,
+                        Qt.KeepAspectRatio,
+                        Qt.SmoothTransformation
+                    )
+                    
+                    # Create a square pixmap with transparent background
+                    square = QPixmap(size, size)
+                    square.fill(Qt.transparent)
+                    
+                    # Center the scaled image in the square
+                    from PySide6.QtGui import QPainter
+                    painter = QPainter(square)
+                    x = (size - scaled.width()) // 2
+                    y = (size - scaled.height()) // 2
+                    painter.drawPixmap(x, y, scaled)
+                    painter.end()
+                    
+                    icon.addPixmap(square)
+                
+                # Set as application icon (taskbar icon)
+                self.app.setWindowIcon(icon)
+                
+                # Store for later use
+                self.app_icon = icon
+            else:
+                self.app_icon = None
+        else:
+            self.app_icon = None
+        
         # Load configuration
         self.config = get_config()
         
@@ -66,6 +112,22 @@ class QIDAppQt:
             batch_indexer=self.batch_indexer,
             config=self.config
         )
+        
+        # Set window icon for taskbar appearance
+        if self.app_icon:
+            self.main_window.setWindowIcon(self.app_icon)
+            
+            # Also set on the QApplication again to ensure it's picked up
+            # by the taskbar (Windows sometimes needs this)
+            
+            if sys.platform == 'win32':
+                # On Windows, we need to set the app user model ID
+                try:
+                    import ctypes
+                    myappid = 'qid.intelligence.imagequery.1.0'
+                    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+                except:
+                    pass
         
         self.logger.info("✅ QID Qt application initialized")
     
