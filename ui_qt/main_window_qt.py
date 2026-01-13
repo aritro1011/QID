@@ -347,6 +347,11 @@ class MainWindowQt(QMainWindow):
         self.settings_screen.rebuild_index.connect(self._rebuild_index)
         self.settings_screen.clear_cache.connect(self._clear_cache)
         self.settings_screen.delete_index.connect(self._delete_index)
+        self.settings_screen.clean_missing.connect(self._on_database_cleaned)
+        self.settings_screen.model_changed.connect(self._on_model_changed)
+        self.settings_screen.hardware_changed.connect(self._on_device_changed)
+
+
         
         self.content_stack.addWidget(self.home_screen)
         self.content_stack.addWidget(self.search_screen)
@@ -354,7 +359,18 @@ class MainWindowQt(QMainWindow):
         self.content_stack.addWidget(self.settings_screen)
         
         self._update_stats()
-    
+    def _on_database_cleaned(self):
+        """Handle database cleanup completion."""
+        # Refresh stats after cleanup
+        self._update_stats()
+
+        # Optional: notify user
+        QMessageBox.information(
+            self,
+            "Cleanup Complete",
+            "Removed missing image entries from the database."
+        )
+
     def _toggle_maximize(self):
         """Toggle maximize/restore."""
         if self.isMaximized():
@@ -461,3 +477,19 @@ class MainWindowQt(QMainWindow):
         self.batch_indexer.metadata_store.clear()
         self._update_stats()
         QMessageBox.information(self, "Success", "Index deleted successfully!")
+    def _on_model_changed(self, model_name: str):
+        """
+        Update encoder model globally.
+        """
+        self.batch_indexer.image_encoder.set_model(model_name)
+        QMessageBox.information(self, "Model Updated",
+                                f"Switched CLIP model to: {model_name}")
+
+
+    def _on_device_changed(self, device: str):
+        """
+        Update CPU / CUDA globally.
+        """
+        self.batch_indexer.image_encoder.set_device(device)
+        QMessageBox.information(self, "Hardware Updated",
+                                f"Switched processing device to: {device.upper()}")

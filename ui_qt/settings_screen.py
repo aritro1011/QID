@@ -5,9 +5,9 @@ Application settings and database management.
 
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel,
-    QPushButton, QFrame, QComboBox, QMessageBox, QScrollArea
+    QPushButton, QFrame, QComboBox, QMessageBox, QScrollArea, QProgressDialog
 )
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtCore import Qt, Signal, QTimer
 from PySide6.QtGui import QFont, QShortcut, QKeySequence
 
 from .theme import COLORS
@@ -136,6 +136,19 @@ class ActionCard(QFrame):
                     color: white;
                 }}
             """)
+        elif style == "warning":
+            btn.setStyleSheet(f"""
+                QPushButton {{
+                    background: transparent;
+                    color: #F59E0B;
+                    border: 1px solid #F59E0B;
+                    border-radius: 8px;
+                }}
+                QPushButton:hover {{
+                    background: #F59E0B;
+                    color: white;
+                }}
+            """)
         else:  # secondary
             btn.setStyleSheet(f"""
                 QPushButton {{
@@ -161,6 +174,7 @@ class SettingsScreen(QWidget):
     hardware_changed = Signal(str)
     rebuild_index = Signal()
     clear_cache = Signal()
+    clean_missing = Signal()  # NEW: Cleanup signal
     delete_index = Signal()
     
     def __init__(self, batch_indexer, parent=None):
@@ -296,7 +310,7 @@ class SettingsScreen(QWidget):
                 color: {COLORS['text_primary']};
             }}
         """)
-        
+        self.model_combo.currentIndexChanged.connect(self._on_model_selected)
         model_selector_layout.addWidget(model_label)
         model_selector_layout.addWidget(self.model_combo)
         model_selector_layout.addStretch()
@@ -387,9 +401,21 @@ class SettingsScreen(QWidget):
         
         layout.addWidget(idx_header)
         
-        # Three cards in a row
+        # FOUR cards in a row (added cleanup card)
         cards_layout = QHBoxLayout()
         cards_layout.setSpacing(20)
+        
+        # Database Cleanup card (NEW)
+        cleanup_card = ActionCard(
+            "Database Cleanup",
+            "Remove entries for images that no longer exist on disk.",
+            [{
+                'text': '🧹 Clean Missing Images',
+                'style': 'warning',
+                'action': 'clean_missing'
+            }]
+        )
+        cleanup_card.button_clicked.connect(self._on_action)
         
         # Maintenance card
         maintenance_card = ActionCard(
@@ -427,6 +453,7 @@ class SettingsScreen(QWidget):
         )
         danger_card.button_clicked.connect(self._on_action)
         
+        cards_layout.addWidget(cleanup_card)
         cards_layout.addWidget(maintenance_card)
         cards_layout.addWidget(optimization_card)
         cards_layout.addWidget(danger_card)
@@ -448,23 +475,45 @@ class SettingsScreen(QWidget):
         
         info_layout = QHBoxLayout(info_frame)
         
-        system_status = QLabel("🟢 SYSTEM READY")
+        self.system_status = QLabel("🟢 SYSTEM READY")
         font = QFont("Inter, Segoe UI", 10, QFont.Bold)
-        system_status.setFont(font)
-        system_status.setStyleSheet(f"color: {COLORS['success']};")
+        self.system_status.setFont(font)
+        self.system_status.setStyleSheet(f"color: {COLORS['success']};")
         
-        library_size = QLabel(f"Library: {len(self.batch_indexer.metadata_store):,} images")
+        self.library_size = QLabel(f"Library: {len(self.batch_indexer.metadata_store):,} images")
         font = QFont("Inter, Segoe UI", 11)
-        library_size.setFont(font)
-        library_size.setStyleSheet(f"color: {COLORS['text_secondary']};")
+        self.library_size.setFont(font)
+        self.library_size.setStyleSheet(f"color: {COLORS['text_secondary']};")
         
-        info_layout.addWidget(system_status)
+        info_layout.addWidget(self.system_status)
         info_layout.addStretch()
-        info_layout.addWidget(library_size)
+        info_layout.addWidget(self.library_size)
         
         layout.addWidget(info_frame)
         
         layout.addSpacing(40)
+    def _on_model_selected(self):
+        text = self.model_combo.currentText()
+
+        # Map pretty names → real model IDs
+        mapping = {
+            "ViT-B/32 (Fast, Recommended)": "ViT-B/32",
+            "ViT-B/16 (Better Quality)": "ViT-B/16",
+            "ViT-L/14 (Best Quality, Slower)": "ViT-L/14",
+        }
+
+        model_id = mapping.get(text, "ViT-B/32")
+
+        # emit signal to backend
+        self.model_changed.emit(model_id)
+
+        # optional: visual feedback
+        self.system_status.setText(f"🔁 Model switched to {model_id} — reindex needed")
+
+
+    def refresh_library_size(self):
+        """Refresh the library size display."""
+        self.library_size.setText(f"Library: {len(self.batch_indexer.metadata_store):,} images")
     
     def _on_gpu_selected(self):
         """Handle GPU selection."""
@@ -478,7 +527,10 @@ class SettingsScreen(QWidget):
     
     def _on_action(self, action: str):
         """Handle action button clicks."""
-        if action == "rebuild":
+        if action == "clean_missing":
+            self._handle_clean_missing()
+        
+        elif action == "rebuild":
             reply = QMessageBox.question(
                 self,
                 "Rebuild Index",
@@ -519,3 +571,108 @@ class SettingsScreen(QWidget):
                 )
                 if reply2 == QMessageBox.Yes:
                     self.delete_index.emit()
+    
+    def _handle_clean_missing(self):
+        """Handle cleaning missing images with preview and confirmation."""
+        try:
+            # First, check database health
+            health = self.batch_indexer.get_database_health()
+            
+            if health['missing_files'] == 0:
+                QMessageBox.information(
+                    self,
+                    "Database Clean",
+                    "✅ No missing files found!\n\n"
+                    "Your database is healthy and all images exist on disk.",
+                    QMessageBox.Ok
+                )
+                return
+            
+            # Show what would be removed
+            missing_count = health['missing_files']
+            missing_list = health.get('missing_file_list', [])
+            
+            # Build preview message
+            preview_msg = f"Found {missing_count} missing image(s).\n\n"
+            preview_msg += "Missing files (showing first 10):\n\n"
+            
+            for i, path in enumerate(missing_list[:10], 1):
+                # Truncate long paths
+                if len(path) > 60:
+                    path = "..." + path[-57:]
+                preview_msg += f"{i}. {path}\n"
+            
+            if len(missing_list) > 10:
+                preview_msg += f"\n... and {len(missing_list) - 10} more"
+            
+            preview_msg += "\n\nRemove these entries from the database?"
+            
+            # Ask for confirmation
+            reply = QMessageBox.warning(
+                self,
+                "Clean Missing Images",
+                preview_msg,
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            
+            if reply != QMessageBox.Yes:
+                return
+            
+            # Show progress dialog
+            progress = QProgressDialog(
+                "Cleaning database...",
+                "Cancel",
+                0,
+                0,
+                self
+            )
+            progress.setWindowTitle("Database Cleanup")
+            progress.setWindowModality(Qt.WindowModal)
+            progress.setMinimumDuration(0)
+            progress.setValue(0)
+            
+            # Perform cleanup
+            results = self.batch_indexer.clean_database(dry_run=False)
+            
+            progress.close()
+            
+            # Show results
+            if results['removed'] > 0:
+                result_msg = f"✅ Cleanup completed successfully!\n\n"
+                result_msg += f"Removed: {results['removed']:,} entries\n"
+                result_msg += f"Remaining: {results['remaining']:,} images\n"
+                
+                if results['failed'] > 0:
+                    result_msg += f"\n⚠️ Failed: {results['failed']} entries"
+                
+                result_msg += "\n\n💡 Tip: Run 'Rebuild Index' to reclaim disk space."
+                
+                QMessageBox.information(
+                    self,
+                    "Cleanup Complete",
+                    result_msg,
+                    QMessageBox.Ok
+                )
+                
+                # Refresh library size
+                self.refresh_library_size()
+                
+                # Emit signal for other components
+                self.clean_missing.emit()
+            
+            else:
+                QMessageBox.warning(
+                    self,
+                    "Cleanup Failed",
+                    f"❌ Failed to remove entries.\n\nErrors: {results['failed']}",
+                    QMessageBox.Ok
+                )
+        
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Error",
+                f"❌ An error occurred during cleanup:\n\n{str(e)}",
+                QMessageBox.Ok
+            )

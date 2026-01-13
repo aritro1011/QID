@@ -1,6 +1,6 @@
 """
-QID - Batch Indexer
-Orchestrates the complete image indexing pipeline.
+QID - Enhanced Batch Indexer
+Includes automatic cleanup of missing images.
 """
 
 from pathlib import Path
@@ -11,6 +11,7 @@ from ..embeddings.image_encoder import ImageEncoder
 from ..database.vector_store import VectorStore
 from ..database.metadata_store import MetadataStore
 from .image_processor import ImageProcessor
+from .index_cleaner import IndexCleaner
 from ..utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -18,16 +19,17 @@ logger = get_logger(__name__)
 
 class BatchIndexer:
     """
-    Complete pipeline for indexing images.
+    Complete pipeline for indexing images with automatic cleanup.
     
     Pipeline:
     1. Find images in directory
     2. Validate images
-    3. Filter already-processed images
-    4. Encode images in batches
-    5. Store embeddings in vector database
-    6. Store metadata in SQLite
-    7. Save everything to disk
+    3. Clean missing images (optional)
+    4. Filter already-processed images
+    5. Encode images in batches
+    6. Store embeddings in vector database
+    7. Store metadata in SQLite
+    8. Save everything to disk
     """
     
     def __init__(
@@ -55,6 +57,7 @@ class BatchIndexer:
         self.config = config
         
         self.image_processor = ImageProcessor()
+        self.cleaner = IndexCleaner(vector_store, metadata_store)
         
         logger.info("✅ Batch indexer initialized")
     
@@ -63,16 +66,18 @@ class BatchIndexer:
         directory: str,
         recursive: bool = True,
         validate: bool = True,
-        skip_existing: bool = True
+        skip_existing: bool = True,
+        clean_missing: bool = True
     ) -> Dict[str, int]:
         """
-        Index all images in a directory.
+        Index all images in a directory with automatic cleanup.
         
         Args:
             directory: Path to image directory
             recursive: Include subdirectories
             validate: Validate images before processing
             skip_existing: Skip already-indexed images
+            clean_missing: Automatically clean missing images before indexing
             
         Returns:
             Dictionary with statistics:
@@ -81,11 +86,12 @@ class BatchIndexer:
             - 'new': New images to process
             - 'processed': Successfully processed
             - 'failed': Failed to process
+            - 'cleaned': Missing images removed (if clean_missing=True)
             
         Example:
             >>> indexer = BatchIndexer(encoder, vector_store, metadata_store)
-            >>> stats = indexer.index_directory("data/images")
-            >>> print(f"Processed {stats['processed']} images")
+            >>> stats = indexer.index_directory("data/images", clean_missing=True)
+            >>> print(f"Processed {stats['processed']}, cleaned {stats['cleaned']}")
         """
         logger.info(f"Starting indexing: {directory}")
         
@@ -95,8 +101,21 @@ class BatchIndexer:
             'valid': 0,
             'new': 0,
             'processed': 0,
-            'failed': 0
+            'failed': 0,
+            'cleaned': 0
         }
+        
+        # Step 0: Clean missing images (if enabled)
+        if clean_missing:
+            print("\n🧹 Step 0: Cleaning missing images...")
+            clean_results = self.cleaner.clean_missing(
+                dry_run=False,
+                show_progress=True
+            )
+            stats['cleaned'] = clean_results['removed']
+            
+            if stats['cleaned'] > 0:
+                print(f"✅ Cleaned {stats['cleaned']} missing images")
         
         # Step 1: Find images
         print("\n📁 Step 1: Finding images...")
@@ -157,12 +176,69 @@ class BatchIndexer:
         print(f"New:        {stats['new']} images")
         print(f"Processed:  {stats['processed']} images")
         print(f"Failed:     {stats['failed']} images")
+        if stats['cleaned'] > 0:
+            print(f"Cleaned:    {stats['cleaned']} missing images")
         print(f"Total in DB: {len(self.metadata_store)} images")
         print("="*60)
         
         logger.info(f"Indexing complete: {stats}")
         
         return stats
+    
+    def clean_database(self, dry_run: bool = False) -> Dict[str, int]:
+        """
+        Clean database by removing entries for missing images.
+        
+        Args:
+            dry_run: If True, only report what would be deleted
+            
+        Returns:
+            Dictionary with cleanup results
+            
+        Example:
+            >>> # First check what would be removed
+            >>> results = indexer.clean_database(dry_run=True)
+            >>> print(f"Would remove {results['missing']} entries")
+            >>> 
+            >>> # Then actually clean
+            >>> results = indexer.clean_database(dry_run=False)
+            >>> print(f"Removed {results['removed']} entries")
+        """
+        logger.info("Running database cleanup...")
+        
+        results = self.cleaner.clean_missing(
+            dry_run=dry_run,
+            show_progress=True
+        )
+        
+        if not dry_run and results['removed'] > 0:
+            # Save changes
+            self._save_all()
+        
+        return results
+    
+    def get_database_health(self) -> Dict[str, any]:
+        """
+        Get comprehensive database health status.
+        
+        Returns:
+            Dictionary with health metrics
+            
+        Example:
+            >>> health = indexer.get_database_health()
+            >>> if not health['is_healthy']:
+            ...     print("Database needs maintenance!")
+        """
+        return self.cleaner.validate_database_integrity()
+    
+    def generate_health_report(self) -> str:
+        """
+        Generate detailed health report.
+        
+        Returns:
+            Formatted report string
+        """
+        return self.cleaner.generate_report()
     
     def _process_batch(self, image_paths: List[Path]) -> int:
         """
@@ -283,10 +359,11 @@ class BatchIndexer:
         self.vector_store.clear()
         self.metadata_store.clear()
         
-        # Index fresh
+        # Index fresh (no need to clean since we just cleared)
         return self.index_directory(
             directory,
-            skip_existing=False
+            skip_existing=False,
+            clean_missing=False
         )
     
     def _save_all(self):
@@ -321,3 +398,15 @@ class BatchIndexer:
             f"batch_size={self.batch_size}"
             f")"
         )
+    def set_model(self, model_name: str):
+        """
+        Update CLIP model and reload encoder.
+        """
+        self.image_encoder.set_model(model_name)
+
+
+    def set_device(self, device: str):
+        """
+        Update device (cpu / cuda) and reload encoder.
+        """
+        self.image_encoder.set_device(device)

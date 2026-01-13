@@ -65,7 +65,30 @@ class ImageEncoder:
             else:
                 return "cpu"
         return device
-    
+    def set_model(self, model_name: str):
+        """
+        Change CLIP model variant at runtime.
+        """
+        if model_name == self.model_name:
+            return
+
+        self.model_name = model_name
+        self._reload()
+    def set_device(self, device: str):
+        """
+        Change compute device at runtime: 'cpu', 'cuda', 'mps', or 'auto'.
+        """
+        resolved = self._get_device(device)
+
+        if resolved == "cuda" and not torch.cuda.is_available():
+            raise RuntimeError("CUDA selected but no GPU available.")
+
+        if resolved == self.device:
+            return
+
+        self.device = resolved
+        self._reload()
+
     def encode_image(self, image: Union[str, Path, Image.Image]) -> np.ndarray:
         """
         Encode a single image to an embedding vector.
@@ -196,3 +219,28 @@ class ImageEncoder:
     
     def __repr__(self) -> str:
         return f"ImageEncoder(model={self.model_name}, device={self.device})"
+    def _reload(self):
+        """
+        Reload CLIP model and preprocess after config change.
+        """
+        logger.info(f"🔄 Reloading CLIP model={self.model_name} device={self.device}")
+
+        self.device = self._get_device(self.device)
+
+        # Move old model out of memory if exists
+        try:
+            del self.model
+            torch.cuda.empty_cache()
+        except Exception:
+            pass
+
+        # Load fresh model
+        self.model, self.preprocess = clip.load(
+            self.model_name,
+            device=self.device,
+            download_root="./models"
+        )
+
+        self.model.eval()
+
+        logger.info("✅ Reload complete")
